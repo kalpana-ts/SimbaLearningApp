@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.config;
+package se.kth.sda.simbha.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import se.kth.sda.skeleton.auth.CustomUserDetailsService;
-import se.kth.sda.skeleton.auth.JWTAuthFilter;
-import se.kth.sda.skeleton.auth.JWTEncoderDecoder;
+import se.kth.sda.simbha.auth.CustomUserDetailsService;
+import se.kth.sda.simbha.auth.JWTAuthFilter;
+import se.kth.sda.simbha.auth.JWTEncoderDecoder;
 
 @Configuration
 @EnableWebSecurity
