@@ -1,11 +1,11 @@
-package se.kth.sda.simbha.auth;
+package se.kth.sda.simba.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import se.kth.sda.simbha.user.User;
-import se.kth.sda.simbha.user.UserRepository;
+import se.kth.sda.simba.user.User;
+import se.kth.sda.simba.user.UserRepository;
 
 import java.util.ArrayList;
 

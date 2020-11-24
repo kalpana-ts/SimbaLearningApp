@@ -1,4 +1,4 @@
-package se.kth.sda.simbha.user;
+package se.kth.sda.simba.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

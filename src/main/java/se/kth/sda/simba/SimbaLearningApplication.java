@@ -1,4 +1,4 @@
-package se.kth.sda.simbha;
+package se.kth.sda.simba;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class SimbhaLearningApplication {
+public class SimbaLearningApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SimbhaLearningApplication.class, args);
+		SpringApplication.run(SimbaLearningApplication.class, args);
 	}
 
 	@Bean

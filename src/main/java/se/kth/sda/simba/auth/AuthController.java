@@ -1,12 +1,12 @@
-package se.kth.sda.simbha.auth;
+package se.kth.sda.simba.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
-import se.kth.sda.simbha.user.User;
-import se.kth.sda.simbha.user.UserService;
+import se.kth.sda.simba.user.User;
+import se.kth.sda.simba.user.UserService;
 
 @RestController
 public class AuthController {

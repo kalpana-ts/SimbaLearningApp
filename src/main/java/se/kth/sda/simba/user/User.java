@@ -1,4 +1,4 @@
-package se.kth.sda.simbha.user;
+package se.kth.sda.simba.user;
 
 import org.hibernate.validator.constraints.Length;
 

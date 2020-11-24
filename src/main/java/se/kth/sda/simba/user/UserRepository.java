@@ -1,4 +1,4 @@
-package se.kth.sda.simbha.user;
+package se.kth.sda.simba.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

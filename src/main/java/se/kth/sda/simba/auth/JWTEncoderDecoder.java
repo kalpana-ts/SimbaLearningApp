@@ -1,4 +1,4 @@
-package se.kth.sda.simbha.auth;
+package se.kth.sda.simba.auth;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;

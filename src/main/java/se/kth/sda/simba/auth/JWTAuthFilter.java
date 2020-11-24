@@ -1,4 +1,4 @@
-package se.kth.sda.simbha.auth;
+package se.kth.sda.simba.auth;
 
 import com.auth0.jwt.interfaces.Claim;
 import org.springframework.beans.factory.annotation.Autowired;

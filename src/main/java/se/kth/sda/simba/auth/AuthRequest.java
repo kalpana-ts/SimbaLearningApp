@@ -1,4 +1,4 @@
-package se.kth.sda.simbha.auth;
+package se.kth.sda.simba.auth;
 
 public class AuthRequest {
     private String email;

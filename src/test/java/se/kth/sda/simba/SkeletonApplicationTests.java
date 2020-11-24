@@ -1,4 +1,4 @@
-package se.kth.sda.simbha;
+package se.kth.sda.simba;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
