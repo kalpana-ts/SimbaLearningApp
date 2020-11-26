@@ -1,5 +1,7 @@
 package se.kth.sda.simba.comment;
 
+import se.kth.sda.simba.Announcement.Announcement;
+
 import javax.persistence.*;
 
 @Entity

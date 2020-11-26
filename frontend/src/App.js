@@ -14,7 +14,8 @@ import Navbar from "./components/layout/Navbar";
 // Import pages
 import LoginPage from "./components/auth/LoginPage";
 import HomePage from './components/home/HomePage';
-import PostsPage from "./components/posts/PostsPage";
+//import PostsPage from "./components/posts/PostsPage";
+import AnnouncePage from "./components/announcement/AnnouncePage";
 import ChatPage from './components/chat/ChatPage';
 
 function App() {
@@ -27,8 +28,8 @@ function App() {
 
                 <div className="container mt-5">
                     <Switch>
-                        <Route path="/posts">
-                            <PostsPage/>
+                        <Route path="/announce">
+                            <AnnouncePage/>
                         </Route>
 
                         <Route path="/chat">

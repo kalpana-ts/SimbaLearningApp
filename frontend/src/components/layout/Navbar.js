@@ -18,8 +18,8 @@ function Navbar({ onLogout }) {
                     </li>
 
                     <li className="nav-item">
-                        <Link to="/posts" className="nav-link">
-                            Posts
+                        <Link to="/announce" className="nav-link">
+                            Announce
                             </Link>
                     </li>
 
