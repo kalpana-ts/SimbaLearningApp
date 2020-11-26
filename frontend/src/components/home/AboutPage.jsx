@@ -4,7 +4,7 @@ import HomeAbout from '../../images/home-about.png';
 function AboutPage() {
     
   return (
-      <div>
+      
       <div class="about-data shadow-lg p-3 mb-5 rounded">
         <div className="row">
                 <div className="col-md-4">
@@ -24,8 +24,7 @@ function AboutPage() {
                 </div>
             </div>
         </div>
-        <br/><br/><br/><br/>
-      </div>
+       
       
   )
 }
