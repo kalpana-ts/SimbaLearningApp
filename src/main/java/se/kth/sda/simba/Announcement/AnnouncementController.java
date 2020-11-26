@@ -11,9 +11,6 @@ import java.util.List;
 @RequestMapping("/announce")
 public class AnnouncementController {
 
-
-
-
     private final AnnouncementService service;
     private final AuthService authService;
 

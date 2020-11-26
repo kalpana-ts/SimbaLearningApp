@@ -1,6 +1,13 @@
+@import "./Components/auth/loginPage.css";
+@import "./Components/layout/layout.css";
+@import "./Components/Home/Home.css";
+@import "./Components/Home/AppHomePage.css";
+
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #2c3e50, #3498db);
+  background-color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .App {
