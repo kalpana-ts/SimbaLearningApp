@@ -41,7 +41,7 @@ public class AssignmentPostController {
     }
 
     //Create a assignment
-    @PostMapping("")
+    @PostMapping("/new")
     public AssignmentPost create(@RequestBody AssignmentPost newAssignmentPost) {
         return assignmentPostService.create(newAssignmentPost);
     }
