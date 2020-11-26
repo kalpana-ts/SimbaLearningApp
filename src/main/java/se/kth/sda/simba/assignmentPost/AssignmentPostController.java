@@ -8,7 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/assignments")
+@RequestMapping("/assignmentPost")
 public class AssignmentPostController {
     @Autowired
     private AssignmentPostService assignmentPostService;
