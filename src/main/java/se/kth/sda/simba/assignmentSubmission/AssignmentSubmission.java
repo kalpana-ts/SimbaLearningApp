@@ -1,37 +1,39 @@
-package se.kth.sda.simba.assignmentPost;
-
+package se.kth.sda.simba.assignmentSubmission;
+import se.kth.sda.simba.assignmentPost.AssignmentPost;
 import se.kth.sda.simba.user.User;
-
-
 import javax.persistence.*;
 
 @Entity
-public class AssignmentPost {
+public class AssignmentSubmission {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String assignmentTitle;
-   @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT")
     private String assignmentDescription;
-    private String fileUrl;
+    private String file;
     private String grade;
     private String subject;
 
     @ManyToOne
-   private User user;
+    private AssignmentPost assignmentPost;
 
+    @ManyToOne
+    private User user;
 
-    public AssignmentPost(long id, String assignmentTitle, String assignmentDescription, String fileUrl, String grade, String subject, User user) {
+    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String file, String grade, String subject, AssignmentPost assignmentPost, User user) {
         this.id = id;
         this.assignmentTitle = assignmentTitle;
         this.assignmentDescription = assignmentDescription;
-        this.fileUrl = fileUrl;
+        this.file = file;
         this.grade = grade;
         this.subject = subject;
+        this.assignmentPost = assignmentPost;
         this.user = user;
     }
 
-    public AssignmentPost() {
+    public AssignmentSubmission() {
 
     }
 
@@ -59,12 +61,12 @@ public class AssignmentPost {
         this.assignmentDescription = assignmentDescription;
     }
 
-    public String getFileUrl() {
-        return fileUrl;
+    public String getFile() {
+        return file;
     }
 
-    public void setFileUrl(String fileUrl) {
-        this.fileUrl = fileUrl;
+    public void setFile(String file) {
+        this.file = file;
     }
 
     public String getGrade() {
@@ -81,6 +83,14 @@ public class AssignmentPost {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public AssignmentPost getAssignmentPost() {
+        return assignmentPost;
+    }
+
+    public void setAssignmentPost(AssignmentPost assignmentPost) {
+        this.assignmentPost = assignmentPost;
     }
 
     public User getUser() {

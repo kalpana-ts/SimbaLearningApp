@@ -20,6 +20,8 @@ import NewAnnouncePage from "./components/announcement/NewAnnounce";
 import SingleAnnounce from "./components/announcement/SingleAnnounce";
 //import CommentsPage from "./components/Comment/CommentsPage";
 import ChatPage from './components/chat/ChatPage';
+import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
+import NewAssignment from './components/assignmentpost/NewAssignment';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -44,6 +46,15 @@ function App() {
                         <Route path="/chat">
                             <ChatPage/>
                         </Route>
+
+                        <Route path="/assignmentPost">
+                            <AssignmentPostPage/>
+                        </Route>
+
+                        <Route path="/assignmentPost/new">
+                            <NewAssignment/>
+                        </Route>
+                        
 
                         <Route path="/">
                           <HomePage/>
