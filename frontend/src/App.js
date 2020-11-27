@@ -16,6 +16,9 @@ import LoginPage from "./components/auth/LoginPage";
 import HomePage from './components/home/HomePage';
 //import PostsPage from "./components/posts/PostsPage";
 import AnnouncePage from "./components/announcement/AnnouncePage";
+import NewAnnouncePage from "./components/announcement/NewAnnounce";
+import SingleAnnounce from "./components/announcement/SingleAnnounce";
+//import CommentsPage from "./components/Comment/CommentsPage";
 import ChatPage from './components/chat/ChatPage';
 
 function App() {
@@ -30,6 +33,12 @@ function App() {
                     <Switch>
                         <Route path="/announce">
                             <AnnouncePage/>
+                        </Route>
+                        <Route path="/announce/new">
+                            <NewAnnouncePage/>
+                        </Route>
+                        <Route path="/announce/:id">
+                            <SingleAnnounce/>
                         </Route>
 
                         <Route path="/chat">
