@@ -1,6 +1,8 @@
 package se.kth.sda.simba.Announcement;
 
 
+import se.kth.sda.simba.comment.Comment;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -28,8 +30,8 @@ public class Announcement {
     private String email;
 
 
-   // @OneToMany
-    //private List<Comment>comment;
+   @OneToMany
+    private List<Comment>comment;
 
     public void setEmail(String email) {
         this.email = email;
