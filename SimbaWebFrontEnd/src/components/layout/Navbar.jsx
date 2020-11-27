@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//import { ExternalLink } from 'react-external-link';
 
-function AppNavbar({ onLogout }) {
+function Navbar() {
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="/">
@@ -24,25 +26,20 @@ function AppNavbar({ onLogout }) {
                     </li>
 
                     <li className="nav-item">
-                        <Link to="/posts" className="nav-link">
-                            Announcements
-                            </Link>
+                        <a href="#about" className="nav-link" rel="noopener noreferrer">
+                            <span>About Us</span>
+                        </a>
                     </li>
 
                     <li className="nav-item">
-                        <Link to="/chat" className="nav-link">
-                            Calender
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>Login</button>
-                    </li>
-                </ul>
-
-                
+                        <a href="http://localhost:3000" target="_blank" className="btn btn-outline-info my-2 my-sm-0" rel="noopener noreferrer">
+                            <span>Login</span>
+                        </a>
+                    </li>                    
+                </ul>                
             </div>
         </nav>
     );
 }
 
-export default AppNavbar;
+export default Navbar;
