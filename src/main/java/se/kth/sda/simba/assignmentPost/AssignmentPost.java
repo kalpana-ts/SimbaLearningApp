@@ -13,7 +13,7 @@ public class AssignmentPost {
     private String assignmentTitle;
    @Column(columnDefinition = "TEXT")
     private String assignmentDescription;
-    private String file;
+    private String fileUrl;
     private String grade;
     private String subject;
 
@@ -21,11 +21,11 @@ public class AssignmentPost {
    private User user;
 
 
-    public AssignmentPost(long id, String assignmentTitle, String assignmentDescription, String file, String grade, String subject, User user) {
+    public AssignmentPost(long id, String assignmentTitle, String assignmentDescription, String fileUrl, String grade, String subject, User user) {
         this.id = id;
         this.assignmentTitle = assignmentTitle;
         this.assignmentDescription = assignmentDescription;
-        this.file = file;
+        this.fileUrl = fileUrl;
         this.grade = grade;
         this.subject = subject;
         this.user = user;
@@ -59,12 +59,12 @@ public class AssignmentPost {
         this.assignmentDescription = assignmentDescription;
     }
 
-    public String getFile() {
-        return file;
+    public String getFileUrl() {
+        return fileUrl;
     }
 
-    public void setFile(String file) {
-        this.file = file;
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
     }
 
     public String getGrade() {
