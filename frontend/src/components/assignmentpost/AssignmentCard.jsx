@@ -5,6 +5,8 @@ function AssignmentCard(assignment) {
     <div className="card mt-3 ">
       <div className="card-title bg-secondary text-white m-0 p-1 ">
         {assignment.assignment.assignmentTitle + " ... "}
+        Posted By: 
+        {assignment.assignment.user.name}
       </div>
       <div className="card-body">
         Description: 
