@@ -11,7 +11,7 @@ function AnnouncePage() {
 
     const [announces, setAnnounces] = useState([]);
     const [userData, setUserData] = useState([]);
-    const [Email, setEmail] = useState("")
+    const [email, setEmail] = useState("")
 
     const getAll = () => {
         Api.get("/announce")
@@ -37,15 +37,31 @@ function AnnouncePage() {
     useEffect (() => {
         Api.get("/user/")
             .then(response => {
-                const Email = response.data
-                setEmail(Email);
+                const email = response.data
+                setEmail(email);
             });
     }, []);
 
-    const deleteAnnounce = id => {
-        Api.delete('/announce/' + id)
-            .then(response => getAll());
-};
+//     const deleteAnnounce = id => {
+//         Api.delete('/announce/' + id)
+//             .then(response => getAll());
+// };
+
+    const deleteAnnounce = (announce) => {
+        console.log(announce);
+        console.log(email);
+        console.log(announce.email);
+       
+        if ( announce.email === email) {
+            
+            Api.delete("/announce/" + announce.id)
+                .then(r => getAll());
+
+        }else{
+            alert("you can't delete the announce");
+        }
+    
+    }
             
         
     
