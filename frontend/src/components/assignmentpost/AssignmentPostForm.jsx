@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import Auth from '../../services/Auth';
+import UserApi from '../../api/UserApi';
 
 //user is still saving as null
 //Image upload
@@ -11,7 +13,21 @@ function AssignmentPostForm({setAssignment}){
   //const [fileUrl, setFileUrl] = useState('');
   const [grade, setGrade] = useState('');
   const [subject, setSubject] = useState('');
-  const [user, setUser] = useState(null);
+
+  const [user, setUser] = useState({});
+  const userMail = Auth.getUserMail();
+
+    // Store user informations when logged: can acces user mail, name, Id
+    useEffect(() => {
+        function getUserByMail() {
+            UserApi.getUserByMail(userMail)
+                .then((res) => {
+                    setUser(res.data)
+                })
+        }
+        userMail !== null && getUserByMail();
+    }, [userMail])
+
   const submitHandler = event => {
     event.preventDefault();
     setAssignment({
@@ -19,7 +35,8 @@ function AssignmentPostForm({setAssignment}){
         assignmentDescription: assignmentDescription,
         grade: grade,
         subject: subject,
-        user: user
+        user: user,
+      //  fileUrl: fileUrl
     });
   };
 return (
@@ -63,14 +80,16 @@ return (
               id="formGroupExampleInput"
               placeholder="Subject..."
               onChange={e => setSubject(e.target.value)}
-            />
-            <button
-            
+            />     
+          </div>
+          <div className="form-group">
+              <input type="file" />
+            </div>
+            <button            
             type="submit"
             className="btn-newPost">
               Submit
             </button>
-          </div>
      </form>
     );
 }
