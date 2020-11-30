@@ -14,12 +14,12 @@ public class AnnouncementService {
             this.repository = repository;
         }
 
-        public List< Announcement> getAll() {
+        public List<Announcement> getAll() {
             return repository.findAll();
         }
 
-        public Optional< Announcement> getById(Long id) {
-            return repository.findById(id);
+        public Optional<Announcement> getById(Long announceId) {
+            return repository.findById(announceId);
         }
 
         public  Announcement create( Announcement newAnnouncement) {
