@@ -17,6 +17,11 @@ function AssignmentCard(assignment) {
        Subject: 
         {assignment.assignment.subject}
         <br />
+        Files:
+        {assignment.assignment.fileUrl}
+        <img src={assignment.assignment.fileUrl} alt="" className="s"/>
+        <a key={assignment.assignment.id} href={assignment.assignment.fileUrl} className="href" target="_blank">Uploaded File</a>
+      
       </div>
     </div>
   );

@@ -4,8 +4,10 @@ import AssignmentPostApi from '../../api/AssignmentPostApi';
 import AssignmentPostForm from '../assignmentpost/AssignmentPostForm';
 
 function NewAssignment(){
+  
     const[assignment,setAssignment]=useState(null);
     const history = useHistory();
+    
     useEffect(() => {
         const createAssignment = async () => {
           try {
