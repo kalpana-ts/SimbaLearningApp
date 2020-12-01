@@ -20,11 +20,8 @@ function AnnounceCard({announce, onUpdateClick, onDeleteClick}) {
             <div className="card-body">
                 <div>
                     {/* <FaRegUserCircle /> */}
-                    {/* {announce.user.name} */}
-                    
-                    
-                    
-                    
+                    {announce.user.name}
+
                 </div>
                 <div className="card-title">
                     

@@ -33,11 +33,13 @@ public class User {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "userType")
+    private String userType;
+
     @OneToMany
     private List<AssignmentPost> assignmentPosts;
     @OneToMany
     private List<AssignmentSubmission> assignmentSubmissions;
-
 
     // Hibernate needs a default constructor to function
     public User() {}
@@ -47,7 +49,6 @@ public class User {
         this.password = password;
         this.name = name;
     }
-
 
     public Long getId() {
         return id;
@@ -81,5 +82,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

@@ -1,0 +1,64 @@
+import { format } from 'date-fns';
+import React, { useState } from 'react';
+import ImageUploader from './AnnouncementImageUploader';
+
+function AnnouncementForm({ setAnnounce }) {
+  const [imgUrl, setImgUrl] = useState('');
+  const [announceTitle, setAnnounceTitle] = useState('');
+  const [details, setDetails] = useState('');
+  const [uploading, setUploading] = useState(true);
+
+  const submitHandler = event => {
+    event.preventDefault();
+    setAnnounce({
+      title: announceTitle,
+      body: details,
+      imageUrl: imgUrl,
+      date: format(new Date(), 'dd-MMM-yyyy'),
+    });
+  };
+
+  return (
+    <form style={{ width: '100%' }} onSubmit={submitHandler}>
+      <h1 style={{ textAlign: 'center', color: '#6C6C6C' }}>Upload Details</h1>
+      <div className="row">
+        <div className="col-md-6 col-sm-6">
+          <div className="form-group">
+            <label htmlFor="formGroupExampleInput">Announcement Title</label>
+            <input
+              type="text"
+              className="form-control"
+              id="formGroupExampleInput1"
+              placeholder="Enter announcement title here.."
+              onChange={e => setAnnounceTitle(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="formGroupExampleInput2">Annoucement Details :</label>
+            <textarea
+              type="text"
+              className="form-control"
+              id="formGroupExampleInput3"
+              placeholder="Enter announcement details here.."
+              rows="3"
+              onChange={e => setDetails(e.target.value)}
+            />
+          </div>
+          <button
+            disabled={uploading ? true : false}
+            type="submit"
+            className="btn-newPost">
+            {uploading ? '- - - - -' : 'Submit'}
+          </button>
+        </div>
+
+        <div className="col-md-6 col-sm-6">
+          <ImageUploader setUploading={setUploading} setImgUrl={setImgUrl} />
+        </div> 
+
+      </div>
+    </form>
+  );
+}
+
+export default AnnouncementForm;
