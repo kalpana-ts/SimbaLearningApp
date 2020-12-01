@@ -16,7 +16,7 @@ public class TestController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/user")
+    @GetMapping("/test")
     public String userEmail() {
 
         return authService.getLoggedInUserEmail();
