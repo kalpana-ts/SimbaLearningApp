@@ -41,4 +41,5 @@ public class AuthController {
         public String getEmail(){
             return authService.getLoggedInUserEmail();
         }
+
 }

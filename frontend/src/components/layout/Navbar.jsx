@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar({ onLogout }) {
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand" href="/">
                 <img className="logo" src="/images/Simba-ICON.png" alt="logo"/>
             </a>
@@ -25,9 +25,26 @@ function Navbar({ onLogout }) {
                     </li>
 
                     <li className="nav-item">
-                        <Link to={' '} className="nav-link">
-                            About Us{' '}
+                        <Link to="/comments" className="nav-link">
+                            Comment
                         </Link> 
+                    </li>
+
+                    <li className="nav-item">
+                        <Link to="/announce" className="nav-link">
+                            Announcement
+                        </Link> 
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/announce/new" className="nav-link">
+                            New Announcement
+                        </Link> 
+                    </li>
+
+                    <li className="nav-item">
+                        <Link exact to="/chat" className="nav-link" activeClassName="active-link">
+                        Chat
+                        </Link>
                     </li>
                     
                     <li className="nav-item">

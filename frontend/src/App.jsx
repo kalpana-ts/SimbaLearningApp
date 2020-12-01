@@ -10,9 +10,12 @@ import Navbar from './components/layout/Navbar';
 // Import pages
 
 import LoginPage from './components/auth/LoginPage';
-import HomePage from './components/home/HomePage';
 import AppHomePage from './components/home/AppHomePage';
-import PostsPage from './components/posts/PostsPage';
+import AnnouncementPage from './components/announcementNew/AnnouncementPage';
+import NewAnnouncementPage from './components/announcementNew/NewAnnouncement';
+import SingleAnnouncement from './components/announcementNew/SingleAnnouncement';
+import CommentPage from './components/commentNew/CommentsPage';
+import ThreadPage from './components/chat/ThreadPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -26,15 +29,34 @@ function App() {
       <div className="container mt-5">
         
         <Switch>
-          <Route path="/posts" exact>
-            <PostsPage />
+          <Route path="/announce" exact>
+            <AnnouncementPage />
           </Route>
+
+          <Route path="/announce/new" exact>
+            <NewAnnouncementPage />
+          </Route>
+
+          <Route path="/announce/:id">
+            <SingleAnnouncement />
+          </Route>
+
+          <Route path="/comments">
+            <CommentPage />
+          </Route>
+
+          <Route path="/chat" exact>
+            <ThreadPage />
+          </Route>
+
+          <Route path="/chat/:id">
+            <ThreadPage />
+          </Route>
+
 
           <Route path="/">
-            <HomePage />
+            <AppHomePage />
           </Route>
-
-          <Route exact={true} path="/login" component={LoginPage} />
 
         </Switch>
       

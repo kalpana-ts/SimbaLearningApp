@@ -1,16 +1,19 @@
 package se.kth.sda.simba.comment;
 
-import javax.persistence.*;
 import se.kth.sda.simba.Announcement.Announcement;
+import javax.persistence.*;
 
 @Entity
 public class Comment {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
-    @Column(columnDefinition = "TEXT")
+
+    @Column(name = "body")
     private String body;
+
+    @Column(name = "author_name")
     private String authorName;
 
     @ManyToOne
@@ -49,13 +52,12 @@ public class Comment {
         this.authorName = authorName;
     }
 
-  /*  public Post getPost() {
-        return post;
+    public Announcement getPost() {
+        return announcement;
     }
 
-    public void setPost(Post post) {
-        this.post = post;
+    public void setPost(Announcement announcement) {
+        this.announcement = announcement;
     }
-*/
 }
 

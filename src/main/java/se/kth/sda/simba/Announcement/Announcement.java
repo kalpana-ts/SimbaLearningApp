@@ -1,6 +1,8 @@
 package se.kth.sda.simba.Announcement;
 
 
+import se.kth.sda.simba.comment.Comment;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class Announcement {
     @Column(name = "body", columnDefinition = "TEXT")
     private String body;
 
+    @Column(name = "image_url")
+    private String imageUrl;
 
     @Column(name = "date")
     private String date;
@@ -27,9 +31,12 @@ public class Announcement {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "poster")
+    private String poster;
 
-   // @OneToMany
-    //private List<Comment>comment;
+
+   @OneToMany
+    private List<Comment>comment;
 
     public void setEmail(String email) {
         this.email = email;
@@ -63,7 +70,13 @@ public class Announcement {
         this.body = body;
     }
 
+    public String getPoster() {
+        return poster;
+    }
 
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
 
     public String getDate() {
         return date;
@@ -73,10 +86,12 @@ public class Announcement {
         this.date = date;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-
-
-
-
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
 }

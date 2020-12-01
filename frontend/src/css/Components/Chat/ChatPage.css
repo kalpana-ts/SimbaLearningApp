@@ -1,4 +1,4 @@
-/*---------chat window---------------*/
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 .inbox_people {
 	background: #fff;
 	float: left;
@@ -124,6 +124,15 @@
 }
 
 .incoming_msg_img img {
+	width: 100%;
+}
+
+.outgoing_msg_img {
+	display: inline-block;
+	width: 6%;
+}
+
+.outgoing_msg_img img {
 	width: 100%;
 }
 

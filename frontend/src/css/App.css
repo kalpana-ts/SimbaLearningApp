@@ -2,6 +2,10 @@
 @import "./Components/layout/layout.css";
 @import "./Components/Home/Home.css";
 @import "./Components/Home/AppHomePage.css";
+@import "./Components/announcement/announcement.css";
+@import "./Components/comment/comment.css";
+@import "./Components/announcement/singleAnnouncement.css";
+@import "./Components/Chat/ChatPage.css";
 
 body {
   min-height: 100vh;
