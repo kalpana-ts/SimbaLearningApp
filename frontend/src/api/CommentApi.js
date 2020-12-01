@@ -5,8 +5,8 @@ class CommentApi {
         return Api.get('/comments');
     }
 
-    getAllCommentsByPostId(postId) {
-        return Api.get(`/comments/postid?postId=${postId}`);
+    getAllCommentsByPostId(announceId) {
+        return Api.get(`/comments/announceid?announceId=${announceId}`);
     }
 
     getCommentById(id) {

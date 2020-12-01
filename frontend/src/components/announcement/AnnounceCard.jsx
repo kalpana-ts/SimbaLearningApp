@@ -21,10 +21,7 @@ function AnnounceCard({announce, onUpdateClick, onDeleteClick}) {
                 <div>
                     {/* <FaRegUserCircle /> */}
                     {announce.user.name}
-                    
-                    
-                    
-                    
+
                 </div>
                 <div className="card-title">
                     

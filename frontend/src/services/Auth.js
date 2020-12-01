@@ -1,10 +1,11 @@
-import AuthApi from "../api/AuthApi";
+import AuthApi from '../api/AuthApi';
 
-const tokenKey = "_token";
+const tokenKey = '_token';
 
 // Disclaimer: This simple auth implementation is for development purposes only.
 
 class Auth {
+
     // Add a way here to access user Mail.
     getUserMail = () => {
         try {
@@ -14,59 +15,72 @@ class Auth {
         }
     }
     
-    setLoggedIn = () => {};
+  setLoggedIn = () => {};
 
-    isLoggedIn() {
-        return this._getToken() != null;
-    }
 
-    async login(loginData) {
-        return await this._loginOrRegister(AuthApi.authenticate, loginData);
-    }
+  isLoggedIn() {
+    return this._getToken() != null;
+  }
 
-    async register(registrationData) {
-        return await this._loginOrRegister(AuthApi.register, registrationData);
-    }
+  async login(loginData) {
+    return await this._loginOrRegister(AuthApi.authenticate, loginData);
+  }
 
-    logout() {
-        this.setLoggedIn(false);
-        this._clearToken();
-    }
+  async register(registrationData) {
+    return await this._loginOrRegister(AuthApi.register, registrationData);
+  }
 
-    bindLoggedInStateSetter(loggedInStateSetter) {
-        this.setLoggedIn = loggedInStateSetter;
-    }
+  logout() {
+    this.setLoggedIn(false);
+    this._clearToken();
+  }
 
-    getAuthorizationHeader() {
-        return "Bearer "+this._getToken();
-    }
+  bindLoggedInStateSetter(loggedInStateSetter) {
+    this.setLoggedIn = loggedInStateSetter;
+  }
 
-    async _loginOrRegister(action, data) {
-        try {
-            const response = await action(data);
-            this._setToken(response.data.token);
-            this.setLoggedIn(true);
-            return true;
-        } catch (e) {
-            console.error(e);
-            
-            this.setLoggedIn(false);
-            return false;
-        }
-    }
+  getAuthorizationHeader() {
+    return 'Bearer ' + this._getToken();
+  }
 
-    _getToken() {
-        return window.sessionStorage.getItem(tokenKey);
+  async _loginOrRegister(action, data) {
+    try {
+      const response = await action(data);
+      this._setToken(response.data.token);
+      this.setLoggedIn(true);
+      this.getEmail();
+      return true;
+    } catch (e) {
+      console.error(e);
+      this.setLoggedIn(false);
+      return false;
     }
+  }
 
-    _setToken(token) {
-        window.sessionStorage.setItem(tokenKey, token);
+  async getEmail() {
+    try {
+      const response = await AuthApi.getEmail();
+      this._setUserEmail(response.data);
+    } catch (e) {
+      console.log(e);
     }
+  }
 
-    _clearToken() {
-        window.sessionStorage.removeItem(tokenKey);
-    }
+  _getToken() {
+    return window.sessionStorage.getItem(tokenKey);
+  }
+
+  _setToken(token) {
+    window.sessionStorage.setItem(tokenKey, token);
+  }
+
+  _clearToken() {
+    window.sessionStorage.removeItem(tokenKey);
+  }
+
+  _setUserEmail(email) {
+    window.sessionStorage.setItem('userEmail', email);
+  }
 }
-
 
 export default new Auth();
