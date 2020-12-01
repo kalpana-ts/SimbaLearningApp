@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se.kth.sda.simba.auth.AuthService;
+import se.kth.sda.simba.user.User;
+import se.kth.sda.simba.user.UserService;
 
 import java.util.List;
 @RestController
@@ -13,11 +15,13 @@ public class AnnouncementController {
 
     private final AnnouncementService service;
     private final AuthService authService;
+    private final UserService userService;
 
     @Autowired
-    public AnnouncementController(AnnouncementService service, AuthService authService) {
+    public AnnouncementController(AnnouncementService service, AuthService authService,UserService userService ) {
         this.service = service;
         this.authService = authService;
+        this.userService = userService;
     }
 
     @GetMapping("")
@@ -32,7 +36,11 @@ public class AnnouncementController {
 
     @PostMapping("/new")
     public Announcement create(@RequestBody Announcement newAnnouncement) {
-        newAnnouncement.setEmail(authService.getLoggedInUserEmail());
+        //newAnnouncement.setEmail(authService.getLoggedInUserEmail());
+        String email = authService.getLoggedInUserEmail();
+        System.out.println(email);
+        User user = userService.findUserByEmail(email);
+        newAnnouncement.setUser(user);
         return service.create(newAnnouncement);
     }
 

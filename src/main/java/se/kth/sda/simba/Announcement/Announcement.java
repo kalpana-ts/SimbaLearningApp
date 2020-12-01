@@ -1,7 +1,7 @@
 package se.kth.sda.simba.Announcement;
 
-
 import se.kth.sda.simba.comment.Comment;
+import se.kth.sda.simba.user.User;
 
 import javax.persistence.*;
 import java.util.List;
@@ -35,8 +35,25 @@ public class Announcement {
     private String poster;
 
 
-   @OneToMany
+   /*@OneToMany
     private List<Comment>comment;
+
+    */
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Comment> comments;
+
+    @ManyToOne
+    private User user;
+    public Announcement() {
+    }
+
+    public Announcement(Long id, String title, String body, String date, String email) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+        this.date = date;
+        this.email = email;
+    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -89,9 +106,23 @@ public class Announcement {
     public String getImageUrl() {
         return imageUrl;
     }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

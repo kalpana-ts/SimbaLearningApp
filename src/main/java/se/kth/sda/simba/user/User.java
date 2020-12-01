@@ -1,10 +1,15 @@
 package se.kth.sda.simba.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
+import se.kth.sda.simba.assignmentPost.AssignmentPost;
+import se.kth.sda.simba.assignmentSubmission.AssignmentSubmission;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Table(name="account")
@@ -31,6 +36,11 @@ public class User {
     @Column(name = "userType")
     private String userType;
 
+    @OneToMany
+    private List<AssignmentPost> assignmentPosts;
+    @OneToMany
+    private List<AssignmentSubmission> assignmentSubmissions;
+
     // Hibernate needs a default constructor to function
     public User() {}
 
@@ -39,7 +49,6 @@ public class User {
         this.password = password;
         this.name = name;
     }
-
 
     public Long getId() {
         return id;
@@ -57,10 +66,12 @@ public class User {
         this.email = email;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
 
+    @JsonProperty
     public void setPassword(String password) {
         this.password = password;
     }

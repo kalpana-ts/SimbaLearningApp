@@ -20,8 +20,10 @@ function AssignmentPostPage(){
     return(
         <div>
             <NewAssignment/>
+            <div>
             {assignments ===[]? 'No Assignment to show' : <div className="row">{assignmentList}</div>}
-
+            
+            </div>
         </div>
         
     );
