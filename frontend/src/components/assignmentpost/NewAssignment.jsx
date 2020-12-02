@@ -4,16 +4,19 @@ import AssignmentPostApi from '../../api/AssignmentPostApi';
 import AssignmentPostForm from '../assignmentpost/AssignmentPostForm';
 
 function NewAssignment(){
-  
+ 
     const[assignment,setAssignment]=useState(null);
     const history = useHistory();
     
+    
     useEffect(() => {
+      
         const createAssignment = async () => {
           try {
             if (assignment !== null) {
               const response = await AssignmentPostApi.createAssignment(assignment); // We need to check response success before redirecting.
-              history.push('/assignmentPost');
+              history.push('/assignmentPost/new');
+        
               setAssignment(null);
             }
           } catch (error) {
@@ -25,7 +28,11 @@ function NewAssignment(){
 
 
    return (
-       <AssignmentPostForm setAssignment={setAssignment}/>
+     <div>
+       <h1>Inside new assignment</h1>
+        <AssignmentPostForm  setAssignment={setAssignment}/>
+     </div>
+       
    );
 }
 

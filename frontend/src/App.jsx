@@ -16,6 +16,9 @@ import NewAnnouncementPage from './components/announcementNew/NewAnnouncement';
 import SingleAnnouncement from './components/announcementNew/SingleAnnouncement';
 import CommentPage from './components/commentNew/CommentsPage';
 import ThreadPage from './components/chat/ThreadPage';
+import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
+import NewAssignment from './components/assignmentpost/NewAssignment';
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -29,6 +32,14 @@ function App() {
       <div className="container mt-5">
         
         <Switch>
+          <Route exact path="/assignmentPost">
+           <AssignmentPostPage/>
+          </Route>
+
+          <Route path="/assignmentPost/new">
+            <NewAssignment/>
+          </Route>
+
           <Route path="/announce" exact>
             <AnnouncementPage />
           </Route>
@@ -52,6 +63,7 @@ function App() {
           <Route path="/chat/:id">
             <ThreadPage />
           </Route>
+
 
 
           <Route path="/">
