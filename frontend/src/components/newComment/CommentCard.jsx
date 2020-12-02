@@ -8,8 +8,6 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
     const handleUpdateClick = () => {
         setIsUpdating(true);
     };
-
-
     
     return ( 
 

@@ -14,7 +14,7 @@ import AppHomePage from './components/home/AppHomePage';
 import AnnouncementPage from './components/announcementNew/AnnouncementPage';
 import NewAnnouncementPage from './components/announcementNew/NewAnnouncement';
 import SingleAnnouncement from './components/announcementNew/SingleAnnouncement';
-import CommentPage from './components/commentNew/CommentsPage';
+import CommentPage from './components/newComment/CommentsPage';
 import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';

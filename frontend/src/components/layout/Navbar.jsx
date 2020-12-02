@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ onLogout }) {
+    const userEmail = window.sessionStorage.getItem('userEmail');
 
     return (
+
+        userEmail.match('simba.com') ?
+
         <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand" href="/">
                 <img className="logo" src="/images/Simba-ICON.png" alt="logo"/>
@@ -20,32 +24,34 @@ function Navbar({ onLogout }) {
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <Link to="/" className="nav-link">
-                            Home
+                            Home{userEmail}
                         </Link>
                     </li>
 
-                    <li className="nav-item">
-                        <Link to="/assignmentPost/new" className="nav-link">
+
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Assignement
+                        </a>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <Link to="/assignmentPost/new" className="dropdown-item">
                             Post a New Assignment
                         </Link>
+                        <Link to="/assignmentPost/" className="dropdown-item">
+                            List of Assignment
+                        </Link>
+                        </div>
                     </li>
 
-                    <li className="nav-item">
-                        <Link to="/comments" className="nav-link">
-                            Comment
-                        </Link> 
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Announcement
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <Link to="/announce" class="dropdown-item">
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <Link to="/announce" className="dropdown-item">
                             Posted Announcement
                         </Link>
-                        <Link to="/announce/new" class="dropdown-item">
+                        <Link to="/announce/new" className="dropdown-item">
                             New Announcement
                         </Link>
                         </div>
@@ -62,11 +68,70 @@ function Navbar({ onLogout }) {
                     <li className="nav-item">
                         <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>LogOut</button>
                     </li>
-                </ul>
-
-                
+                </ul>  
             </div>
         </nav>
+
+        :
+
+
+        <nav className="navbar navbar-expand-lg navbar-dark">
+        <a className="navbar-brand" href="/">
+            <img className="logo" src="/images/Simba-ICON.png" alt="logo"/>
+        </a>
+        <p className="nav-simba-title">
+            <span className="title-name">SIMBA</span><br/>
+            <span className="title-slogan">The Lion King (Learning App)</span>
+        </p>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarColor01">
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        Home
+                    </Link>
+                </li>
+
+
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Assignement
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <Link to="/assignmentPost/" className="dropdown-item">
+                        List of Assignment
+                    </Link>
+                    </div>
+                </li>
+
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Announcement
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <Link to="/announce" className="dropdown-item">
+                        Posted Announcement
+                    </Link>
+                    </div>
+                </li>
+
+                <li className="nav-item">
+                    <Link exact to="/chat" className="nav-link" activeClassName="active-link">
+                    Chat
+                    </Link>
+                </li>
+                <li className="nav-item">
+
+                </li>              
+                <li className="nav-item">
+                    <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>LogOut</button>
+                </li>
+            </ul>  
+        </div>
+    </nav>
     );
 }
 
