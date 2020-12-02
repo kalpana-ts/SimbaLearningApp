@@ -5,7 +5,7 @@ import ErrorScreen from '../tempscreens/ErrorScreen';
 import ChatApi from '../../api/ChatApi';
 import Api from '../../api/Api';
 import Auth from '../../services/Auth';
-import CommentPage from '../commentNew/CommentsPage';
+import CommentPage from '../newComment/CommentsPage';
 
 function SingleAnnouncement() {
   const userEmail = window.sessionStorage.getItem('userEmail');
@@ -53,7 +53,7 @@ function SingleAnnouncement() {
                     </div>
                 </div> 
                 <div class="d-flex justify-content-center">
-                      {announce.imageUrl.match('.jpg' || '.png') ?
+                      {announce.imageUrl.match('.jpg' || '.png' || '.gif') ?
                         <img src={announce.imageUrl} class="img-fluid" alt="Responsive image"/> : 
                         <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src={announce.imageUrl} allowfullscreen></iframe>

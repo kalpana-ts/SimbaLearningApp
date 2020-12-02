@@ -3,12 +3,14 @@ import CommentsCreateForm from './CommentsCreateForm';
 import Api from '../../api/Api';
 import CommentCard from './CommentCard';
 import { useHistory, useLocation } from 'react-router-dom';
+import ErrorScreen from '../tempscreens/ErrorScreen';
 
-export default function CommentsPage({announceForComment}){
+function CommentsPage({announceForComment}){
 
  /* Save the response from useEffect in a variable using state variables */
 const [userComment, setUserComment] = useState([]);
 const [email, setEmail] = useState(null);
+const history = useHistory();
 
 /*We want all the comments to be displayed when the page is loaded,
 so we use useEffect */
@@ -33,27 +35,26 @@ so we use useEffect */
     const createComment =(commentData) => {
             Api.post("/comments", commentData)
             .then((resp)=> {setUserComment([...userComment, resp.data])})
+            alert("Shared successfully..");
         };
     
     const updateComment =(updatedComment) => {
           Api.put("/comments/", updatedComment)
                 .then(res=> getAll());
+                alert("Edited successfully..");
         };
 
     const deleteComment = (delComment) => {
                 Api.delete("/comments/" + delComment.id)
                     .then(r => getAll());
+                    alert("Deleted successfully..");
        };
         
+      
+    try {       
     return (
         <div>
             <CommentsCreateForm onSubmit={createComment}/>
-             {/* { <CommentList key={userComment.id}
-                     userComment = {userComment} 
-                    // onCommentUpdate={updateComment}
-                     onUpdateClick={updateComment}
-                     onDeleteClick={deleteComment}
-                     /> }  */}
                 {userComment.map(eachuserComment=> 
                 <CommentCard key={eachuserComment.id}
                  userComment={eachuserComment}
@@ -62,4 +63,10 @@ so we use useEffect */
                 
         </div>
     );
+    } catch (e) {
+    console.log(e);
+    return <ErrorScreen />;
+  }
 }
+
+export default CommentsPage;
