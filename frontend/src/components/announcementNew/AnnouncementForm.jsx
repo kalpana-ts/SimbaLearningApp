@@ -1,12 +1,29 @@
 import { format } from 'date-fns';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from "react";
+import Auth from '../../services/Auth';
+import UserApi from '../../api/UserApi';
 import ImageUploader from './AnnouncementImageUploader';
+import VideoUploader from './VideoUploader';
 
 function AnnouncementForm({ setAnnounce }) {
   const [imgUrl, setImgUrl] = useState('');
   const [announceTitle, setAnnounceTitle] = useState('');
   const [details, setDetails] = useState('');
-  const [uploading, setUploading] = useState(true);
+  //const [uploading, setUploading] = useState(true);
+  const [user, setUser] = useState({});
+  const userMail = Auth.getUserMail();
+
+    // Store user informations when logged: can acces user mail, name, Id
+    useEffect(() => {
+        function getUserByMail() {
+            UserApi.getUserByMail(userMail)
+                .then((res) => {
+                    setUser(res.data)
+                })
+        }
+        userMail !== null && getUserByMail();
+    }, [userMail])
+
 
   const submitHandler = event => {
     event.preventDefault();
@@ -15,14 +32,16 @@ function AnnouncementForm({ setAnnounce }) {
       body: details,
       imageUrl: imgUrl,
       date: format(new Date(), 'dd-MMM-yyyy'),
+      user: user,
     });
   };
 
   return (
-    <form style={{ width: '100%' }} onSubmit={submitHandler}>
+    <>
       <h1 style={{ textAlign: 'center', color: '#6C6C6C' }}>Upload Details</h1>
       <div className="row">
         <div className="col-md-6 col-sm-6">
+        <form style={{ width: '100%' }} onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Announcement Title</label>
             <input
@@ -44,20 +63,23 @@ function AnnouncementForm({ setAnnounce }) {
               onChange={e => setDetails(e.target.value)}
             />
           </div>
-          <button
-            disabled={uploading ? true : false}
-            type="submit"
-            className="btn-newPost">
-            {uploading ? '- - - - -' : 'Submit'}
-          </button>
-        </div>
 
-        <div className="col-md-6 col-sm-6">
+          <button type="submit" className="btn-newPost"> Submit </button>
+          </form>
+          </div>
+
+          <div className="col-md-6 col-sm-6">
+            <VideoUploader setImgUrl={setImgUrl} />
+          </div>
+
+        {/* <div className="col-md-6 col-sm-6">
           <ImageUploader setUploading={setUploading} setImgUrl={setImgUrl} />
-        </div> 
-
+        </div> */}
       </div>
-    </form>
+    
+
+      
+      </>
   );
 }
 
