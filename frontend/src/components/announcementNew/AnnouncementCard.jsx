@@ -1,20 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
 function AnnouncementCard({ announce }) {
+    console.log(announce.user.name);
 
   return (
     
-    <div class="row">
-    <div class="col-md-8 d-flex align-items-center justify-content-center">
-                <section class="widget">
-                <div class="widget-controls">
-                    <a href="#"><i class="fa fa-refresh"></i></a>
-                    <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
-                </div>
+    
+    <div class="col-md-7 announcement-post">
+            <section class="widget">
                 <div class="widget-body">
                     <div class="widget-top-overflow text-white">
-                        <img className="post-img" src={announce.imageUrl} alt=""/>
+                        {announce.imageUrl.match('.jpg' || '.png') ?
+                        <img src={announce.imageUrl} class="img-fluid" alt="Responsive image"/> : 
+                        <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src={announce.imageUrl} allowfullscreen></iframe>
+                        </div>
+                        }
+                            
                     </div>
                     <div class="post-user mt-sm">
                         <span class="thumb pull-left mr">
@@ -40,7 +44,7 @@ function AnnouncementCard({ announce }) {
                 </footer>
             </section>   
     </div>
-  </div>
+
 
 
   );

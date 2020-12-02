@@ -151,4 +151,6 @@
 .post-user .poster-detail{
   line-height: 2.4;
 }
-
+.announcement-post{
+  margin: 0 auto;
+}

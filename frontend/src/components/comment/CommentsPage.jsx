@@ -42,6 +42,7 @@ so we use useEffect */
     const deleteComment = (delComment) => {
                 Api.delete("/comments/" + delComment.id)
                     .then(r => getAll());
+                    alert("deleted successfully...")
        };
         
     return (

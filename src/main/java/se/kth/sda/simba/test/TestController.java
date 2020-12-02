@@ -18,10 +18,8 @@ public class TestController {
 
     @GetMapping("/test")
     public String userEmail() {
-
         return authService.getLoggedInUserEmail();
     }
-
 
     @GetMapping("/user/me")
     public User userData() {
