@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import CommentsCreateForm from './CommentsCreateForm';
 import Api from '../../api/Api';
 import CommentCard from './CommentCard';
+import ErrorScreen from '../tempscreens/ErrorScreen';
 
 export default function CommentsPage({announceForComment}){
 
@@ -31,7 +32,7 @@ so we use useEffect */
 
     const createComment =(commentData) => {
             Api.post("/comments", commentData)
-            .then((resp)=> {setUserComment([...userComment, resp.data])})
+            .then((resp)=> {setUserComment([...userComment, resp.data]);})
         };
     
     const updateComment =(updatedComment) => {
@@ -40,9 +41,14 @@ so we use useEffect */
         };
 
     const deleteComment = (delComment) => {
-                Api.delete("/comments/" + delComment.id)
-                    .then(r => getAll());
-                    alert("deleted successfully...")
+            try{
+                    Api.delete("/comments/" + delComment.id)
+                        .then(r => getAll());
+            }
+            catch (e) {
+                console.log(e);
+                return <ErrorScreen />;
+            }
        };
         
     return (
