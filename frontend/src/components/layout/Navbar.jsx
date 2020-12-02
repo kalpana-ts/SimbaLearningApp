@@ -30,15 +30,19 @@ function Navbar({ onLogout }) {
                         </Link> 
                     </li>
 
-                    <li className="nav-item">
-                        <Link to="/announce" className="nav-link">
-                            Announcement
-                        </Link> 
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/announce/new" className="nav-link">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Announcement
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <Link to="/announce" class="dropdown-item">
+                            Posted Announcement
+                        </Link>
+                        <Link to="/announce/new" class="dropdown-item">
                             New Announcement
-                        </Link> 
+                        </Link>
+                        </div>
                     </li>
 
                     <li className="nav-item">

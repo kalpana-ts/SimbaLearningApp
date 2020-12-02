@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CommentUpdateForm from "./CommentUpdateForm";
+import ErrorScreen from '../tempscreens/ErrorScreen';
 
 function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
     const [isUpdating, setIsUpdating] = useState(false);
@@ -7,9 +8,7 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
     const handleUpdateClick = () => {
         setIsUpdating(true);
     };
-
-
-    
+  try {
     return ( isUpdating ? 
                     <CommentUpdateForm 
                     initialComment={userComment}
@@ -37,5 +36,13 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
                 </div>
                 <div></div>
                 </div>
-            )}
+            )
+    }
+
+    catch (e) {
+        console.log(e);
+        return <ErrorScreen />;
+    }
+}
+
 export default CommentCard;
