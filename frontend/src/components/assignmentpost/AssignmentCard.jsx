@@ -1,5 +1,5 @@
 function AssignmentCard(assignment) {
-  console.log(assignment.assignment.assignmentTitle);
+  
 
   return (
     <div className="card mt-3 ">

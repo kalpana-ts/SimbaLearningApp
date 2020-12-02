@@ -8,20 +8,22 @@ import AssignmentCard from '../assignmentpost/AssignmentCard';
 
 
 function AssignmentPostPage(){
-    const [assignments, setAssignmnets]= useState([]);
+    const [assignments, setAssignments]= useState([]);
     useEffect(()=>{
         const fetchPosts = async() => {
             const response = await AssignmentPostApi.getAllAssignmentsPosts();
-            setAssignmnets(response.data);
+            setAssignments(response.data);
         };
         fetchPosts();
     },[]);
+
     const assignmentList = assignments.map(assignment => <AssignmentCard key={assignment.id} assignment={assignment}/>);
+
     return(
         <div>
-            <NewAssignment/>
+            
             <div>
-            {assignments ===[]? 'No Assignment to show' : <div className="row">{assignmentList}</div>}
+            {assignments ===[]? 'No Assignments to show' : <div className="row">{assignmentList}</div>}
             
             </div>
         </div>
