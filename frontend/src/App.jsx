@@ -18,6 +18,7 @@ import CommentPage from './components/newComment/CommentsPage';
 import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
+import AssignmentCard from './components/assignmentpost/AssignmentCard';
 
 
 function App() {
@@ -36,8 +37,12 @@ function App() {
            <AssignmentPostPage/>
           </Route>
 
-          <Route path="/assignmentPost/new">
+          <Route exact path="/assignmentPost/new">
             <NewAssignment/>
+          </Route>
+
+          <Route exact path="/assignmentPost/:id">
+            <AssignmentCard/>
           </Route>
 
           <Route path="/announce" exact>

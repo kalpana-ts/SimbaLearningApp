@@ -16,7 +16,7 @@ function AssignmentPostPage(){
         };
         fetchPosts();
     },[]);
-
+    console.log(assignments);
     const assignmentList = assignments.map(assignment => <AssignmentCard key={assignment.id} assignment={assignment}/>);
 
     return(
