@@ -25,6 +25,12 @@ function Navbar({ onLogout }) {
                     </li>
 
                     <li className="nav-item">
+                        <Link to="/assignmentPost/new" className="nav-link">
+                            Post a New Assignment
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
                         <Link to="/comments" className="nav-link">
                             Comment
                         </Link> 
@@ -50,7 +56,9 @@ function Navbar({ onLogout }) {
                         Chat
                         </Link>
                     </li>
-                    
+                    <li className="nav-item">
+
+                    </li>              
                     <li className="nav-item">
                         <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>LogOut</button>
                     </li>
