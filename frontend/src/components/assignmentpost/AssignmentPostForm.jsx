@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from "react";
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
-import FileUploader from '../assignmentpost/FileUploader';
+
+import FileUploader from '../announcementNew/FileUploader';
 
 
 //File upload
@@ -42,6 +43,8 @@ function AssignmentPostForm({setAssignment}){
     });
   };
 return (
+  <div>
+
     <form style={{ width: '100%' }} onSubmit={submitHandler}>
       <h1>Assignment Post</h1>
         <div className="row">
@@ -51,6 +54,7 @@ return (
               <input
               type="text"
               className="form-control"
+              required
               id="formGroupExampleInput"
               placeholder="Assignment Title"
               onChange={e => setAssignmentTitle(e.target.value)}
@@ -66,38 +70,45 @@ return (
                 onChange={e => setAssignmentDescription(e.target.value)}
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="formGroupExampleInput">Grade</label>
-              <input
-                type="text"
-                className="form-control"
-                id="formGroupExampleInput"
-                placeholder="Grade..."
-                onChange={e => setGrade(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="formGroupExampleInput">Subject</label>
-              <input
-               type="text"
-                className="form-control"
-                id="formGroupExampleInput"
-                placeholder="Subject..."
-                onChange={e => setSubject(e.target.value)}
-              />     
+            <div class='form-group '>
+            <label for='inputType'>Grade</label>
+            <select
+              id='grade'
+              className='form-control'
+              
+              onChange={e => setGrade(e.target.value)}>
+              <option value='1'>Grade 1</option>
+              <option value='2'>Grade 2</option>
+              <option value='3'>Grade 3</option>
+              <option value='4'>Grade 4</option>
+             
+            </select>
           </div>
-          <button
-            disabled={uploading ? true : false}
-            type="submit"
-            className="btn-newPost">
-            {uploading ? '- - - - -' : 'Submit'}
-          </button>
-        </div>
-          <div className="col-md-6 col-sm-6">
-              <FileUploader setUploading={setUploading} setFileUrl={setFileUrl}/>
+          <div class='form-group '>
+            <label for='inputType'>Subject</label>
+            <select
+              id='grade'
+              className='form-control'
+              
+              onChange={e => setSubject(e.target.value)}>
+              <option value='Math'>Math</option>
+              <option value='English'>English</option>
+              <option value='Science'>Science</option>
+              <option value='GK'>General Knowledge</option>
+             
+            </select>
           </div>
+            
+          <button type="submit" className="btn-newPost"> Submit </button>
         </div>
-     </form>
+        </div>
+        </form>
+        
+        <div className="col-md-6 col-sm-6">
+            <FileUploader setFileUrl={setFileUrl} />
+        </div>
+    
+     </div>
     );
 }
 
