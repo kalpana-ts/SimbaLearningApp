@@ -1,4 +1,8 @@
 import React, {useState} from 'react';
+import QuizTopics from "./components/evaluationModule/QuizTopics";
+import QuizPage from "./components/evaluationModule/QuizPage";
+
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -34,6 +38,14 @@ function App() {
 
                         <Route path="/chat">
                             <ChatPage/>
+                        </Route>
+
+                        <Route path="/Quiz Topics">
+                            <QuizTopics/>
+                        </Route>
+
+                        <Route path="/Quiz">
+                            <QuizPage/>
                         </Route>
 
                         <Route path="/">
