@@ -19,7 +19,7 @@ import CommentPage from './components/newComment/CommentsPage';
 import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
-import AssignmentCard from './components/assignmentpost/AssignmentCard';
+import SingleAssignment from './components/assignmentpost/SingleAssignment';
 
 
 function App() {
@@ -42,8 +42,8 @@ function App() {
             <NewAssignment/>
           </Route>
 
-          <Route exact path="/assignmentPost/:id">
-            <AssignmentCard/>
+          <Route path="/assignmentPost/:id">
+            <SingleAssignment/>
           </Route>
 
           <Route exact path="/announce" exact>
