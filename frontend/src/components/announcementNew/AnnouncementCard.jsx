@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 function AnnouncementCard({ announce }) {
-    console.log(announce.user.name);
 
   return (
     
     
-    <div class="col-md-7 announcement-post">
+    <div class="col-md-6 announcement-post">
             <section class="widget">
                 <div class="widget-body">
                     <div class="widget-top-overflow text-white">

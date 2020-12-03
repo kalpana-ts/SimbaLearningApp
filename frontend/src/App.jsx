@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/App.css';
 
 import Auth from './services/Auth';
+import AdminNavbar from './components/layout/AdminNavbar';
 import Navbar from './components/layout/Navbar';
 
 // Import pages

@@ -41,8 +41,8 @@ function SingleAnnouncement() {
 
   try {
     return (
-
-        <div class="col-md-9 announcement-post">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-7 announcement-post">
             <div class="single-announcement-card">
                 <div class="d-flex justify-content-between p-2 px-3">
                     <div class="d-flex flex-row align-items-center"> 
@@ -52,14 +52,14 @@ function SingleAnnouncement() {
                         <small class="text-primary">{User_Name}</small> </div>
                     </div>
                 </div> 
-                <div class="d-flex justify-content-center">
-                      {announce.imageUrl.match('.jpg' || '.png' || '.gif') ?
+                
+                      {announce.imageUrl.match('.jpg' || '.png') ?
                         <img src={announce.imageUrl} class="img-fluid" alt="Responsive image"/> : 
                         <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src={announce.imageUrl} allowfullscreen></iframe>
                         </div>
                       }
-                </div>
+               
                 <div class="p-2">
                     <h3 className="product-title">{announce.title}</h3>
                     <p class="text-justify">{announce.body}</p>
@@ -83,6 +83,7 @@ function SingleAnnouncement() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
   } catch (e) {
