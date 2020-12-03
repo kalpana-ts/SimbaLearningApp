@@ -5,7 +5,8 @@ import ReactPlayer from 'react-player';
 
 function AssignmentCard(assignment) {
   
-console.log(assignment);
+console.log(assignment.assignment);
+
   return (
     
     

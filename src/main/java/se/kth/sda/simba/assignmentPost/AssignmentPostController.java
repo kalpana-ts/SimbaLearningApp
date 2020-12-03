@@ -15,12 +15,8 @@ public class AssignmentPostController {
 
 
     @GetMapping("")
-    public List<AssignmentPost> getAll(@RequestParam(required = false) Long userId) {
-        if (userId == null) {
+    public List<AssignmentPost> getAll() {
             return assignmentPostService.getAll();
-        } else {
-            return assignmentPostService.getAllByUserId(userId);
-        }
     }
 
     //Get a specific assignment by its id
@@ -39,6 +35,8 @@ public class AssignmentPostController {
     public List<AssignmentPost> getAllBySubject(@PathVariable String subject) {
         return assignmentPostService.getAllBySubject(subject);
     }
+
+    //Filter
 
     //Create a assignment
     @PostMapping("/new")
