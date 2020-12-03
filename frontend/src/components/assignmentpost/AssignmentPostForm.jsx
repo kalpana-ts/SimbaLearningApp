@@ -29,6 +29,8 @@ function AssignmentPostForm({setAssignment}){
                 })
         }
         userMail !== null && getUserByMail();
+       
+
     }, [userMail])
 
   const submitHandler = event => {
@@ -41,11 +43,12 @@ function AssignmentPostForm({setAssignment}){
         user: user,
         fileUrl: fileUrl
     });
+    document.getElementById("assignment-form").reset();
   };
 return (
   <div>
 
-    <form style={{ width: '100%' }} onSubmit={submitHandler}>
+    <form id="assignment-form" style={{ width: '100%' }} onSubmit={submitHandler}>
       <h1>Assignment Post</h1>
         <div className="row">
           <div className="col-md-6 col-sm-6">
@@ -53,6 +56,7 @@ return (
               <label htmlFor="formGroupExampleInput">Assignment Title</label>
               <input
               type="text"
+            
               className="form-control"
               required
               id="formGroupExampleInput"
@@ -65,6 +69,7 @@ return (
               <input
                 type="text"
                 className="form-control"
+                
                 id="formGroupExampleInput"
                 placeholder="Assignment Decription..."
                 onChange={e => setAssignmentDescription(e.target.value)}

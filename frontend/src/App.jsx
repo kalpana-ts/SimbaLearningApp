@@ -45,15 +45,15 @@ function App() {
             <AssignmentCard/>
           </Route>
 
-          <Route path="/announce" exact>
+          <Route exact path="/announce" exact>
             <AnnouncementPage />
           </Route>
 
-          <Route path="/announce/new" exact>
+          <Route  path="/announce/new" exact>
             <NewAnnouncementPage />
           </Route>
 
-          <Route path="/announce/:id">
+          <Route exact path="/announce/:id">
             <SingleAnnouncement />
           </Route>
 
@@ -68,8 +68,6 @@ function App() {
           <Route path="/chat/:id">
             <ThreadPage />
           </Route>
-
-
 
           <Route path="/">
             <AppHomePage />

@@ -29,7 +29,7 @@ function NewAssignment(){
 
    return (
      <div>
-       <h1>Inside new assignment</h1>
+       
         <AssignmentPostForm  setAssignment={setAssignment}/>
      </div>
        
