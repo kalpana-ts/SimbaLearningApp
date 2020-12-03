@@ -1,6 +1,8 @@
 package se.kth.sda.simba.comment;
 
 import se.kth.sda.simba.Announcement.Announcement;
+import se.kth.sda.simba.user.User;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,10 @@ public class Comment {
 
     @Column(name = "author_name")
     private String authorName;
+
+    @ManyToOne
+    private User user;
+
 
     @ManyToOne
     private Announcement announcement;
@@ -58,6 +64,14 @@ public class Comment {
 
     public void setPost(Announcement announcement) {
         this.announcement = announcement;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 

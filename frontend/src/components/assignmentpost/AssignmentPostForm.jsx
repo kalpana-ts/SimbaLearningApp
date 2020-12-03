@@ -1,11 +1,10 @@
 import React, { useState,useEffect } from "react";
+import { format } from 'date-fns';
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
 
 import FileUploader from '../announcementNew/FileUploader';
 
-
-//File upload
 //last date submission
 
 function AssignmentPostForm({setAssignment}){
@@ -15,7 +14,7 @@ function AssignmentPostForm({setAssignment}){
   const [fileUrl, setFileUrl] = useState('');
   const [grade, setGrade] = useState('1');
   const [subject, setSubject] = useState('Math');
-  const [uploading, setUploading] = useState(true);
+  //const [uploading, setUploading] = useState(true);
 
   const [user, setUser] = useState({});
   const userMail = Auth.getUserMail();
@@ -29,8 +28,6 @@ function AssignmentPostForm({setAssignment}){
                 })
         }
         userMail !== null && getUserByMail();
-       
-
     }, [userMail])
 
   const submitHandler = event => {

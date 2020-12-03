@@ -5,7 +5,8 @@ import ReactPlayer from 'react-player';
 
 function AssignmentCard(assignment) {
   
-console.log(assignment);
+
+
   return (
     
     
@@ -22,16 +23,7 @@ console.log(assignment);
                   </Link>
             </button>                
       </div>
-        <div class="widget-body">
-            <div class="widget-top-overflow text-white">
-            {assignment.assignment.fileUrl && (assignment.assignment.fileUrl.match('.jpg' || '.png') ?
-                        <img src={assignment.assignment.fileUrl} class="img-fluid" alt="Responsive image"/> : 
-                        <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src={assignment.assignment.fileUrl} allowfullscreen></iframe>
-                        </div>)
-                        }
-            </div>
-            <div className="card-body">
+      <div className="card-body">
               Description: 
               {assignment.assignment.assignmentDescription} <br />
               Grade:
@@ -41,6 +33,16 @@ console.log(assignment);
               {assignment.assignment.subject}
               <br />
             </div>
+        <div class="widget-body">
+            <div class="widget-top-overflow text-white">
+            {assignment.assignment.fileUrl && (assignment.assignment.fileUrl.match('.jpg' || '.png') ?
+                        <img src={assignment.assignment.fileUrl} class="img-fluid" alt="Responsive image"/> : 
+                        <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src={assignment.assignment.fileUrl} allowfullscreen></iframe>
+                        </div>)
+                        }
+            </div>
+            
           </div>
         </section>
       </div>
