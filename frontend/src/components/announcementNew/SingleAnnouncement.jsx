@@ -13,9 +13,9 @@ function SingleAnnouncement() {
   const passedPost = state === undefined ? null : state.announce;
   const [announce, setAnnounce] = useState(passedPost);
   const history = useHistory();
-  const isPoster = userEmail === announce.email;
-  const User_Email_ID = announce.email;
-  const User_Name = announce.name;
+  const isPoster = userEmail === announce.user.email;
+  const User_Email_ID = announce.user.email;
+  const User_Name = announce.user.name;
 
   // try to fetch token value
   // useEffect(() => {
@@ -48,7 +48,7 @@ function SingleAnnouncement() {
                     <div class="d-flex flex-row align-items-center"> 
                     <img  src="https://i.imgur.com/UXdKE3o.jpg" width="50" class="rounded-circle"/>
                         <div class="d-flex flex-column ml-2"> 
-                          <span class="font-weight-bold">{User_Email_ID}{userEmail}</span> 
+                          <span class="font-weight-bold">{User_Email_ID}</span> 
                         <small class="text-primary">{User_Name}</small> </div>
                     </div>
                 </div> 

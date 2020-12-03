@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactImageUploadComponent from 'react-images-upload';
 import { storage } from "../../firebase";
 
-function VideoUploader({ setImgUrl }) {
+function FileUploader({ setFileUrl }) {
 //   const [payload, setPayload] = useState(null);
     const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(null);
@@ -66,7 +66,7 @@ function VideoUploader({ setImgUrl }) {
           .child(file.name)
           .getDownloadURL()
           .then(url => {
-            setImgUrl(url);
+            setFileUrl(url);
           });
       }
     );
@@ -86,4 +86,4 @@ function VideoUploader({ setImgUrl }) {
   );
 }
 
-export default VideoUploader;
+export default FileUploader;

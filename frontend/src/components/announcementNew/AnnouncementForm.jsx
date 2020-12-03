@@ -3,10 +3,10 @@ import React, { useState,useEffect } from "react";
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
 import ImageUploader from './AnnouncementImageUploader';
-import VideoUploader from './VideoUploader';
+import FileUploader from './FileUploader';
 
 function AnnouncementForm({ setAnnounce }) {
-  const [imgUrl, setImgUrl] = useState('');
+  const [fileUrl, setFileUrl] = useState('');
   const [announceTitle, setAnnounceTitle] = useState('');
   const [details, setDetails] = useState('');
   //const [uploading, setUploading] = useState(true);
@@ -30,10 +30,11 @@ function AnnouncementForm({ setAnnounce }) {
     setAnnounce({
       title: announceTitle,
       body: details,
-      imageUrl: imgUrl,
+      imageUrl: fileUrl,
       date: format(new Date(), 'dd-MMM-yyyy'),
-      user: user,
+      user: user
     });
+    document.getElementById("announce-form").reset();
   };
 
   return (
@@ -41,7 +42,7 @@ function AnnouncementForm({ setAnnounce }) {
       <h1 style={{ textAlign: 'center', color: '#6C6C6C' }}>Upload Details</h1>
       <div className="row">
         <div className="col-md-6 col-sm-6">
-        <form style={{ width: '100%' }} onSubmit={submitHandler}>
+        <form id="announce-form" style={{ width: '100%' }} onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Announcement Title</label>
             <input
@@ -69,7 +70,7 @@ function AnnouncementForm({ setAnnounce }) {
           </div>
 
           <div className="col-md-6 col-sm-6">
-            <VideoUploader setImgUrl={setImgUrl} />
+            <FileUploader setFileUrl={setFileUrl} />
           </div>
 
         {/* <div className="col-md-6 col-sm-6">
