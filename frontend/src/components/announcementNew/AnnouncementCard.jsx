@@ -27,8 +27,9 @@ function AnnouncementCard({ announce }) {
                         <h5 class="poster-detail"><span class="fw-semi-bold">{announce.email}</span> </h5>
                     </div>
                     <br/>
-                    <h5 class="mb-xs mt-xs"><span class="fw-semi-bold">{announce.title}</span> </h5>
+                    <h5 class="mb-xs mt-xs"><span class="fw-semi-bold">{announce.title} posted by : {announce.user.name}</span> </h5>
                     <p class="fs-mini m txt-color">{announce.body} </p>
+
                 </div>
                 <footer class="bg-body-light">
                     <ul class="post-links no-separator">
