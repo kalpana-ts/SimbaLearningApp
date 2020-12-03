@@ -7,12 +7,16 @@ export default function CommentsCreateForm( {onSubmit}) {
 
     //Inform parent by calling onSubmit and passing the title and body
   
-
+    function  onClickHandler () {
+        document.getElementById("comment-text").value="";
+       onSubmit( {body})
+    }
     return (
         <div className="card">
                 <div>
                     <div className="form-group">
                         <textarea
+                            id="comment-text"
                             type="text"
                             className="form-control"
                             placeholder="What would you like to say"
@@ -21,7 +25,7 @@ export default function CommentsCreateForm( {onSubmit}) {
                         
                             <button
                                 className="btn btn-success"
-                                onClick={e=>onSubmit( {body})}>
+                                onClick={onClickHandler}>
                                             Add Comment 
                             </button>
        
