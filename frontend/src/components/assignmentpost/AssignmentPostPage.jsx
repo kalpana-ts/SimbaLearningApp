@@ -10,6 +10,7 @@ import AssignmentCard from '../assignmentpost/AssignmentCard';
 function AssignmentPostPage(){
     const [assignments, setAssignments]= useState([]);
     useEffect(()=>{
+        
         const fetchPosts = async() => {
             const response = await AssignmentPostApi.getAllAssignmentsPosts();
             setAssignments(response.data);

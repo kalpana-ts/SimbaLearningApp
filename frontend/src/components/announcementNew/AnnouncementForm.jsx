@@ -32,7 +32,7 @@ function AnnouncementForm({ setAnnounce }) {
       body: details,
       imageUrl: fileUrl,
       date: format(new Date(), 'dd-MMM-yyyy'),
-      user: user,
+      poster: user,
     });
   };
 

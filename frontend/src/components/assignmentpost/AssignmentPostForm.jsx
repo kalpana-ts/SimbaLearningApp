@@ -13,8 +13,8 @@ function AssignmentPostForm({setAssignment}){
   const [assignmentTitle, setAssignmentTitle] = useState('');
   const [assignmentDescription, setAssignmentDescription] = useState('');
   const [fileUrl, setFileUrl] = useState('');
-  const [grade, setGrade] = useState('');
-  const [subject, setSubject] = useState('');
+  const [grade, setGrade] = useState('1');
+  const [subject, setSubject] = useState('Math');
   const [uploading, setUploading] = useState(true);
 
   const [user, setUser] = useState({});
@@ -72,7 +72,7 @@ return (
             </div>
             <div class='form-group '>
             <label for='inputType'>Grade</label>
-            <select
+            <select required
               id='grade'
               className='form-control'
               
@@ -86,8 +86,8 @@ return (
           </div>
           <div class='form-group '>
             <label for='inputType'>Subject</label>
-            <select
-              id='grade'
+            <select required
+              id='subject'
               className='form-control'
               
               onChange={e => setSubject(e.target.value)}>
