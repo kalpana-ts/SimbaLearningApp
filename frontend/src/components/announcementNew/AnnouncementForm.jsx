@@ -34,6 +34,7 @@ function AnnouncementForm({ setAnnounce }) {
       date: format(new Date(), 'dd-MMM-yyyy'),
       user: user
     });
+    document.getElementById("announce-form").reset();
   };
 
   return (
@@ -41,7 +42,7 @@ function AnnouncementForm({ setAnnounce }) {
       <h1 style={{ textAlign: 'center', color: '#6C6C6C' }}>Upload Details</h1>
       <div className="row">
         <div className="col-md-6 col-sm-6">
-        <form style={{ width: '100%' }} onSubmit={submitHandler}>
+        <form id="announce-form" style={{ width: '100%' }} onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Announcement Title</label>
             <input
