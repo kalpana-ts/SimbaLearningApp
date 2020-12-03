@@ -1,8 +1,8 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import ChatApi from '../../api/ChatApi';
-import receiverImg from '../../images/Simba-ICON.png';
-import senderImg from '../../images/women_1.jpg';
+import receiverImg from '../../images/women_icon_1.png';
+import senderImg from '../../images/women_icon_2.png';
 
 function ChatPage({ id, thread }) {
   const loggedInUser = window.sessionStorage.getItem('userEmail');
@@ -117,6 +117,7 @@ function ChatPage({ id, thread }) {
 
   return (
     <form>
+      <div className="mesgs shadow-lg p-3 mb-5 bg-white rounded">
       <div className="msg_history">{messages}</div>
       <div className="type_msg">
         <div className="input_msg_write">
@@ -133,6 +134,7 @@ function ChatPage({ id, thread }) {
             <i className="fa fa-paper-plane" aria-hidden="true"></i>
           </button>
         </div>
+      </div>
       </div>
     </form>
   );

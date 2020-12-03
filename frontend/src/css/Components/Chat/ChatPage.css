@@ -1,14 +1,15 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 .inbox_people {
-	background: #fff;
 	float: left;
 	overflow: hidden;
 	width: 30%;
-	border-right: 1px solid #ddd;
+	background: rgb(108,117,125);
+	background:#fff;
+	border: 1px solid #ddd;
 }
 
 .inbox_msg {
-	border: 1px solid #ddd;
+	/* border: 1px solid #ddd; */
 	clear: both;
 	overflow: hidden;
 }
@@ -144,9 +145,9 @@
 }
 
 .received_withd_msg p {
-	background: #ebebeb none repeat scroll 0 0;
+	background: #118ab2 none repeat scroll 0 0;
 	border-radius: 0 15px 15px 15px;
-	color: #646464;
+	color: #fff;
 	font-size: 14px;
 	margin: 0;
 	padding: 5px 10px 5px 12px;
@@ -167,7 +168,13 @@
 .mesgs{
 	float: left;
 	padding: 30px 15px 0 25px;
-	width:70%;
+	margin-left: 10%;
+	width:80%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.72), rgba(141, 153, 174, 1)),
+    url('..//..//../images/kids_1.jpg');
 }
 
 .sent_msg p {
@@ -193,11 +200,14 @@
 .input_msg_write input {
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 	border: medium none;
-	color: #4c4c4c;
-	font-size: 15px;
+	color: #fff;
+	font-size: 16px;
 	min-height: 48px;
 	width: 100%;
 	outline:none;
+}
+.input_msg_write input::placeholder{
+	color:#ced4da;
 }
 
 .type_msg {
@@ -224,6 +234,11 @@
 }
 
 .msg_history {
-	height: 516px;
+	height: 550px;
 	overflow-y: auto;
+}
+.chat-inbox-people{
+	margin-left: 10%;
+	width: 80% !important;
+	border: 2px solid rgba(39, 125, 161, 1) !important;
 }

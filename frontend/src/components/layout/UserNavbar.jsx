@@ -1,15 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import AdminNavbar from '../layout/AdminNavbar';
-import UserNavbar from '../layout/UserNavbar';
-
 function Navbar({ onLogout }) {
-    //const userEmail = window.sessionStorage.getItem('userEmail');
 
     return (
-
-        // userEmail.match('simba') ? <AdminNavbar /> : <UserNavbar />
 
         <nav className="navbar navbar-expand-lg navbar-dark">
         <a className="navbar-brand" href="/">
@@ -37,9 +31,6 @@ function Navbar({ onLogout }) {
                     Assignement
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <Link to="/assignmentPost/new" className="dropdown-item">
-                        Post a New Assignment
-                    </Link>
                     <Link to="/assignmentPost/" className="dropdown-item">
                         List of Assignment
                     </Link>
@@ -53,9 +44,6 @@ function Navbar({ onLogout }) {
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <Link to="/announce" className="dropdown-item">
                         Posted Announcement
-                    </Link>
-                    <Link to="/announce/new" className="dropdown-item">
-                        New Announcement
                     </Link>
                     </div>
                 </li>
@@ -74,7 +62,6 @@ function Navbar({ onLogout }) {
             </ul>  
         </div>
     </nav>
-
     );
 }
 
