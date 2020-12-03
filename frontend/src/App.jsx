@@ -17,9 +17,9 @@ import NewAnnouncementPage from './components/announcementNew/NewAnnouncement';
 import SingleAnnouncement from './components/announcementNew/SingleAnnouncement';
 import CommentPage from './components/newComment/CommentsPage';
 import ThreadPage from './components/chat/ThreadPage';
-import AssignmentList from './components/assignmentpost/AssignmentList';
+import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
-import AssignmentCard from './components/assignmentpost/AssignmentCard';
+import SingleAssignment from './components/assignmentpost/SingleAssignment';
 
 
 function App() {
@@ -35,15 +35,15 @@ function App() {
         
         <Switch>
           <Route exact path="/assignmentPost">
-           <AssignmentList/>
+           <AssignmentPostPage/>
           </Route>
 
           <Route exact path="/assignmentPost/new">
             <NewAssignment/>
           </Route>
 
-          <Route exact path="/assignmentPost/:id">
-            <AssignmentCard/>
+          <Route path="/assignmentPost/:id">
+            <SingleAssignment/>
           </Route>
 
           <Route exact path="/announce" exact>
