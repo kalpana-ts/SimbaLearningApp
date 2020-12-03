@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
+import { Dropdown } from 'semantic-ui-react'
 import ChatApi from '../../api/ChatApi';
 import ChatPage from './ChatPage';
 import Thread from './Thread';
@@ -22,11 +23,31 @@ function ThreadPage() {
   const listOfThreads = threads.map(thread => (
     <Thread key={thread.id} setMessageBox={setMessageBox} thread={thread} />
   ));
+
   return (
     <div>
+
+{/* <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" 
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">{threads === [] ? 'loading...' : listOfThreads}</button>
+  </div>
+</div> */}
+
+      <Dropdown className="chat-inbox-people"
+        placeholder='Select person'
+        fluid
+        selection
+        options={threads === [] ? 'loading...' : listOfThreads}
+      />
+
+
       <div className="messaging">
         <div className="inbox_msg">
-          <div className="inbox_people">
+          {/* <div className="inbox_people shadow-lg p-3 mb-5 bg-white rounded">
             <div className="headind_srch">
               <div className="recent_heading">
                 <h4>Recent</h4>
@@ -42,12 +63,12 @@ function ThreadPage() {
                 {threads === [] ? 'loading...' : listOfThreads}
               </div>
             </div>
-          </div>
-          <div className="mesgs">
+          </div> */}
+          
             {messageBox.thread === '' ? null : (
               <ChatPage id={messageBox.threadId} thread={messageBox.thread} />
             )}
-          </div>
+          
         </div>
       </div>
     </div> 
