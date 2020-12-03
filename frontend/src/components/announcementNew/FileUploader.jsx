@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactImageUploadComponent from 'react-images-upload';
 import { storage } from "../../firebase";
 
 function FileUploader({ setFileUrl }) {
@@ -7,45 +6,11 @@ function FileUploader({ setFileUrl }) {
     const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(null);
 
-/*   const updateImage = event => {
-    var file = event[0];
-    var data = new FormData();
-    data.append('file', file);
-    data.append('upload_preset', 'Simba_Img');
-    setPayload(data);
-  }; */
-/*   useEffect(() => {
-    const abortFetch = new AbortController();
-    const sendImage = async () => {
-      try {
-        if (payload !== null) {
-          const response = await fetch(
-            'https://api.cloudinary.com/v1_1/dmythh2na/image/upload',
-            {
-              method: 'post',
-              body: payload,
-              signal: abortFetch.signal
-            }
-          );
-          const jsonResponse = await response.json();
-          setImgUrl(jsonResponse['secure_url']);
-          setUploading(false);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    sendImage();
-    return () => abortFetch.abort();
-  }, [payload, setImgUrl]); */
-
-
   const handleChange = e => {
     if (e.target.files[0]) {
         setFile(e.target.files[0]);
     }
   };
-  
   
   const handleUpload = () => {
     const uploadTask = storage.ref(`files/${file.name}`).put(file);
@@ -76,12 +41,16 @@ function FileUploader({ setFileUrl }) {
   return (
 
     <div>
-        <progress value={progress} max="100" />
-        <br />
-        <br />
-        <input type="file" onChange={handleChange} />
-        <button onClick={handleUpload}>Upload</button>
-    </div>
+
+        <br/>
+          <input type="file" className="input-file-upload" id="exampleFormControlFile1" onChange={handleChange}/>
+          <button className="btn btn-outline-info btn-newPost-upload" 
+          onClick={handleUpload}>Upload</button>
+          <br/>
+        <br/>
+        <progress className="announcement-progress" value={progress} max="100" />
+        
+    </div>   
 
   );
 }

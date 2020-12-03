@@ -16,11 +16,12 @@
     height:50px;
 }
 .btn-outline-info{
-    color: #006d77;
-    border-color: #006d77;
+    color: #F9844A;
+    border-color: #F9844A;
 }
 .btn-outline-info:hover{
-    background-color: #006d77;
+    background-color: #F9844A;
+    border-color: #F9844A;
 }
 .line{
     position: absolute;
