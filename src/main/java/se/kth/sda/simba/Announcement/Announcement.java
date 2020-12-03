@@ -7,32 +7,31 @@ import javax.persistence.*;
 import java.util.List;
 
 
-@Table(name = "announce")
+
 @Entity
 public class Announcement {
     @Id
-    @Column(name = "id")
+
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "announce_generator")
     @SequenceGenerator(name = "announce_generator", sequenceName = "announce_seq")
     private Long id;
 
-    @Column(name = "title")
+
     private String title;
 
-    @Column(name = "body", columnDefinition = "TEXT")
+    @Column( columnDefinition = "TEXT")
     private String body;
 
-    @Column(name = "image_url")
+
     private String imageUrl;
 
-    @Column(name = "date")
+
     private String date;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "poster")
-    private String poster;
+    /*@Column(name = "poster")
+    private String poster;*/
 
 
    /*@OneToMany
@@ -44,6 +43,7 @@ public class Announcement {
 
     @ManyToOne
     private User user;
+
     public Announcement() {
     }
 
@@ -87,13 +87,13 @@ public class Announcement {
         this.body = body;
     }
 
-    public String getPoster() {
+   /* public String getPoster() {
         return poster;
     }
 
     public void setPoster(String poster) {
         this.poster = poster;
-    }
+    }*/
 
     public String getDate() {
         return date;
