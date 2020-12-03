@@ -38,10 +38,12 @@ function AnnouncementForm({ setAnnounce }) {
   };
 
   return (
-    <>
-      <h1 style={{ textAlign: 'center', color: '#6C6C6C' }}>Upload Details</h1>
+    <div  className="announcement-frm">
+      <h2 style={{color: '#006d77' }}>Post Announcement</h2>
       <div className="row">
         <div className="col-md-6 col-sm-6">
+        <FileUploader setFileUrl={setFileUrl} />
+        <br/>
         <form id="announce-form" style={{ width: '100%' }} onSubmit={submitHandler}>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Announcement Title</label>
@@ -65,12 +67,8 @@ function AnnouncementForm({ setAnnounce }) {
             />
           </div>
 
-          <button type="submit" className="btn-newPost"> Submit </button>
+            <button type="submit" className="btn-newPost"> Submit </button>
           </form>
-          </div>
-
-          <div className="col-md-6 col-sm-6">
-            <FileUploader setFileUrl={setFileUrl} />
           </div>
 
         {/* <div className="col-md-6 col-sm-6">
@@ -80,7 +78,7 @@ function AnnouncementForm({ setAnnounce }) {
     
 
       
-      </>
+      </div>
   );
 }
 
