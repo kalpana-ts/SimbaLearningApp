@@ -23,10 +23,11 @@ function AnnouncementCard({ announce }) {
                         <span class="thumb pull-left mr">
                             <img class="img-circle" src="https://bootdey.com/img/Content/user_1.jpg" alt="..."/>
                         </span>
-                        <h5 class="poster-detail"><span class="fw-semi-bold">{announce.email}</span> </h5>
+                        <h5 class="poster-detail"><span class="fw-semi-bold">{announce.user.name}</span> </h5>
+                        <h6><span class="fw-semi-bold">{announce.user.email}</span> </h6>
                     </div>
                     <br/>
-                    <h5 class="mb-xs mt-xs"><span class="fw-semi-bold">{announce.title} posted by : {announce.user.name}</span> </h5>
+                    <h5 class="mb-xs mt-xs"><span class="fw-semi-bold">{announce.title}</span> </h5>
                     <p class="fs-mini m txt-color">{announce.body} </p>
 
                 </div>

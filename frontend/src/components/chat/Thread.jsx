@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../../services/Auth';
+import senderImg from '../../images/women_icon_2.png';
 
 function Thread({ thread, setMessageBox }) {
-  const senderMail = window.sessionStorage.getItem('userEmail');
+  //const senderMail = window.sessionStorage.getItem('userEmail');
+  const senderMail = Auth.getUserMail();
   const receiverEmail = senderMail === thread.p1Email ? thread.p2Email : thread.p1Email;
   const receiverMessage = thread.receiverMessage;
 
@@ -17,7 +20,7 @@ function Thread({ thread, setMessageBox }) {
     <div className="chat_people">
       <div className="chat_img">
         {' '}
-        <img src="/images/sender.jpeg" alt="name" />{' '}
+        <img style={{height:'45px', width:'45px'}} src={senderImg} alt="name" />{' '}
       </div>
       <div className="chat_ib">
         <h5>

@@ -28,8 +28,8 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
             </a>
             <div className="media-body comment-text">
                 <div className="mar-btm">
-                    <a href="#" class="btn-link text-semibold media-heading box-inline">Lisa {userComment.authorName}</a>
-                    <p className="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p>
+                    <a href="#" class="btn-link text-semibold media-heading box-inline">User Name {userComment.userEmail}</a>
+                    {/* <p className="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p> */}
                 </div>
                   <p>{userComment.body}</p>
                 <div class="pad-ver">

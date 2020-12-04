@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-
+import Auth from '../../services/Auth';
 
 export default function CommentsCreateForm( {onSubmit}) {
     const [body, setBody] = useState("");
-    const userEmail = window.sessionStorage.getItem('userEmail');
+    //const userEmail = window.sessionStorage.getItem('userEmail');
+    const userEmail = Auth.getUserMail();
 
     function  onClickHandler () {
       
