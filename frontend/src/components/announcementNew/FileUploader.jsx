@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { storage } from "../../firebase";
+import uploadIcon from '../../images/Upload-Folder-icon.png';
 
 function FileUploader({ setFileUrl }) {
 //   const [payload, setPayload] = useState(null);
@@ -44,8 +45,8 @@ function FileUploader({ setFileUrl }) {
 
         <br/>
           <input type="file" className="input-file-upload" id="exampleFormControlFile1" onChange={handleChange}/>
-          <button className="btn btn-outline-info btn-newPost-upload" 
-          onClick={handleUpload}>Upload</button>
+          <button className="btn-newPost-upload" 
+          onClick={handleUpload}> <img src={uploadIcon} className="upload-img" alt="" srcset=""/> </button>
           <br/>
         <br/>
         <progress className="announcement-progress" value={progress} max="100" />
