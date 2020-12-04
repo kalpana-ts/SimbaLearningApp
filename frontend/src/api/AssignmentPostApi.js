@@ -6,6 +6,10 @@ class AssignmentPostApi {
         return Api.get('/assignmentPost');
     }
 
+    getAllAssignmentsByGradeAndSubject(grade,subject){
+            return Api.get(`/assignmentPost/grade/${grade}`,subject);
+    }
+
     getAssignmentsById(id){
         return Api.get('/assignmentPost/'+id);
     }

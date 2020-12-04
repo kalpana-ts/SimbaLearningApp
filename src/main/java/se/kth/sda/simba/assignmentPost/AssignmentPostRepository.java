@@ -8,4 +8,5 @@ public interface AssignmentPostRepository extends JpaRepository<AssignmentPost, 
     List<AssignmentPost> findAllByUserId(Long userId);
     List<AssignmentPost> findAllByGrade(String grade);
     List<AssignmentPost> findAllBySubject(String subject);
+    List<AssignmentPost> findAllByGradeAndSubject(String grade, String subject);
 }
