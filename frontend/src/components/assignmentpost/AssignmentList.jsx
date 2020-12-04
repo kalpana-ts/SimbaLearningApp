@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 import AssignmentPostApi from '../../api/AssignmentPostApi';
-import AssignmentPostForm from '../../components/assignmentpost/AssignmentPostForm';
-import NewAssignment from '../assignmentpost/NewAssignment';
+
 import AssignmentCard from '../assignmentpost/AssignmentCard';
 
 
 function AssignmentList(){
+    const { state } = useLocation();
+    const grade = state === undefined ? null : state.grade;
+    const subject = state === undefined ? null : state.subject;
     const [assignments, setAssignments]= useState([]);
     
     useEffect(()=>{
         const fetchPosts = async() => {
-            const response = await AssignmentPostApi.getAllAssignmentsPosts();
+            const response = await AssignmentPostApi.getAllAssignmentsByGradeAndSubject(grade,subject);
             setAssignments(response.data);
         };
         fetchPosts();
     },[]);
+
     console.log(assignments);
     const assignmentList = assignments.map(assignment => <AssignmentCard key={assignment.id} assignment={assignment}/>);
 
@@ -24,7 +27,7 @@ function AssignmentList(){
         <div>
             
             <div>
-                <h1>List</h1>
+                <h1>Assignment List by subject wise</h1>
             {assignments ===[]? 'No Assignments to show' : <div className="row">{assignmentList}</div>}
             
             </div>

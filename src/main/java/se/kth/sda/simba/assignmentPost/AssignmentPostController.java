@@ -31,6 +31,11 @@ public class AssignmentPostController {
         return assignmentPostService.getAllByGrade(grade);
     }
 
+    @GetMapping("/grade/{grade}/")
+    public List<AssignmentPost> getAllByGradeAndSubject(@PathVariable String grade, @RequestParam String subject){
+        return assignmentPostService.getAllByGradeAndSubject(grade,subject);
+    }
+
     @GetMapping("/subject/{subject}")
     public List<AssignmentPost> getAllBySubject(@PathVariable String subject) {
         return assignmentPostService.getAllBySubject(subject);
