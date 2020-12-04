@@ -5,11 +5,8 @@ import ReactPlayer from 'react-player';
 
 function AssignmentCard(assignment) {
   
-
-
   return (
-    
-    
+     
     <div class="col-md-7 assignment-card">
       <section class="widget">
       <div className="card-title bg-secondary text-white m-0 p-1 ">

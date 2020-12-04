@@ -86,7 +86,7 @@
 
 .chat_img {
 	float: left;
-	width: 11%;
+	width: 5%;
 }
 
 .chat_img img {
@@ -97,6 +97,7 @@
 	float: left;
 	padding: 0 0 0 15px;
 	width: 88%;
+	margin-top: 1%;
 }
 
 .chat_people {

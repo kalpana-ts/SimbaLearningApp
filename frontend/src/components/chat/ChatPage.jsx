@@ -1,11 +1,13 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import ChatApi from '../../api/ChatApi';
+import Auth from '../../services/Auth';
 import receiverImg from '../../images/women_icon_1.png';
 import senderImg from '../../images/women_icon_2.png';
 
 function ChatPage({ id, thread }) {
-  const loggedInUser = window.sessionStorage.getItem('userEmail');
+  //const loggedInUser = window.sessionStorage.getItem('userEmail');
+  const loggedInUser = Auth.getUserMail();
   const receiverEmail = loggedInUser === thread.p1Email ? thread.p2Email : thread.p1Email;
   const [messageText, setMessageText] = useState({ text: '' });
   const [messageArray, setMessageArray] = useState(thread.thread);

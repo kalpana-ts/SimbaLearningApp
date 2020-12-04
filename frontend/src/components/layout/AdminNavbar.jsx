@@ -63,7 +63,7 @@ function Navbar({ onLogout }) {
 
                     </li>              
                     <li className="nav-item">
-                        <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>LogOut</button>
+                        <button className="btn btn-log my-2 my-sm-0" onClick={onLogout}>LogOut</button>
                     </li>
                 </ul>  
             </div>
