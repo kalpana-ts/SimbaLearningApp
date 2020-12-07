@@ -20,7 +20,9 @@ function AssignmentPostPage(){
  console.log(assignments);
     const assignmentList = assignments.map(assignment => <AssignmentCard key={assignment.id} assignment={assignment}/>);
 
-    return assignments ===[]? 'No Assignments to show' : <div className="row">{assignmentList}</div>;
+    return (
+        assignments === [] ? <p>No Assignments to show</p>
+     : <div className="row">{assignmentList}</div>);
 }
 
 export default AssignmentPostPage;

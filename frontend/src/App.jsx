@@ -20,6 +20,8 @@ import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
 import SingleAssignment from './components/assignmentpost/SingleAssignment';
 import SubjectPage from './components/assignmentpost/SubjectPage';
+import GradeAssignmentPage from './components/home/GradeAssignmentPage';
+import AssignmentList from './components/assignmentpost/AssignmentList';
 
 
 function App() {
@@ -42,11 +44,21 @@ function App() {
             <NewAssignment/>
           </Route>
 
-          <Route path="/assignmentPost/:id">
+          <Route exact path="/assignmentPost/:id">
             <SingleAssignment/>
           </Route>
 
-          <Route exact path="/announce" exact>
+          <Route exact path="/assignmentPost/grade/:grade">
+            <GradeAssignmentPage/>
+          </Route>
+
+          <Route exact path="/assignmentPost/grade/subject/:subject">
+            <AssignmentList/>
+          </Route>
+
+
+
+          <Route exact path="/announce" >
             <AnnouncementPage />
           </Route>
 
