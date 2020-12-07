@@ -5,11 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import se.kth.sda.simba.assignmentPost.AssignmentPost;
 import se.kth.sda.simba.assignmentSubmission.AssignmentSubmissionService;
 
 import java.util.List;
 @RestController
-@RequestMapping("/assignmentSubmission")
+@RequestMapping("/assignmentSubmittedByStudents")
 public class AssignmentSubmissionController {
 
     @Autowired
@@ -27,7 +28,10 @@ public class AssignmentSubmissionController {
             return assignmentSubmissionService.getAllByAssignmentPostId(assignmentPostId);
         }
     }
-
+    @GetMapping("/grade/{grade}/{subject}")
+    public List<AssignmentSubmission> getAllByGradeAndSubject(@PathVariable("grade") String grade, @PathVariable("subject") String subject){
+        return assignmentSubmissionService.getAllByGradeAndSubject(grade,subject);
+    }
 
     @GetMapping("/userid")
     public List<AssignmentSubmission> getAllByUserId(@RequestParam(required = false) Long userId) {
@@ -55,7 +59,7 @@ public class AssignmentSubmissionController {
         return assignmentSubmissionService.getAllBySubject(subject);
     }
 
-    //Create a assignment
+    //Create an assignment submission
     @PostMapping("")
     public AssignmentSubmission create(@RequestBody AssignmentSubmission newAssignmentSubmission) {
         return assignmentSubmissionService.create(newAssignmentSubmission);
