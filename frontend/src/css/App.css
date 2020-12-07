@@ -6,6 +6,8 @@
 @import "./Components/comment/comment.css";
 @import "./Components/announcement/singleAnnouncement.css";
 @import "./Components/Chat/ChatPage.css";
+@import "./Components/assignement/assignement.css";
+@import "./Components/assignement/SubjectPage.css";
 
 body {
   min-height: 100vh;

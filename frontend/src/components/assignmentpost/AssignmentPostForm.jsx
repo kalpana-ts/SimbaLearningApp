@@ -43,12 +43,13 @@ function AssignmentPostForm({setAssignment}){
     document.getElementById("assignment-form").reset();
   };
 return (
-  <div>
-
-    <form id="assignment-form" style={{ width: '100%' }} onSubmit={submitHandler}>
-      <h1>Assignment Post</h1>
+  <div className="assignement-frm">
+      <h2 style={{color: '#006d77' }}>Assignment Post</h2>
         <div className="row">
           <div className="col-md-6 col-sm-6">
+          <FileUploader setFileUrl={setFileUrl} />
+          <br/>
+          <form id="assignment-form" style={{ width: '100%' }} onSubmit={submitHandler}>
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Assignment Title</label>
               <input
@@ -111,15 +112,12 @@ return (
             
           </div>
             
-          <button type="submit" className="btn-newPost"> Submit </button>
+          <button type="submit" className="btn-newPost"> Submit Assignement</button>
+
+          </form>
+
         </div>
         </div>
-        </form>
-        
-        <div className="col-md-6 col-sm-6">
-            <FileUploader setFileUrl={setFileUrl} />
-        </div>
-    
      </div>
     );
 }

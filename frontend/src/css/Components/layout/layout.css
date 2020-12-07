@@ -23,6 +23,22 @@
     background-color: #F9844A;
     border-color: #F9844A;
 }
+.btn-log{
+    background-color: #F9844A; 
+    border:1px solid #F9844A;
+    display:inline-block;
+    padding:6px 15px;
+    color:#fff;
+    font-weight:600;
+    font-size:14px;
+    border-radius:0px;
+    transition:all .3s;
+  }
+  .btn-log:hover{
+    border:1px solid transparent;
+    background:#B52B65;
+    color:#fff;
+  }
 .line{
     position: absolute;
     width: 1440px;

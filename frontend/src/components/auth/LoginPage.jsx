@@ -21,7 +21,7 @@ function LoginPage() {
     return (
     <div className="row">
       <div className="login-container">
-        <div className="card">
+        <div className="card login-card">
           <div className="login-box">
             <img className="simba-logo" src="/images/Simba-ICON.png" alt="logo" />
             <div className="simba-title"> <span className="title-name">SIMBA</span> <br/> <span className="title-slogan">The Lion King (Learning App)</span></div>

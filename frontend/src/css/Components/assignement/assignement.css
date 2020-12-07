@@ -1,0 +1,9 @@
+.assignement-frm{
+    background-image: url('..//..//../images//assignement_frm_bg1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom; 
+    height:900px;
+    background-size: 300px;
+    background-position-x: 94%;
+}

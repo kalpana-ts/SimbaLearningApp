@@ -28,7 +28,7 @@ function Navbar({ onLogout }) {
 
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Assignement
+                        Assignment
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <Link to="/assignmentPost/new" className="dropdown-item">
@@ -63,7 +63,7 @@ function Navbar({ onLogout }) {
 
                     </li>              
                     <li className="nav-item">
-                        <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>LogOut</button>
+                        <button className="btn btn-log my-2 my-sm-0" onClick={onLogout}>LogOut</button>
                     </li>
                 </ul>  
             </div>

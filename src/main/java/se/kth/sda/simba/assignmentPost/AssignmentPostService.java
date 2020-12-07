@@ -28,6 +28,9 @@ public class AssignmentPostService {
         return repo.findAllBySubject(subject);
     }
 
+    public List<AssignmentPost> getAllByGradeAndSubject(String grade,String subject){
+        return repo.findAllByGradeAndSubject(grade,subject);
+    }
     public AssignmentPost create(AssignmentPost newAssignmentPost) {
         return repo.save(newAssignmentPost);
     }

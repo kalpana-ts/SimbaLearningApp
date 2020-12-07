@@ -25,13 +25,14 @@ background-position-x: 94%;
   color:#fff;
 }
 .btn-newPost-upload{
-  border:1px solid #B52B65;
-  color: #B52B65
+  border: none;
+  background-color: transparent;
 }
-.btn-newPost-upload:hover{
-  border:1px solid transparent;
-  background:#B52B65;
-  color:#fff;
+.upload-img{
+  height:38px;
+}
+.upload-img:hover{
+  height: 50px;
 }
 
 .widget {
@@ -183,7 +184,8 @@ background-position-x: 94%;
   margin-top: -5px;
 }
 .post-user .poster-detail{
-  line-height: 2.4;
+  line-height: 0;
+  padding-top: 10px;
 }
 .announcement-post{
   margin: 0 auto;
@@ -208,8 +210,8 @@ progress::-webkit-progress-value {
   box-shadow: 1px 1px 5px 3px rgba(173, 181, 189, 0.7);
 }
 .input-file-upload{
-  width:88%; 
-  border:1px solid #B52B65;
+  width:90%; 
+  border:1px solid #adb5bd;
   display:inline-block;
   color:#666;
   font-weight:600;

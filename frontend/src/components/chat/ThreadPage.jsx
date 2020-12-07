@@ -37,12 +37,9 @@ function ThreadPage() {
   </div>
 </div> */}
 
-      <Dropdown className="chat-inbox-people"
-        placeholder='Select person'
-        fluid
-        selection
-        options={threads === [] ? 'loading...' : listOfThreads}
-      />
+     
+      <Dropdown className="chat-inbox-people" placeholder="Select teacher.."
+      clearable options={threads === [] ? 'loading...' : listOfThreads} selection />
 
 
       <div className="messaging">

@@ -8,7 +8,8 @@ import Auth from '../../services/Auth';
 import CommentPage from '../newComment/CommentsPage';
 
 function SingleAnnouncement() {
-  const userEmail = window.sessionStorage.getItem('userEmail');
+  //const userEmail = window.sessionStorage.getItem('userEmail');
+  const userEmail = Auth.getUserMail();
   const { state } = useLocation();
   const passedPost = state === undefined ? null : state.announce;
   const [announce, setAnnounce] = useState(passedPost);
