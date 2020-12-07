@@ -7,7 +7,7 @@ class AssignmentPostApi {
     }
 
     getAllAssignmentsByGradeAndSubject(grade,subject){
-            return Api.get(`/assignmentPost/grade/${grade}`,subject);
+            return Api.get(`/assignmentPost/grade/${grade}/${subject}`);
     }
 
     getAssignmentsById(id){

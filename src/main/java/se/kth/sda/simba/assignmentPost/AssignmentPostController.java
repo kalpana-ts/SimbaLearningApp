@@ -14,6 +14,8 @@ public class AssignmentPostController {
     private AssignmentPostService assignmentPostService;
 
 
+
+
     @GetMapping("")
     public List<AssignmentPost> getAll() {
             return assignmentPostService.getAll();
@@ -26,13 +28,13 @@ public class AssignmentPostController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/grade/{grade}")
+    /*@GetMapping("/grade/{grade}")
     public List<AssignmentPost> getAllByGrade(@PathVariable String grade) {
         return assignmentPostService.getAllByGrade(grade);
-    }
+    }*/
 
-    @GetMapping("/grade/{grade}/")
-    public List<AssignmentPost> getAllByGradeAndSubject(@PathVariable String grade, @RequestParam String subject){
+    @GetMapping("/grade/{grade}/{subject}")
+    public List<AssignmentPost> getAllByGradeAndSubject(@PathVariable("grade") String grade, @PathVariable("subject") String subject){
         return assignmentPostService.getAllByGradeAndSubject(grade,subject);
     }
 

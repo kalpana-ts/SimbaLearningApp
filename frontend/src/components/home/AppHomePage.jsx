@@ -15,6 +15,12 @@ import gradeAs4 from '../../images/reading.png';
 
 function AppHomePage({ onLogout }) {
     const [gradeone,setGradeone]=useState("1");
+    const [gradetwo,setGradetwo]=useState("2");
+    const [gradethree,setGradethree]=useState("3");
+    const [gradefour,setGradefour]=useState("4");
+    const [grade,setGrade]=useState('1');
+
+    
     
   return (
       <div>
@@ -63,7 +69,7 @@ function AppHomePage({ onLogout }) {
             <div class="card-body">
             <h5 class="card-title grade-title">
             
-                <Link className="" to={{ pathname: `/assignmentPost/grade/${gradeone}`, state: {gradeone} }} >
+                <Link className=""  to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:1} }} >
                     <img className="grade-img" src={gradeAs1} alt="" srcset=""/>&nbsp;Grade - 1
                 </Link>
             </h5>
@@ -75,7 +81,7 @@ function AppHomePage({ onLogout }) {
             <div class="card-body">
             <h5 class="card-title grade-title">
 
-            <Link className="" to="/assignmentPost">
+            <Link className="" to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:2} }} >
                 <img className="grade-img" src={gradeAs2} alt="" srcset=""/>&nbsp;Grade - 2
             </Link>  
             </h5>
@@ -85,14 +91,22 @@ function AppHomePage({ onLogout }) {
         <div class="col-sm-5">
         <div class="card grade gradeAs-3">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs3} alt="" srcset=""/>&nbsp;Grade - 3</h5>
+            <h5 class="card-title grade-title">
+            <Link className="" to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:3} }} >
+                <img className="grade-img" src={gradeAs3} alt="" srcset=""/>&nbsp;Grade - 3
+            </Link>
+            </h5>
             </div>
         </div>
         </div>
         <div class="col-sm-5">
         <div class="card grade gradeAs-4">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs4} alt="" srcset=""/>&nbsp;Grade - 4</h5>
+            <h5 class="card-title grade-title">
+            <Link className="" to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:4} }} >
+                <img className="grade-img" src={gradeAs4} alt="" srcset=""/>&nbsp;Grade - 4
+            </Link>
+            </h5>
             </div>
         </div>
         </div>
