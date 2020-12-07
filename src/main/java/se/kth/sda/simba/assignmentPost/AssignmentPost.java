@@ -17,17 +17,24 @@ public class AssignmentPost {
     private String grade;
     private String subject;
 
+    private String postDate;
+    private String submissionDate;
+
+
+
     @ManyToOne
    private User user;
 
 
-    public AssignmentPost(long id, String assignmentTitle, String assignmentDescription, String fileUrl, String grade, String subject, User user) {
+    public AssignmentPost(long id, String assignmentTitle, String assignmentDescription, String fileUrl, String grade, String subject, String postDate, String submissionDate, User user) {
         this.id = id;
         this.assignmentTitle = assignmentTitle;
         this.assignmentDescription = assignmentDescription;
         this.fileUrl = fileUrl;
         this.grade = grade;
         this.subject = subject;
+        this.postDate = postDate;
+        this.submissionDate = submissionDate;
         this.user = user;
     }
 
@@ -89,5 +96,21 @@ public class AssignmentPost {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(String postDate) {
+        this.postDate = postDate;
+    }
+
+    public String getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(String submissionDate) {
+        this.submissionDate = submissionDate;
     }
 }

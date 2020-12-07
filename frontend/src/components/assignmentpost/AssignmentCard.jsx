@@ -18,7 +18,7 @@ function AssignmentCard(assignment) {
                                 to={{ pathname: `/assignmentPost/${assignment.assignment.id}`, state: { assignment } }}>
                                     View 
                   </Link>
-            </button>                
+            </button>
       </div>
       <div className="card-body">
               Description: 
@@ -29,6 +29,8 @@ function AssignmentCard(assignment) {
               Subject: 
               {assignment.assignment.subject}
               <br />
+              Last Date to Submit:
+              {assignment.assignment.submissionDate}
             </div>
         <div class="widget-body">
             <div class="widget-top-overflow text-white">
