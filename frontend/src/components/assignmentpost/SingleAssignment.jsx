@@ -42,6 +42,9 @@ function SingleAssignment() {
               Subject: 
               {assignment.subject}
               <br />
+              Last Date to Submit:
+              {assignment.submissionDate}
+
             </div>
             <div class="widget-body">
             <div class="widget-top-overflow text-white">
