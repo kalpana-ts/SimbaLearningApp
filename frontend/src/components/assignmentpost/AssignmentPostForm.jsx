@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { format } from 'date-fns';
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
-
+import DatePicker from "../calendar/DatePicker";
 import FileUploader from '../announcementNew/FileUploader';
 
 //last date submission
@@ -98,8 +98,18 @@ return (
               <option value='English'>English</option>
               <option value='Science'>Science</option>
               <option value='GK'>General Knowledge</option>
-             
+              
             </select>
+            
+          </div>
+          <div class='form-group '>
+          <label for='inputType'>Last Submission Date</label>
+        
+              
+            
+              <DatePicker />
+              
+            
           </div>
             
           <button type="submit" className="btn-newPost"> Submit Assignement</button>
