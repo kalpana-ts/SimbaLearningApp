@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/App.css';
 
 import Auth from './services/Auth';
-import AdminNavbar from './components/layout/AdminNavbar';
 import Navbar from './components/layout/Navbar';
 
 // Import pages
@@ -20,6 +19,7 @@ import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
 import SingleAssignment from './components/assignmentpost/SingleAssignment';
+import SubjectPage from './components/assignmentpost/SubjectPage';
 import GradeAssignmentPage from './components/home/GradeAssignmentPage';
 import AssignmentList from './components/assignmentpost/AssignmentList';
 
