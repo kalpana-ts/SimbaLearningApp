@@ -1,5 +1,8 @@
 import React,{useState} from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Auth from '../../services/Auth';
+import UserApi from '../../api/UserApi';
 
 
 import AssignmentPost from "../assignmentpost/AssignmentPostPage";
@@ -13,14 +16,25 @@ import gradeAs3 from '../../images/student-2.png';
 import gradeAs4 from '../../images/reading.png';
 
 
-function AppHomePage({ onLogout }) {
+function AppHomePage() {
     const [gradeone,setGradeone]=useState("1");
     const [gradetwo,setGradetwo]=useState("2");
     const [gradethree,setGradethree]=useState("3");
     const [gradefour,setGradefour]=useState("4");
-    const [grade,setGrade]=useState('1');
+    const [grade,setGrade]=useState('');
+    const [user, setUser] = useState({});
+    const userMail = Auth.getUserMail();
 
     
+    useEffect(() => {
+        function getUserByMail() {
+            UserApi.getUserByMail(userMail)
+                .then((res) => {
+                    setUser(res.data)
+                })
+        }
+        userMail !== null && getUserByMail();
+    }, [userMail])
     
   return (
       <div>
