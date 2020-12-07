@@ -33,6 +33,9 @@ public class User {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "grade")
+    private String grade;
+
     @Column(name = "userType")
     private String userType;
 
@@ -44,10 +47,17 @@ public class User {
     // Hibernate needs a default constructor to function
     public User() {}
 
-    public User(@Email(message = "Invalid email address! Please provide a valid email address") @NotEmpty(message = "Please provide an email address") String email, @Length(min = 5, max = 100, message = "Password length most be between 5-100 characters") String password, @Length(min = 3, max = 100, message = "Name must be between 3-100 characters") String name) {
+    public User(@Email(message = "Invalid email address! Please provide a valid email address")
+                @NotEmpty(message = "Please provide an email address") String email,
+                @Length(min = 5, max = 100, message = "Password length most be between 5-100 characters")
+                        String password,
+                @Length(min = 3, max = 100, message = "Name must be between 3-100 characters") String name,
+                String grade, String userType) {
         this.email = email;
         this.password = password;
         this.name = name;
+        this.grade = grade;
+        this.userType = userType;
     }
 
     public Long getId() {
@@ -82,6 +92,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
     public String getUserType() {

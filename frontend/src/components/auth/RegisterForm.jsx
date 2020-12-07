@@ -5,6 +5,7 @@ function RegisterForm({onSubmit}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [userType, setuserType] = useState("");
+    const [grade, setGrade] = useState('1');
 
     return (
             <div className="sign-up-form">
@@ -55,11 +56,36 @@ function RegisterForm({onSubmit}) {
                 placeholder="Create your password"
                 />
             </div>
+
+    {   userType === 'student' ?
+
+            <div className="group">
+                <label htmlFor="pass" className="label">
+                Grade
+                </label>
+                <select required
+                id='grade'
+                className='form-control'
+                
+                onChange={e => setGrade(e.target.value)}>
+                <option value='1'>Grade 1</option>
+                <option value='2'>Grade 2</option>
+                <option value='3'>Grade 3</option>
+                <option value='4'>Grade 4</option>
+                
+                </select>
+            </div>
+
+        :
+
+        null
+    }
+
             <div className="group">
                 <input
                 type="submit"
                 className="button"
-                onClick={e => onSubmit({ name, email, password })}
+                onClick={e => onSubmit({ name, email, password, userType, grade })}
                 value="Sign Up"
                 />
             </div>
