@@ -10,6 +10,8 @@ function AssignmentList(){
     const { state } = useLocation();
     const grade = state === undefined ? null : state.grade;
     const subject = state === undefined ? null : state.subject;
+    console.log("grade from list:",grade);
+    console.log("Subject from list:",subject);
     const [assignments, setAssignments]= useState([]);
     
     useEffect(()=>{
