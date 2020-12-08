@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import UserApi from '../../api/UserApi';
 import MessageApi from '../../api/MessageApi';
+import FileUploader from '../../components/announcementNew/FileUploader';
 
 
 function NewMessageForm({user}) {
@@ -9,6 +10,7 @@ function NewMessageForm({user}) {
     const [ message, setMessage ] = useState("");
     const [ recipient, setRecipient ] = useState("");
     const [ subject, setSubject ] = useState("");
+    const [ fileUrl, setFileUrl ] = useState("");
 
     useEffect(() => {
         function getAllUsers() {
@@ -22,12 +24,13 @@ function NewMessageForm({user}) {
     }, [])
 
     const sendMessage = () => {
-        if (message === "") {return;}
+        if (message === "") { return;}
         const newMessage = {
             msgSubject: subject,
             recipient: listOfUsers.find((user) => user.name === recipient),
             msgBody: message,
-            sender: user
+            sender: user,
+            fileUrl : fileUrl
         }
 
         MessageApi.createMessage(newMessage)
@@ -44,23 +47,17 @@ function NewMessageForm({user}) {
             <h3 className="font-italic">Send a direct message</h3>
 
             <div className="card p-3">
-                <p className="card-title">What do you want to tell?</p>
-
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
-                        <span className="input-group-text">Subject</span>
+                        <span className="input-group-text">Upload file</span>
                     </div>
-                    <input 
-                        type="text" className="form-control"
-                        value={subject}
-                        onChange={event => setSubject(event.target.value)}
-                    />
+                    <FileUploader setFileUrl={setFileUrl} />
                 </div>
 
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
                         <div className="dropdown">
-                            <button className="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                            {/* <button className="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
                                 To whom ? 
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -74,7 +71,26 @@ function NewMessageForm({user}) {
                                             </button>
                                         ) 
                                     }
-                            </div>
+                            </div> */}
+
+                                <label htmlFor="user" className="label">
+                                    Send To
+                                </label>
+                                <select 
+                                    id='user' name ='user'
+                                    className='form-control'
+                                    required
+                                    onChange={event => setRecipient(event.target.value)}>
+                                        <option value="">Please select</option>
+                                    { listOfUsers.length === 0 ? "" :
+                                    listOfUsers
+                                        .map((user) => 
+                                            <option key={user.id} value={user.name}>{user.name}</option>
+                                        ) 
+                                    }
+                                    
+                                </select>
+
                         </div>
                     </div>
                     <div className="text-muted ml-3 mt-1 font-weight-bold">{recipient} </div>
