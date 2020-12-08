@@ -22,8 +22,8 @@ class AssignmentSubmissionApi {
         return Api.post('/assignmentSubmittedByStudents/new', assignment);
     }
 
-    updateAssignment(assignment) {
-        return Api.put('/assignmentSubmittedByStudents/update', assignment);
+    updateAssignment(updatedAssignmentSubmission) {
+        return Api.put('/assignmentSubmittedByStudents/update', updatedAssignmentSubmission);
     }
 
     deleteAssignment(id) {
