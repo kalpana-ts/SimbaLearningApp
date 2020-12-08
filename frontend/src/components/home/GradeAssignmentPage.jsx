@@ -5,20 +5,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 //setSubject as per the link , can use onclickmethod call and set state.
 
 export default function GradeAssignmentPage() {
-    // var getParams = function () {
-    //     var url = window.location.href;
-    //     var params = {};
-    //     var parser = document.createElement('a');
-    //     parser.href = url;
-    //     var query = parser.search.substring(1);
-    //     var vars = query.split('?');
-    //     for (var i = 0; i < vars.length; i++) {
-    //       var pair = vars[i].split('=');
-    //       params[pair[0]] = decodeURIComponent(pair[1]);
-    //     }
-    //     return params;
-    //   };
-      //console.log("props",props);
+    
 
     const { state } = useLocation();
     const grade = state === undefined ? null : state.grade;

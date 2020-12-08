@@ -51,17 +51,19 @@ export default function AssignmentSubmissionForm(){
                 <FileUploader setFileUrl={setFileUrl} />
                 <br/>
                 </div>
-                <form id="assignment-form" style={{ width: '100%' }} >
+            <form id="assignment-form" style={{ width: '100%' }} >
+            <div className="form-group">
               <label htmlFor="formGroupExampleInput">Description</label>
-              <input
+              <input  
                 type="text"
                 className="form-control"
-                
+                required
                 id="formGroupExampleInput"
                 placeholder="Enter your Answer here...."
                 onChange={e => setAssignmentDescription(e.target.value)}
               />
               <button className="btn btn-primary  " onClick={submitAssignment}>Submit</button>
+              </div>
                 </form>
                 {/* {emptySubmission && <h2>Please submit a valid answer</h2>} */}
             </div>

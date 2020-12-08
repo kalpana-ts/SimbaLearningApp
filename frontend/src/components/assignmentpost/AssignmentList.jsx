@@ -26,14 +26,14 @@ function AssignmentList(){
     const assignmentList = assignments.map(assignment => <AssignmentCard key={assignment.id} assignment={assignment}/>);
 
     return(
-        <div>
+       
             
             <div>
                 <h1>Assignment List by subject wise</h1>
             {assignments ===[]? 'No Assignments to show' : <div className="row">{assignmentList}</div>}
             
             </div>
-        </div>
+       
         
     );
 }

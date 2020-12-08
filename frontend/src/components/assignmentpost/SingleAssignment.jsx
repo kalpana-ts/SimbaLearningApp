@@ -1,11 +1,9 @@
-import React, { Component, useState ,useEffect} from 'react';
+import React, { useState ,useEffect} from 'react';
 
-import { useHistory, useLocation ,Link} from 'react-router-dom';
+import { useLocation ,Link} from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import UserApi from '../../api/UserApi';
-import ChatApi from '../../api/ChatApi';
-import Api from '../../api/Api';
-import Auth from '../../services/Auth';
+import AssignmentSubmittedList from '../assignmentsubmission/AssignmentSubmittedList';
 
 //delete for user
 //Assingmentsubmission linked to this post
@@ -87,7 +85,8 @@ function SingleAssignment() {
                     {teacherView &&
                        <div class="assignments-submitted">
                         
-                        <h1>Assignments submitted back by students</h1>
+           
+                        <AssignmentSubmittedList assignment={assignment} />
                         
                     </div> }
                 </div>

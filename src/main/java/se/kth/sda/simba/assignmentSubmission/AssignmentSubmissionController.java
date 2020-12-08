@@ -20,7 +20,8 @@ public class AssignmentSubmissionController {
     public List<AssignmentSubmission> getAll(){
         return assignmentSubmissionService.getAll();
     }
-    @GetMapping("/assignmentpostid")
+
+    @GetMapping("/assignmentPostId")
     public List<AssignmentSubmission> getAllByAssignmentPostId(@RequestParam(required = false) Long assignmentPostId) {
         if (assignmentPostId == null) {
             return assignmentSubmissionService.getAll();
