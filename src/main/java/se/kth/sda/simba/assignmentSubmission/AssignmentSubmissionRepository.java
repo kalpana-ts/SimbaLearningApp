@@ -13,5 +13,6 @@ public interface AssignmentSubmissionRepository extends JpaRepository<Assignment
     List<AssignmentSubmission> findAllByGrade(String grade);
     List<AssignmentSubmission> findAllBySubject(String subject);
     List<AssignmentSubmission> findAllByAssignmentPostId(Long assignmentPostId);
+    List<AssignmentSubmission> findAllByGradeAndSubject(String grade, String subject);
 }
 

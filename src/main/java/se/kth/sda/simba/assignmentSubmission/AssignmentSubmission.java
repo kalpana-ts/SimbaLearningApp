@@ -12,9 +12,14 @@ public class AssignmentSubmission {
     private String assignmentTitle;
     @Column(columnDefinition = "TEXT")
     private String assignmentDescription;
-    private String file;
+    private String fileURL;
     private String grade;
     private String subject;
+    private String dateSubmitted;
+    private String status;
+    @Column(columnDefinition = "TEXT")
+    private String comments;
+    private String reviewedBy;
 
     @ManyToOne
     private AssignmentPost assignmentPost;
@@ -22,15 +27,20 @@ public class AssignmentSubmission {
     @ManyToOne
     private User user;
 
-    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String file, String grade, String subject, AssignmentPost assignmentPost, User user) {
+    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String fileURL, String grade, String subject, String dateSubmitted, String status, String comments, String reviewedBy, AssignmentPost assignmentPost, User user) {
         this.id = id;
         this.assignmentTitle = assignmentTitle;
         this.assignmentDescription = assignmentDescription;
-        this.file = file;
+        this.fileURL = fileURL;
         this.grade = grade;
         this.subject = subject;
+        this.dateSubmitted = dateSubmitted;
+        this.status = status;
+        this.comments = comments;
+        this.reviewedBy = reviewedBy;
         this.assignmentPost = assignmentPost;
         this.user = user;
+
     }
 
     public AssignmentSubmission() {
@@ -61,13 +71,11 @@ public class AssignmentSubmission {
         this.assignmentDescription = assignmentDescription;
     }
 
-    public String getFile() {
-        return file;
+    public String getFileURL() {
+        return fileURL;
     }
 
-    public void setFile(String file) {
-        this.file = file;
-    }
+
 
     public String getGrade() {
         return grade;
@@ -99,5 +107,41 @@ public class AssignmentSubmission {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getDateSubmitted() {
+        return dateSubmitted;
+    }
+
+    public void setDateSubmitted(String dateSubmitted) {
+        this.dateSubmitted = dateSubmitted;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public void setFileURL(String fileURL) {
+        this.fileURL = fileURL;
+    }
+
+    public String getReviewedBy() {
+        return this.reviewedBy;
+    }
+
+    public void setReviewedBy(String reviewedBy) {
+        this.reviewedBy = reviewedBy;
     }
 }
