@@ -24,7 +24,8 @@ function NewMessageForm({user}) {
     }, [])
 
     const sendMessage = () => {
-        if (message === "") { return;}
+        if (message === "") { alert("Please enter your message.."); }
+        if (recipient === "") { alert("Please select person name.."); }
         const newMessage = {
             msgSubject: subject,
             recipient: listOfUsers.find((user) => user.name === recipient),
