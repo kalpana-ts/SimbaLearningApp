@@ -43,6 +43,12 @@ public class AssignmentSubmission {
 
     }
 
+    public AssignmentSubmission(String status, String comments, String reviewedBy) {
+        this.status = status;
+        this.comments = comments;
+        this.reviewedBy = reviewedBy;
+    }
+
     public AssignmentSubmission() {
 
     }
