@@ -19,6 +19,7 @@ public class AssignmentSubmission {
     private String status;
     @Column(columnDefinition = "TEXT")
     private String comments;
+    private String reviewedBy;
 
     @ManyToOne
     private AssignmentPost assignmentPost;
@@ -26,7 +27,7 @@ public class AssignmentSubmission {
     @ManyToOne
     private User user;
 
-    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String fileURL, String grade, String subject, String dateSubmitted, String status, String comments, AssignmentPost assignmentPost, User user) {
+    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String fileURL, String grade, String subject, String dateSubmitted, String status, String comments, String reviewedBy, AssignmentPost assignmentPost, User user) {
         this.id = id;
         this.assignmentTitle = assignmentTitle;
         this.assignmentDescription = assignmentDescription;
@@ -36,6 +37,7 @@ public class AssignmentSubmission {
         this.dateSubmitted = dateSubmitted;
         this.status = status;
         this.comments = comments;
+        this.reviewedBy = reviewedBy;
         this.assignmentPost = assignmentPost;
         this.user = user;
 
@@ -73,9 +75,7 @@ public class AssignmentSubmission {
         return fileURL;
     }
 
-    public void setFile(String fileURL) {
-        this.fileURL = fileURL;
-    }
+
 
     public String getGrade() {
         return grade;
@@ -131,5 +131,17 @@ public class AssignmentSubmission {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public void setFileURL(String fileURL) {
+        this.fileURL = fileURL;
+    }
+
+    public String getReviewedBy() {
+        return this.reviewedBy;
+    }
+
+    public void setReviewedBy(String reviewedBy) {
+        this.reviewedBy = reviewedBy;
     }
 }
