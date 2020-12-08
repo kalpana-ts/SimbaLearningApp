@@ -22,6 +22,7 @@ import SingleAssignment from './components/assignmentpost/SingleAssignment';
 import SubjectPage from './components/assignmentpost/SubjectPage';
 import GradeAssignmentPage from './components/home/GradeAssignmentPage';
 import AssignmentList from './components/assignmentpost/AssignmentList';
+import ChatNewPage from './components/chatNew/ChatPage';
 import AssignmentSubmissionForm from './components/assignmentsubmission/AssignmentSubmissionForm';
 import SingleAssignmentSubmitted from './components/assignmentsubmission/SingleAssignmentSubmitted';
 
@@ -81,12 +82,8 @@ function App() {
             <CommentPage />
           </Route>
 
-          <Route path="/chat" exact>
-            <ThreadPage />
-          </Route>
-
-          <Route path="/chat/:id">
-            <ThreadPage />
+          <Route path="/messages" exact>
+            <ChatNewPage />
           </Route>
 
           <Route path="/">

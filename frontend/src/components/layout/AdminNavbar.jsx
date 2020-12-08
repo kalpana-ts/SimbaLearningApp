@@ -55,8 +55,8 @@ function Navbar({ onLogout }) {
                     </li>
 
                     <li className="nav-item">
-                        <Link exact to="/chat" className="nav-link" activeClassName="active-link">
-                        Chat
+                        <Link exact to="/messages" className="nav-link" activeClassName="active-link">
+                        Messages
                         </Link>
                     </li>
                     <li className="nav-item">
