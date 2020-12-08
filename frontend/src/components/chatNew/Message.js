@@ -44,17 +44,51 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                         <div className="received_msg">
                             <div className="received_withd_msg">
                                 <span className="sender-name">{message.sender.name}</span>
-                                <p>{message.msgBody}</p>
+
+                                {message.fileUrl === null ? 
+                                    <p>{message.msgBody}</p>
+                                        :
+                                    <div>
+                                        <p>{message.msgBody}</p>
+                                        <a href={message.fileUrl} className="show-files-msg">
+                                        {   message.fileUrl.match('.jpg' || '.png') ?
+                                            <img src={message.fileUrl} class="img-fluid" alt="Responsive image"/> 
+                                            : 
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src={message.fileUrl} allowfullscreen></iframe>
+                                            </div>
+                                        }
+                                        </a>
+                                    </div>
+                                }
+
                                 <span className="time_date"> 11:01 AM    |    June 9</span>
                             </div>
                         </div>
+
+
                         
                         :
 
                         <div className="outgoing_msg">
                             <div className="sent_msg">
-                                <span className="sender-name">{message.recipient.name}</span>
-                                <p>{message.msgBody}</p>
+                                <span className="sender-name">{message.recipient.name}</span> 
+
+                                {message.fileUrl === null ? 
+                                    <p>{message.msgBody}</p>
+                                        :
+                                    <div>
+                                        <p>{message.msgBody}</p>
+                                        {   message.fileUrl.match('.jpg' || '.png') ?
+                                            <img src={message.fileUrl} class="img-fluid" alt="Responsive image"/> 
+                                            : 
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src={message.fileUrl} allowfullscreen></iframe>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+
                                 <span className="time_date"> 11:01 AM    |    Today</span> 
                             </div>
                         </div>

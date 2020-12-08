@@ -27,6 +27,8 @@ public class ChatMessage {
     @Column(name = "readbyrecipient")
     private Boolean readByRecipient;
 
+    private String fileUrl;
+
 
     public ChatMessage() {
     }
@@ -93,6 +95,14 @@ public class ChatMessage {
 
     public void setReadBySender(Boolean read) {
         this.readBySender = read;
+    }
+
+    public String getFileUrl() {
+        return fileUrl;
+    }
+
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
     }
 
 }
