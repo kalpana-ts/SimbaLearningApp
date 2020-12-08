@@ -21,7 +21,7 @@ function AppHomePage() {
     const [gradetwo,setGradetwo]=useState("2");
     const [gradethree,setGradethree]=useState("3");
     const [gradefour,setGradefour]=useState("4");
-    const [grade,setGrade]=useState('');
+    const [grade,setGrade]=useState('1');
     const [user, setUser] = useState({});
     const userMail = Auth.getUserMail();
 

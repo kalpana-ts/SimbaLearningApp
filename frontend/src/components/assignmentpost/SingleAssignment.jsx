@@ -1,7 +1,8 @@
-import React, { Component, useState } from 'react';
-//import { useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import React, { Component, useState ,useEffect} from 'react';
+
+import { useHistory, useLocation ,Link} from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
+import UserApi from '../../api/UserApi';
 import ChatApi from '../../api/ChatApi';
 import Api from '../../api/Api';
 import Auth from '../../services/Auth';
@@ -10,16 +11,33 @@ import Auth from '../../services/Auth';
 //Assingmentsubmission linked to this post
 
 function SingleAssignment() {
-  const currentUserEmail = window.sessionStorage.getItem('userEmail');
+  const userMail = window.sessionStorage.getItem('userEmail');
+  const [user,setUser] = useState({});
   const { state } = useLocation();
   const passedAssignment = state === undefined ? null : state.assignment;
   //console.log("PassedAssignment:",passedAssignment.assignment);
   const [assignment, setAssignment] = useState(passedAssignment.assignment);
  // console.log("set Assignment:",assignment);
   //const history = useHistory();
-  const isOwner = currentUserEmail === assignment.user.email;
+
+  const isOwner = userMail === assignment.user.email;
   const User_Email_ID = assignment.user.email;
   const User_Name = assignment.user.name;
+  const studentView = user.userType === "student";
+  const teacherView = user.userType === "teacher";
+  console.log(user);
+  console.log("teacher: ",teacherView );
+  console.log("student",studentView);
+
+  useEffect(() => {
+    function getUserByMail() {
+        UserApi.getUserByMail(userMail)
+            .then((res) => {
+                setUser(res.data)
+            })
+    }
+    userMail !== null && getUserByMail();
+}, [userMail])
 
   
   try {
@@ -57,17 +75,21 @@ function SingleAssignment() {
             </div>
             
           </div>
-                      
-    
-                   
-
-                    <hr/>
+                  <hr/>
+                  <div>
+                    {studentView && 
+                <Link to={{ pathname: `/assignmentSubmission/new/${assignment.id}`, state: { assignment,user } }}>
+                      <button>Submit Your Answer</button>
+                </Link>
+                    }
                     
-                    <div class="assignments-submitted">
+                  </div>
+                    {teacherView &&
+                       <div class="assignments-submitted">
                         
-                        <h1>Assignments submitted</h1>
+                        <h1>Assignments submitted back by students</h1>
                         
-                    </div>
+                    </div> }
                 </div>
             </div>
         </div>

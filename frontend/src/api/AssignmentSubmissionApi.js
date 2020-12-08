@@ -19,7 +19,7 @@ class AssignmentSubmissionApi {
     }
 
     updateAssignment(assignment) {
-        return Api.put('/assignmentSubmittedByStudents', assignment);
+        return Api.put('/assignmentSubmittedByStudents/update', assignment);
     }
 
     deleteAssignment(id) {

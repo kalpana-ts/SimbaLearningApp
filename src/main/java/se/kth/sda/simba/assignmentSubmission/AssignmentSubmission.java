@@ -12,7 +12,7 @@ public class AssignmentSubmission {
     private String assignmentTitle;
     @Column(columnDefinition = "TEXT")
     private String assignmentDescription;
-    private String file;
+    private String fileURL;
     private String grade;
     private String subject;
     private String dateSubmitted;
@@ -26,11 +26,11 @@ public class AssignmentSubmission {
     @ManyToOne
     private User user;
 
-    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String file, String grade, String subject, String dateSubmitted, String status, String comments, AssignmentPost assignmentPost, User user) {
+    public AssignmentSubmission(long id, String assignmentTitle, String assignmentDescription, String fileURL, String grade, String subject, String dateSubmitted, String status, String comments, AssignmentPost assignmentPost, User user) {
         this.id = id;
         this.assignmentTitle = assignmentTitle;
         this.assignmentDescription = assignmentDescription;
-        this.file = file;
+        this.fileURL = fileURL;
         this.grade = grade;
         this.subject = subject;
         this.dateSubmitted = dateSubmitted;
@@ -69,12 +69,12 @@ public class AssignmentSubmission {
         this.assignmentDescription = assignmentDescription;
     }
 
-    public String getFile() {
-        return file;
+    public String getFileURL() {
+        return fileURL;
     }
 
-    public void setFile(String file) {
-        this.file = file;
+    public void setFile(String fileURL) {
+        this.fileURL = fileURL;
     }
 
     public String getGrade() {
