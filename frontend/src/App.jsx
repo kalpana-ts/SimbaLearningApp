@@ -22,7 +22,7 @@ import SingleAssignment from './components/assignmentpost/SingleAssignment';
 import SubjectPage from './components/assignmentpost/SubjectPage';
 import GradeAssignmentPage from './components/home/GradeAssignmentPage';
 import AssignmentList from './components/assignmentpost/AssignmentList';
-
+import ChatNewPage from './components/chatNew/ChatPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -55,9 +55,7 @@ function App() {
           <Route exact path="/assignmentPost/grade/subject/:subject">
             <AssignmentList/>
           </Route>
-
-
-
+          
           <Route exact path="/announce" >
             <AnnouncementPage />
           </Route>
@@ -74,12 +72,8 @@ function App() {
             <CommentPage />
           </Route>
 
-          <Route path="/chat" exact>
-            <ThreadPage />
-          </Route>
-
-          <Route path="/chat/:id">
-            <ThreadPage />
+          <Route path="/messages" exact>
+            <ChatNewPage />
           </Route>
 
           <Route path="/">
