@@ -68,8 +68,8 @@ public class AssignmentSubmissionController {
 
     //Create a task
     @PutMapping("/update")
-    public AssignmentSubmission update(@RequestBody AssignmentSubmission newAssignmentSubmission) {
-        return assignmentSubmissionService.update(newAssignmentSubmission);
+    public AssignmentSubmission update(@RequestBody AssignmentSubmission updatedAssignmentSubmission) {
+        return assignmentSubmissionService.update(updatedAssignmentSubmission);
     }
 
     @DeleteMapping("/{id}")

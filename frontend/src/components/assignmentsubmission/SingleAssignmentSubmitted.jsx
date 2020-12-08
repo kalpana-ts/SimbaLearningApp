@@ -78,7 +78,7 @@ export default function SingleAssignmentSubmitted(){
                                 <div className="modal-body">
                                   <ReviewByTeacher
                                   key={assignment.id}
-                                   assignment={assignment}
+                                  assignment={assignment}
                                   user={user}
                                     />
                                 </div>
