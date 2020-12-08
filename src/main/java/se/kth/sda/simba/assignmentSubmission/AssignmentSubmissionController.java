@@ -60,13 +60,13 @@ public class AssignmentSubmissionController {
     }
 
     //Create an assignment submission
-    @PostMapping("")
+    @PostMapping("/new")
     public AssignmentSubmission create(@RequestBody AssignmentSubmission newAssignmentSubmission) {
         return assignmentSubmissionService.create(newAssignmentSubmission);
     }
 
     //Create a task
-    @PutMapping("")
+    @PutMapping("/update")
     public AssignmentSubmission update(@RequestBody AssignmentSubmission newAssignmentSubmission) {
         return assignmentSubmissionService.update(newAssignmentSubmission);
     }
