@@ -4,26 +4,7 @@ import { Link } from "react-router-dom";
 export default function AssignmentSubmittedCard(assignmentSubmitted) {
   console.log(assignmentSubmitted);
   return (
-    <tbody>
-      <tr>
-        <td>{assignmentSubmitted.assignmentSubmitted.user.name}</td>
-        <td>{assignmentSubmitted.assignmentSubmitted.dateSubmitted}</td>
-        <td>{assignmentSubmitted.assignmentSubmitted.assignmentDescription}</td>
-        <td>{assignmentSubmitted.assignmentSubmitted.status}</td>
-        <td>{assignmentSubmitted.assignmentSubmitted.comments}</td>
-        <td>
-          <Link className="btn-assignement-view"
-            to={{
-              pathname: `/assignmentSubmission/${assignmentSubmitted.assignmentSubmitted.id}`,
-              state: { assignmentSubmitted },
-            }}>
-            View
-          </Link>
-        </td>
-      </tr>
-    </tbody>
-
-    /* <div class="col-md-7 assignment-card">
+    <div class="col-md-7 assignment-card">
       <section class="widget">
         <div className="card-title bg-secondary text-white m-0 p-1 ">
           {assignmentSubmitted.assignmentSubmitted.assignmentTitle + " ...    "}
@@ -72,6 +53,6 @@ export default function AssignmentSubmittedCard(assignmentSubmitted) {
           </div>
         </div>
       </section>
-    </div> */
+    </div>
   );
 }
