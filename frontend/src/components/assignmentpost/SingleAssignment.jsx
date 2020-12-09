@@ -1,15 +1,18 @@
 import React, { useState ,useEffect} from 'react';
-
+import Auth from '../../services/Auth';
 import { useLocation ,Link} from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import UserApi from '../../api/UserApi';
 import AssignmentSubmittedList from '../assignmentsubmission/AssignmentSubmittedList';
+import AssignmentSubmissionApi from '../../api/AssignmentSubmissionApi';
 
 //delete for user
 //Assingmentsubmission linked to this post
 
 function SingleAssignment() {
-  const userMail = window.sessionStorage.getItem('userEmail');
+  
+  const userMail = Auth.getUserMail();
+  console.log("userMail:",userMail);
   const [user,setUser] = useState({});
   const { state } = useLocation();
   const passedAssignment = state === undefined ? null : state.assignment;
@@ -36,6 +39,7 @@ function SingleAssignment() {
     }
     userMail !== null && getUserByMail();
 }, [userMail])
+  
 
   
   try {
@@ -75,10 +79,12 @@ function SingleAssignment() {
           </div>
                   <hr/>
                   <div>
-                    {studentView && 
+                    {studentView && <div>
                 <Link to={{ pathname: `/assignmentSubmission/new/${assignment.id}`, state: { assignment,user } }}>
                       <button>Submit Your Answer</button>
                 </Link>
+                <AssignmentSubmittedList assignment={assignment} user={user} />
+                </div>
                     }
                     
                   </div>
@@ -86,7 +92,7 @@ function SingleAssignment() {
                        <div class="assignments-submitted">
                         
            
-                        <AssignmentSubmittedList assignment={assignment} />
+                        <AssignmentSubmittedList assignment={assignment} user={user} />
                         
                     </div> }
                 </div>

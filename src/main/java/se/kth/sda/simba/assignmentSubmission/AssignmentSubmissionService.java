@@ -53,5 +53,10 @@ public class AssignmentSubmissionService {
     public List<AssignmentSubmission> getAllByGradeAndSubject(String grade, String subject) {
         return repo.findAllByGradeAndSubject(grade,subject);
     }
+    public List<AssignmentSubmission> getAllByAssignmentPostIdAndUserId(Long assignmentPostId, Long  userId){
+        return repo.findAllByUserIdAndAssignmentPostId(assignmentPostId,userId);
+    }
+
+
 }
 

@@ -10,6 +10,15 @@ class AssignmentSubmissionApi {
         return Api.get(`/assignmentSubmittedByStudents/assignmentPostId?assignmentPostId=${assignmentPostId}`);
     }
 
+    getAllSubmittedForAssignmentByUser(assignmentPostId,userId){
+        return Api.get(`assignmentSubmittedByStudents/assignmentPostId/user/${assignmentPostId}/${userId}`);
+
+    }
+
+    getAllSubmittedByUserId(userId) {
+        return Api.get(`assignmentSubmittedByStudents/userid?userid=${userId}`);
+    }
+
     getAllAssignmentsByGradeAndSubject(grade,subject){
             return Api.get(`/assignmentSubmittedByStudents/grade/${grade}/${subject}`);
     }
