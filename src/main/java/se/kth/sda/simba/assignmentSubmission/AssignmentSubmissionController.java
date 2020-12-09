@@ -5,11 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import se.kth.sda.simba.assignmentPost.AssignmentPost;
 import se.kth.sda.simba.assignmentSubmission.AssignmentSubmissionService;
 
 import java.util.List;
 @RestController
-@RequestMapping("/assignmentSubmission")
+@RequestMapping("/assignmentSubmittedByStudents")
 public class AssignmentSubmissionController {
 
     @Autowired
@@ -19,7 +20,8 @@ public class AssignmentSubmissionController {
     public List<AssignmentSubmission> getAll(){
         return assignmentSubmissionService.getAll();
     }
-    @GetMapping("/assignmentpostid")
+
+    @GetMapping("/assignmentPostId")
     public List<AssignmentSubmission> getAllByAssignmentPostId(@RequestParam(required = false) Long assignmentPostId) {
         if (assignmentPostId == null) {
             return assignmentSubmissionService.getAll();
@@ -27,7 +29,10 @@ public class AssignmentSubmissionController {
             return assignmentSubmissionService.getAllByAssignmentPostId(assignmentPostId);
         }
     }
-
+    @GetMapping("/grade/{grade}/{subject}")
+    public List<AssignmentSubmission> getAllByGradeAndSubject(@PathVariable("grade") String grade, @PathVariable("subject") String subject){
+        return assignmentSubmissionService.getAllByGradeAndSubject(grade,subject);
+    }
 
     @GetMapping("/userid")
     public List<AssignmentSubmission> getAllByUserId(@RequestParam(required = false) Long userId) {
@@ -55,16 +60,16 @@ public class AssignmentSubmissionController {
         return assignmentSubmissionService.getAllBySubject(subject);
     }
 
-    //Create a assignment
-    @PostMapping("")
+    //Create an assignment submission
+    @PostMapping("/new")
     public AssignmentSubmission create(@RequestBody AssignmentSubmission newAssignmentSubmission) {
         return assignmentSubmissionService.create(newAssignmentSubmission);
     }
 
     //Create a task
-    @PutMapping("")
-    public AssignmentSubmission update(@RequestBody AssignmentSubmission newAssignmentSubmission) {
-        return assignmentSubmissionService.update(newAssignmentSubmission);
+    @PutMapping("/update")
+    public AssignmentSubmission update(@RequestBody AssignmentSubmission updatedAssignmentSubmission) {
+        return assignmentSubmissionService.update(updatedAssignmentSubmission);
     }
 
     @DeleteMapping("/{id}")

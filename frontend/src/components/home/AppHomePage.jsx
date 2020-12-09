@@ -1,5 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Auth from '../../services/Auth';
+import UserApi from '../../api/UserApi';
 
 
 import AssignmentPost from "../assignmentpost/AssignmentPostPage";
@@ -13,8 +16,25 @@ import gradeAs3 from '../../images/student-2.png';
 import gradeAs4 from '../../images/reading.png';
 
 
+function AppHomePage() {
+    const [gradeone,setGradeone]=useState("1");
+    const [gradetwo,setGradetwo]=useState("2");
+    const [gradethree,setGradethree]=useState("3");
+    const [gradefour,setGradefour]=useState("4");
+    const [grade,setGrade]=useState('1');
+    const [user, setUser] = useState({});
+    const userMail = Auth.getUserMail();
 
-function AppHomePage({ onLogout }) {
+    
+    useEffect(() => {
+        function getUserByMail() {
+            UserApi.getUserByMail(userMail)
+                .then((res) => {
+                    setUser(res.data)
+                })
+        }
+        userMail !== null && getUserByMail();
+    }, [userMail])
     
   return (
       <div>
@@ -56,13 +76,14 @@ function AppHomePage({ onLogout }) {
 
     <br/><br/>
 
-    <span className="Assignement-title">Assignements</span><br/><br/>
+    <span className="Assignement-title">Assignments</span><br/><br/>
         <div class="row">
         <div class="col-sm-5">
         <div class="card grade gradeAs-1">
             <div class="card-body">
             <h5 class="card-title grade-title">
-                <Link className="" to="/assignmentPost">
+            
+                <Link className=""  to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:1} }} >
                     <img className="grade-img" src={gradeAs1} alt="" srcset=""/>&nbsp;Grade - 1
                 </Link>
             </h5>
@@ -72,21 +93,34 @@ function AppHomePage({ onLogout }) {
         <div class="col-sm-5">
         <div class="card grade gradeAs-2">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs2} alt="" srcset=""/>&nbsp;Grade - 2</h5>
+            <h5 class="card-title grade-title">
+
+            <Link className="" to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:2} }} >
+                <img className="grade-img" src={gradeAs2} alt="" srcset=""/>&nbsp;Grade - 2
+            </Link>  
+            </h5>
             </div>
         </div>
         </div>
         <div class="col-sm-5">
         <div class="card grade gradeAs-3">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs3} alt="" srcset=""/>&nbsp;Grade - 3</h5>
+            <h5 class="card-title grade-title">
+            <Link className="" to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:3} }} >
+                <img className="grade-img" src={gradeAs3} alt="" srcset=""/>&nbsp;Grade - 3
+            </Link>
+            </h5>
             </div>
         </div>
         </div>
         <div class="col-sm-5">
         <div class="card grade gradeAs-4">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs4} alt="" srcset=""/>&nbsp;Grade - 4</h5>
+            <h5 class="card-title grade-title">
+            <Link className="" to={{ pathname: `/assignmentPost/grade/${grade}`, state: {grade:4} }} >
+                <img className="grade-img" src={gradeAs4} alt="" srcset=""/>&nbsp;Grade - 4
+            </Link>
+            </h5>
             </div>
         </div>
         </div>

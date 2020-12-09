@@ -1,6 +1,8 @@
 package se.kth.sda.simba.assignmentSubmission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.kth.sda.simba.assignmentPost.AssignmentPost;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -46,6 +48,10 @@ public class AssignmentSubmissionService {
 
     public List<AssignmentSubmission> getAllByAssignmentPostId(Long assignmentPostId) {
         return repo.findAllByAssignmentPostId(assignmentPostId);
+    }
+
+    public List<AssignmentSubmission> getAllByGradeAndSubject(String grade, String subject) {
+        return repo.findAllByGradeAndSubject(grade,subject);
     }
 }
 

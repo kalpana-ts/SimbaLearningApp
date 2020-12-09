@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/App.css';
 
 import Auth from './services/Auth';
-import AdminNavbar from './components/layout/AdminNavbar';
 import Navbar from './components/layout/Navbar';
 
 // Import pages
@@ -22,7 +21,12 @@ import NewAssignment from './components/assignmentpost/NewAssignment';
 import SingleAssignment from './components/assignmentpost/SingleAssignment';
 import QuizPage from './components/quiz/QuizPage';
 import NewQuiz  from './components/quiz/NewQuiz';
-
+import SubjectPage from './components/assignmentpost/SubjectPage';
+import GradeAssignmentPage from './components/home/GradeAssignmentPage';
+import AssignmentList from './components/assignmentpost/AssignmentList';
+import ChatNewPage from './components/chatNew/ChatPage';
+import AssignmentSubmissionForm from './components/assignmentsubmission/AssignmentSubmissionForm';
+import SingleAssignmentSubmitted from './components/assignmentsubmission/SingleAssignmentSubmitted';
 
 
 function App() {
@@ -45,11 +49,27 @@ function App() {
             <NewAssignment/>
           </Route>
 
-          <Route path="/assignmentPost/:id">
+          <Route exact path="/assignmentPost/:id">
             <SingleAssignment/>
           </Route>
 
-          <Route exact path="/announce" exact>
+          <Route exact path="/assignmentPost/grade/:grade">
+            <GradeAssignmentPage/>
+          </Route>
+
+          <Route exact path="/assignmentPost/grade/subject/:subject">
+            <AssignmentList/>
+          </Route>
+
+          <Route exact path="/assignmentSubmission/new/:id">
+              <AssignmentSubmissionForm/>
+          </Route>
+
+          <Route exact path="/assignmentSubmission/:id">
+            <SingleAssignmentSubmitted/>
+          </Route>
+          
+          <Route exact path="/announce" >
             <AnnouncementPage />
           </Route>
 
@@ -77,12 +97,8 @@ function App() {
             <CommentPage />
           </Route>
 
-          <Route path="/chat" exact>
-            <ThreadPage />
-          </Route>
-
-          <Route path="/chat/:id">
-            <ThreadPage />
+          <Route path="/messages" exact>
+            <ChatNewPage />
           </Route>
 
           <Route path="/">

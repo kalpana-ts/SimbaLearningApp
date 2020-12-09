@@ -28,7 +28,7 @@ function Navbar({ onLogout }) {
 
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Assignement
+                        Assignment
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <Link to="/assignmentPost/new" className="dropdown-item">
@@ -55,8 +55,8 @@ function Navbar({ onLogout }) {
                     </li>
 
                     <li className="nav-item">
-                        <Link exact to="/chat" className="nav-link" activeClassName="active-link">
-                        Chat
+                        <Link exact to="/messages" className="nav-link" activeClassName="active-link">
+                        Messages
                         </Link>
                     </li>
                     <li className="nav-item">

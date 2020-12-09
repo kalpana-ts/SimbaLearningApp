@@ -2,8 +2,10 @@ import React, { useState,useEffect } from "react";
 import { format } from 'date-fns';
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
-
+//import DatePicker from "../calendar/DatePicker";
 import FileUploader from '../announcementNew/FileUploader';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 //last date submission
 
@@ -14,6 +16,8 @@ function AssignmentPostForm({setAssignment}){
   const [fileUrl, setFileUrl] = useState('');
   const [grade, setGrade] = useState('1');
   const [subject, setSubject] = useState('Math');
+  const [submissionDate, setSubmissionDate] = useState('');
+ // const [postDate,setPostDate] = useState('');
   //const [uploading, setUploading] = useState(true);
 
   const [user, setUser] = useState({});
@@ -38,7 +42,10 @@ function AssignmentPostForm({setAssignment}){
         grade: grade,
         subject: subject,
         user: user,
-        fileUrl: fileUrl
+        fileUrl: fileUrl,
+        submissionDate: format(submissionDate, 'dd-MMM-yyyy'),
+        postDate: format(new Date(), 'dd-MMM-yyyy')
+
     });
     document.getElementById("assignment-form").reset();
   };
@@ -98,8 +105,16 @@ return (
               <option value='English'>English</option>
               <option value='Science'>Science</option>
               <option value='GK'>General Knowledge</option>
-             
+              
             </select>
+            
+          </div>
+          <div class='form-group '>
+          <label for='inputType'>Last Submission Date</label>           
+          <DatePicker selected={submissionDate} onChange={date => setSubmissionDate(date)} 
+        dateFormat= "dd-MMM-yyyy"
+        minDate ={new Date()}
+        filterDate = {date => date.getDay() !== 6 && date.getDay()!== 0}       />       
           </div>
             
           <button type="submit" className="btn-newPost"> Submit Assignement</button>
