@@ -15,8 +15,8 @@ public class Comment {
     @Column(name = "body")
     private String body;
 
-    @Column(name = "author_name")
-    private String authorName;
+   // @Column(name = "author_name")
+    // private String authorName;
 
     @ManyToOne
     private User user;
@@ -28,10 +28,11 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(Long id, String body, String authorName) {
+    public Comment(Long id, String body, User user, Announcement announcement) {
         this.id = id;
         this.body = body;
-        this.authorName = authorName;
+        this.user = user;
+        this.announcement = announcement;
     }
 
     public Long getId() {
@@ -50,19 +51,19 @@ public class Comment {
         this.body = body;
     }
 
-    public String getAuthorName() {
+    /*public String getAuthorName() {
         return authorName;
     }
 
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
-    }
+    }*/
 
-    public Announcement getPost() {
+    public Announcement getAnnouncement() {
         return announcement;
     }
 
-    public void setPost(Announcement announcement) {
+    public void setAnnouncement(Announcement announcement) {
         this.announcement = announcement;
     }
 

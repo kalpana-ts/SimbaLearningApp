@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import ChatApi from '../../api/ChatApi';
+import UserApi from '../../api/UserApi';
 import Api from '../../api/Api';
 import Auth from '../../services/Auth';
 import CommentPage from '../newComment/CommentsPage';
@@ -10,6 +11,7 @@ import CommentPage from '../newComment/CommentsPage';
 function SingleAnnouncement() {
   //const userEmail = window.sessionStorage.getItem('userEmail');
   const userEmail = Auth.getUserMail();
+  const [user, setUser] = useState({});
   const { state } = useLocation();
   const passedPost = state === undefined ? null : state.announce;
   const [announce, setAnnounce] = useState(passedPost);
@@ -17,6 +19,16 @@ function SingleAnnouncement() {
   const isPoster = userEmail === announce.user.email;
   const User_Email_ID = announce.user.email;
   const User_Name = announce.user.name;
+
+  useEffect(() => {
+    function getUserByMail() {
+        UserApi.getUserByMail(userEmail)
+            .then((res) => {
+                setUser(res.data)
+            })
+    }
+    userEmail !== null && getUserByMail();
+}, [userEmail])
 
   // try to fetch token value
   // useEffect(() => {
@@ -54,11 +66,11 @@ function SingleAnnouncement() {
                     </div>
                 </div> 
                 
-                      {announce.imageUrl.match('.jpg' || '.png') ?
+                      {announce.imageUrl && (announce.imageUrl.match('.jpg' || '.png') ?
                         <img src={announce.imageUrl} class="img-fluid" alt="Responsive image"/> : 
                         <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src={announce.imageUrl} allowfullscreen></iframe>
-                        </div>
+                        </div>)
                       }
                
                 <div class="p-2">
@@ -79,7 +91,7 @@ function SingleAnnouncement() {
                     
                     <div class="comments">
                         
-                        <CommentPage />
+                        <CommentPage announce={announce} user ={user}/>
                         
                     </div>
                 </div>
