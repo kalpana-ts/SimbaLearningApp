@@ -34,6 +34,11 @@ public class AssignmentSubmissionController {
         return assignmentSubmissionService.getAllByGradeAndSubject(grade,subject);
     }
 
+    @GetMapping("/assignmentPostId/user/{assignmentPostId}/{userId}")
+    public List<AssignmentSubmission> getAllSubmittedForAssignmentByUser(@PathVariable("assignmentPostId") Long assignmentPostId, @PathVariable("userId") Long userId){
+        return assignmentSubmissionService.getAllByAssignmentPostIdAndUserId(assignmentPostId,userId);
+    }
+
     @GetMapping("/userid")
     public List<AssignmentSubmission> getAllByUserId(@RequestParam(required = false) Long userId) {
         if (userId == null) {

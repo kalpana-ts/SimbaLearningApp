@@ -1,11 +1,11 @@
 import React, { useState ,useEffect} from 'react';
 import { useLocation ,Link} from 'react-router-dom';
-
+import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
 import ReviewByTeacher from '../assignmentsubmission/ReviewByTeacher';
 
 export default function SingleAssignmentSubmitted(){
-    const userMail = window.sessionStorage.getItem('userEmail');
+    const userMail = Auth.getUserMail();
     const [user,setUser] = useState({});
     const { state } = useLocation();
     const passedAssignment = state === undefined ? null : state.assignmentSubmitted;
