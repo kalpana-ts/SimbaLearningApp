@@ -9,7 +9,7 @@ background-position-x: 94%;
 }
 
 .btn-newPost{
-  background-color: #A0D368; 
+  background-color: #4FC0E9; 
   border:1px solid #e5e5e5;
   display:inline-block;
   padding:10px 20px;
@@ -25,14 +25,14 @@ background-position-x: 94%;
   color:#fff;
 }
 .btn-newPost-upload{
-  border: none;
-  background-color: transparent;
-}
-.upload-img{
-  height:38px;
-}
-.upload-img:hover{
-  height: 50px;
+    background-color: #fff!important;
+    width: 10rem!important;
+    border-color: #a3d0da!important;
+    color:#666 !important;
+    font-size: 18px;
+    text-align: center;
+    height: 45px;
+    margin-left: 2%;
 }
 
 .widget {
@@ -205,12 +205,12 @@ progress::-webkit-progress-bar {
   border-radius: 12px;
 }
 progress::-webkit-progress-value {
-  background-color: #FFCE54;
+  background-color: #55a630;
   border-radius: 12px;
   box-shadow: 1px 1px 5px 3px rgba(173, 181, 189, 0.7);
 }
 .input-file-upload{
-  width:90%; 
+  width:75%; 
   border:1px solid #adb5bd;
   display:inline-block;
   color:#666;
@@ -219,5 +219,8 @@ progress::-webkit-progress-value {
   border-radius:4px;
   transition:all .3s;
   line-height: 27px;
+}
+.upload-img{
+  height:38px;
 }
 

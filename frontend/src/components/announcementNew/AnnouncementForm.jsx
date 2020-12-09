@@ -67,7 +67,7 @@ function AnnouncementForm({ setAnnounce }) {
             />
           </div>
 
-            <button type="submit" className="btn-newPost"> Submit </button>
+            <button type="submit" className="btn-newPost"> <i class="fas fa-share-square"></i> Submit </button>
           </form>
           </div>
 

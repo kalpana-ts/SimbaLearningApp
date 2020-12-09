@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./ChatPage.css";
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
 

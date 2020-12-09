@@ -37,10 +37,7 @@ function Inbox({user}) {
     }
 
     return (
-        <div className="container col-sm-12 col-md-10 col-lg-8">
-            
-            <div>
-                <h3 className="font-italic">Your messages received, {user.name}</h3>
+        <>          
                 { messages.length === 0 ? "No messages" :
                     messages.map((msg) => 
                         <Message key={msg.id} message={msg} 
@@ -49,9 +46,7 @@ function Inbox({user}) {
                         />
                     )
                 }
-            </div>
-
-        </div>
+        </>
     );
 }
 

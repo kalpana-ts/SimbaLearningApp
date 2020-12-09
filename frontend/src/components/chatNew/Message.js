@@ -4,53 +4,23 @@ import MessageApi from '../../api/MessageApi';
 
 function Message({message, inbox, getAllAgain, deleteMessage, user}) {
 
-    const [ bodyIsOpen, setBodyIsOpen ] = useState(false)
-
-    const handleOpenMessage = () => { 
-        setBodyIsOpen(!bodyIsOpen);
-
-        if (inbox) {
-            if (!message.readByRecipient) {
-
-                const newMessage = {...message}
-                newMessage.readByRecipient = true;
-
-                MessageApi.updateMessage(newMessage)
-                .then(() => {
-                    getAllAgain(message.recipient.id);
-                })
-            }
-        } else {
-            if (!message.readBySender) {
-
-                const newMessage = {...message}
-                newMessage.readBySender = true;
-
-                MessageApi.updateMessage(newMessage)
-                .then(() => {
-                    getAllAgain(message.sender.id);
-                })
-            }           
-        }
-    }
 
     return (
-
-    
-                    <div className="incoming_msg" style={{cursor: 'pointer'}} >
+                    <>
 
                         { inbox ? 
                         
+                        <div className="incoming_msg" style={{cursor: 'pointer'}} >
                         <div className="received_msg">
                             <div className="received_withd_msg">
                                 <span className="sender-name">{message.sender.name}</span>
 
                                 {message.fileUrl === null ? 
-                                    <p>{message.msgBody}</p>
+                                        <p>{message.msgBody}</p>
                                         :
                                     <div>
                                         <p>{message.msgBody}</p>
-                                        <a href={message.fileUrl} className="show-files-msg">
+                                        <a href={message.fileUrl} className={message.fileUrl === "" ? 'show-msg' : 'show-files-msg'}>
                                         {   message.fileUrl.match('.jpg' || '.png') ?
                                             <img src={message.fileUrl} class="img-fluid" alt="Responsive image"/> 
                                             : 
@@ -65,7 +35,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                 <span className="time_date"> 11:01 AM    |    June 9</span>
                             </div>
                         </div>
-
+                        </div>
 
                         
                         :
@@ -79,6 +49,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                         :
                                     <div>
                                         <p>{message.msgBody}</p>
+                                        <a href={message.fileUrl} className={message.fileUrl === "" ? 'show-msg' : 'show-files-msg'}>
                                         {   message.fileUrl.match('.jpg' || '.png') ?
                                             <img src={message.fileUrl} class="img-fluid" alt="Responsive image"/> 
                                             : 
@@ -86,6 +57,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                             <iframe class="embed-responsive-item" src={message.fileUrl} allowfullscreen></iframe>
                                             </div>
                                         }
+                                        </a>
                                     </div>
                                 }
 
@@ -95,7 +67,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
 
                         }  
 
-                    </div>
+                    </>
 
 
 
