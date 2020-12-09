@@ -240,3 +240,61 @@
 	width:200px;
 	float: left;
 }
+.show-msg{
+	height: 0px;
+	width: 0px;
+	float: left;
+}
+
+.user-dropdown{
+	margin-top: 2%;
+}
+
+.btn-msg-submit{
+	background-color: #4FC0E9; 
+	border:1px solid #e5e5e5;
+	display:inline-block;
+	padding:10px 20px;
+	color:#fff;
+	font-weight:600;
+	font-size:14px;
+	border-radius:4px;
+	transition:all .3s;
+  }
+  .btn-msg-submit:hover{
+	border:1px solid transparent;
+	background:#B52B65;
+	color:#fff;
+  }
+
+.ChatPage .btn-chat {
+    border-radius: 0.2;
+    background-color: #fff!important;
+    width: 20rem!important;
+    border-color: #a3d0da!important;
+    color:#666 !important;
+    font-size: 18px;
+    text-align: center;
+}
+.btn-chat:hover{
+    color:#666 !important;
+}
+.chat-page-icon{
+    height:60px;
+    float: left;
+}
+.message-frame{
+    height: 650px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.72), rgba(141, 153, 174, 1)),
+    url('../../../images/kids_1.jpg');
+}
+.msg-tab{
+    background-color: transparent;
+}
+.msg-form-card{
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,.6) 55%, rgba(206,212,218,.6) 100%);
+}

@@ -117,7 +117,7 @@ return (
         filterDate = {date => date.getDay() !== 6 && date.getDay()!== 0}       />       
           </div>
             
-          <button type="submit" className="btn-newPost"> Submit Assignement</button>
+          <button type="submit" className="btn-newPost"> <i class="fas fa-share-square"></i> Submit Assignement</button>
 
           </form>
 
