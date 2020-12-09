@@ -11,7 +11,7 @@ function AnnouncementCard({ announce }) {
             <section class="widget">
                 <div class="widget-body">
                     <div class="widget-top-overflow text-white">
-                        {announce.imageUrl.match('.jpg' || '.png') ?
+                        {announce.imageUrl.match('.jpg' || '.png' || '.jpeg' || '.gif') ?
                         <img src={announce.imageUrl} class="img-fluid" alt="Responsive image"/> : 
                         <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src={announce.imageUrl} allowfullscreen></iframe>
