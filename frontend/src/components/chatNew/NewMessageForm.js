@@ -3,7 +3,6 @@ import UserApi from '../../api/UserApi';
 import MessageApi from '../../api/MessageApi';
 import FileUploader from '../../components/announcementNew/FileUploader';
 
-
 function NewMessageForm({user}) {
 
     const [ listOfUsers, setListOfUsers ] = useState([])
@@ -45,42 +44,19 @@ function NewMessageForm({user}) {
 
     return (
         <div className="container col-sm-12 col-md-10 col-lg-8">
-            <h3 className="font-italic">Send a direct message</h3>
+            <h3 className="font-italic">Send your message</h3>
 
-            <div className="card p-3">
-                <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                        <span className="input-group-text">Upload file</span>
-                    </div>
+            <div className="card msg-form-card p-3">
+                
                     <FileUploader setFileUrl={setFileUrl} />
-                </div>
+                
 
-                <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                        <div className="dropdown">
-                            {/* <button className="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
-                                To whom ? 
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                { listOfUsers.length === 0 ? "" :
-                                    listOfUsers
-                                        .map((user) => 
-                                            <button key={user.id}
-                                                className="dropdown-item" type="button"
-                                                onClick={() => {setRecipient(user.name)}}
-                                            >   {user.name}
-                                            </button>
-                                        ) 
-                                    }
-                            </div> */}
-
-                                <label htmlFor="user" className="label">
-                                    Send To
-                                </label>
-                                <select 
-                                    id='user' name ='user'
-                                    className='form-control'
-                                    required
+                <div className="input-group mb-3 user-dropdown">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Send To</span>
+                            </div>
+                                <select id='user' name ='user'
+                                    className='browser-default custom-select' required
                                     onChange={event => setRecipient(event.target.value)}>
                                         <option value="">Please select</option>
                                     { listOfUsers.length === 0 ? "" :
@@ -91,15 +67,11 @@ function NewMessageForm({user}) {
                                     }
                                     
                                 </select>
-
-                        </div>
-                    </div>
-                    <div className="text-muted ml-3 mt-1 font-weight-bold">{recipient} </div>
                 </div>
               
              
 
-                <div className="input-group mb-3">
+                <div className="input-group mb-3 user-dropdown">
                     <div className="input-group-prepend">
                         <span className="input-group-text">Message</span>
                     </div>
@@ -111,8 +83,8 @@ function NewMessageForm({user}) {
                 </div>
 
                 <div className="form-group text-right">
-                    <button className="btn btn-light" onClick={sendMessage}>
-                        <i class="fas fa-share-square"></i>
+                    <button className="btn btn-msg-submit" onClick={sendMessage}>
+                        <i class="fas fa-share-square"></i> Submit
                     </button>
                 </div>
             </div>
