@@ -19,12 +19,15 @@ import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
 import SingleAssignment from './components/assignmentpost/SingleAssignment';
+import QuizPage from './components/quiz/QuizPage';
+import NewQuiz  from './components/quiz/NewQuiz';
 import SubjectPage from './components/assignmentpost/SubjectPage';
 import GradeAssignmentPage from './components/home/GradeAssignmentPage';
 import AssignmentList from './components/assignmentpost/AssignmentList';
 import ChatNewPage from './components/chatNew/ChatPage';
 import AssignmentSubmissionForm from './components/assignmentsubmission/AssignmentSubmissionForm';
 import SingleAssignmentSubmitted from './components/assignmentsubmission/SingleAssignmentSubmitted';
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -69,6 +72,18 @@ function App() {
           <Route exact path="/announce" >
             <AnnouncementPage />
           </Route>
+
+
+          <Route exact path="/Quizs" exact>
+            <QuizPage />
+          </Route>
+
+          <Route exact path="/Quizs/new" exact>
+            <NewQuiz />
+          </Route>
+
+
+          
 
           <Route  path="/announce/new" exact>
             <NewAnnouncementPage />
