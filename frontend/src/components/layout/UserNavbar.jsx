@@ -53,6 +53,14 @@ function Navbar({ onLogout }) {
                     Chat
                     </Link>
                 </li>
+
+                <li className="nav-item">
+                    <Link exact to="/quizs" className="nav-link" activeClassName="active-link">
+                    Quiz
+                    </Link>
+                </li>
+
+                
                 <li className="nav-item">
 
                 </li>              

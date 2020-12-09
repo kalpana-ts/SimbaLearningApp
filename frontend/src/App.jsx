@@ -20,6 +20,9 @@ import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
 import SingleAssignment from './components/assignmentpost/SingleAssignment';
+import QuizPage from './components/quiz/QuizPage';
+import NewQuiz  from './components/quiz/NewQuiz';
+
 
 
 function App() {
@@ -49,6 +52,18 @@ function App() {
           <Route exact path="/announce" exact>
             <AnnouncementPage />
           </Route>
+
+
+          <Route exact path="/Quizs" exact>
+            <QuizPage />
+          </Route>
+
+          <Route exact path="/Quizs/new" exact>
+            <NewQuiz />
+          </Route>
+
+
+          
 
           <Route  path="/announce/new" exact>
             <NewAnnouncementPage />
