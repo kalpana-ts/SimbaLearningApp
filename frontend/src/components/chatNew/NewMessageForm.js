@@ -22,12 +22,20 @@ function NewMessageForm({user}) {
         getAllUsers();
     }, [])
 
+    const listOfTeachers = listOfUsers.filter(li_user => {
+            if (li_user.name !== user.name) {
+            return ( li_user); } else { return null; }
+        });
+
+        console.log(listOfTeachers);
+    
+
     const sendMessage = () => {
         if (message === "") { alert("Please enter your message.."); }
         if (recipient === "") { alert("Please select person name.."); }
         const newMessage = {
             msgSubject: subject,
-            recipient: listOfUsers.find((user) => user.name === recipient),
+            recipient: listOfTeachers.find((user) => user.name === recipient),
             msgBody: message,
             sender: user,
             fileUrl : fileUrl
@@ -39,6 +47,8 @@ function NewMessageForm({user}) {
                 setMessage("");
                 setRecipient("");
                 setSubject("");
+                setFileUrl("");
+                alert("Message sent successfully...")
             })
     }
 
@@ -59,9 +69,9 @@ function NewMessageForm({user}) {
                                     className='browser-default custom-select' required
                                     onChange={event => setRecipient(event.target.value)}>
                                         <option value="">Please select</option>
-                                    { listOfUsers.length === 0 ? "" :
-                                    listOfUsers
-                                        .map((user) => 
+                                    { listOfTeachers.length === 0 ? "" :
+                                    listOfTeachers
+                                        .map((user) =>  
                                             <option key={user.id} value={user.name}>{user.name}</option>
                                         ) 
                                     }
