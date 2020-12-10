@@ -15,19 +15,14 @@ function SingleAssignment() {
   const [user, setUser] = useState({});
   const { state } = useLocation();
   const passedAssignment = state === undefined ? null : state.assignment;
-  //console.log("PassedAssignment:",passedAssignment.assignment);
   const [assignment, setAssignment] = useState(passedAssignment.assignment);
-  // console.log("set Assignment:",assignment);
-  //const history = useHistory();
-
+  
+  const url = assignment.fileUrl;
   const isOwner = userMail === assignment.user.email;
   const User_Email_ID = assignment.user.email;
   const User_Name = assignment.user.name;
   const studentView = user.userType === "student";
   const teacherView = user.userType === "teacher";
-  console.log(user);
-  console.log("teacher: ", teacherView);
-  console.log("student", studentView);
 
   useEffect(() => {
     function getUserByMail() {
@@ -39,99 +34,93 @@ function SingleAssignment() {
   }, [userMail]);
 
   try {
-    return (     
-          <div class="row assignment-tab">
-            <div class="col-md-12">
-              <nav>
-                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a
-                    class="nav-item nav-link active"
-                    id="nav-home-tab"
-                    data-toggle="tab"
-                    href="#nav-home"
-                    role="tab"
-                    aria-controls="nav-home"
-                    aria-selected="true"
-                  >
-                    Assignment View
-                  </a>
-                  <a
-                    class="nav-item nav-link"
-                    id="nav-profile-tab"
-                    data-toggle="tab"
-                    href="#nav-profile"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                    Assignment By Student
-                  </a>
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="nav-home"
-                  role="tabpanel"
-                  aria-labelledby="nav-home-tab"
+    return (
+      <div class="row assignment-tab">
+        <div class="col-md-12">
+          <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a
+                class="nav-item nav-link active"
+                id="nav-home-tab"
+                data-toggle="tab"
+                href="#nav-home"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+              >
+                Assignment View
+              </a>
+              <a
+                class="nav-item nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-profile"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                Assignment By Student
+              </a>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+            >
+              <h3>{assignment.assignmentTitle}</h3>
+              <p>{assignment.assignmentDescription}</p>
+              <p>Submission date : {assignment.submissionDate}</p>
+              {studentView && (
+                <Link
+                  to={{
+                    pathname: `/assignmentSubmission/new/${assignment.id}`,
+                    state: { assignment, user },
+                  }}
                 >
-                  <h3>{assignment.assignmentTitle}</h3>
-                  <p>{assignment.assignmentDescription}</p>
-                  <p>Submission date : {assignment.submissionDate}</p>
-                  {studentView && (
-                    <Link
-                      to={{
-                        pathname: `/assignmentSubmission/new/${assignment.id}`,
-                        state: { assignment, user },
-                      }}
-                    >
-                      <button>Submit Your Answer</button>
-                    </Link>
-                  )}
-                  <div class="widget-top-overflow text-white">
-                    {assignment.fileUrl.match(
-                      ".jpg" || ".png" || "gif" || ".jpeg"
-                    ) ? (
-                      <img
-                        src={assignment.fileUrl}
-                        class="img-fluid"
-                        alt="Responsive image"
-                      />
-                    ) : (
-                      <div class="embed-responsive embed-responsive-16by9">
-                        <iframe
-                          class="embed-responsive-item"
-                          src={assignment.fileUrl}
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    )}
+                  <button>Submit Your Answer</button>
+                </Link>
+              )}
+              <div class="widget-top-overflow text-white">
+                {url.match(".gif") ||
+                url.match(".jpg") ||
+                url.match(".png") ||
+                url.match(".jpeg") ? (
+                  <img
+                    src={assignment.fileUrl}
+                    class="img-fluid"
+                    alt="Responsive image"
+                  />
+                ) : (
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      class="embed-responsive-item"
+                      src={assignment.fileUrl}
+                      allowfullscreen
+                    ></iframe>
                   </div>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-profile"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                >
-                  {studentView && (
-                      <AssignmentSubmittedList
-                        assignment={assignment}
-                        user={user}
-                      />
-                  )}
-
-                  {teacherView && (
-                      <AssignmentSubmittedList
-                        assignment={assignment}
-                        user={user}
-                      />
-                  )}
-                </div>
+                )}
               </div>
             </div>
-          </div>
+            <div
+              class="tab-pane fade"
+              id="nav-profile"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              {studentView && (
+                <AssignmentSubmittedList assignment={assignment} user={user} />
+              )}
 
+              {teacherView && (
+                <AssignmentSubmittedList assignment={assignment} user={user} />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       /*  // <div class="row d-flex align-items-center justify-content-center">
       //   <div class="col-md-7 assignment-post">

@@ -69,17 +69,18 @@ function AssignmentPostForm({ setAssignment }) {
                 onChange={(e) => setAssignmentTitle(e.target.value)}
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="formGroupExampleInput">
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">
                 Assignment Description
               </label>
-              <input
+              <textarea
                 type="text"
-                className="form-control"
-                id="formGroupExampleInput"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="2"
                 placeholder="Assignment Decription..."
                 onChange={(e) => setAssignmentDescription(e.target.value)}
-              />
+              ></textarea>
             </div>
             <div class="form-group ">
               <label for="inputType">Grade</label>
@@ -113,7 +114,9 @@ function AssignmentPostForm({ setAssignment }) {
             </div>
             <div class="form-group ">
               <label for="inputType">Last Submission Date</label>
+              &nbsp;&nbsp;
               <DatePicker
+                className="form-control"
                 selected={submissionDate}
                 onChange={(date) => setSubmissionDate(date)}
                 dateFormat="dd-MMM-yyyy"

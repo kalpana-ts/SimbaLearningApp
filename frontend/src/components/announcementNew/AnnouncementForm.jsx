@@ -2,7 +2,6 @@ import { format } from 'date-fns';
 import React, { useState,useEffect } from "react";
 import Auth from '../../services/Auth';
 import UserApi from '../../api/UserApi';
-import ImageUploader from './AnnouncementImageUploader';
 import FileUploader from './FileUploader';
 
 function AnnouncementForm({ setAnnounce }) {
