@@ -1,14 +1,20 @@
 import React, {useState} from 'react';
 import Auth from '../../services/Auth';
 
-export default function CommentsCreateForm( {onSubmit}) {
+export default function CommentsCreateForm( {announce, user, onSubmit}) {
     const [body, setBody] = useState("");
+    
     //const userEmail = window.sessionStorage.getItem('userEmail');
-    const userEmail = Auth.getUserMail();
+    
 
     function  onClickHandler () {
-      
-       onSubmit( {body},{userEmail});
+        
+        const comment ={
+            body: body,
+            user: user,
+            announcement: announce
+        }
+       onSubmit(comment);
        setBody("");
     }
 
@@ -41,7 +47,7 @@ export default function CommentsCreateForm( {onSubmit}) {
         <div class="panel">
             <div class="panel-body">
                 <textarea id="comment-text" class="form-control" rows="2" placeholder="What are you thinking?"
-                value={body} onChange={e => setBody(e.target.value)} defaultValue="Reset"></textarea>
+                value={body} onChange={e => setBody(e.target.value)} defaultValue="Reset" ></textarea>
                 <div class="mar-top clearfix">
                 <a class="btn btn-sm btn-primary pull-right" href="#comment" onClick={onClickHandler}>
                     <i class="fa fa-pencil fa-fw"></i> Share

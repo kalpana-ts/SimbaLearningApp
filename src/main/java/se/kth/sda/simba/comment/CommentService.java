@@ -38,6 +38,8 @@ public class CommentService {
     }
 
 
-
+    public List<Comment> getAllCommentsByAnnounceId(Long announcementId) {
+        return repository.findAllByAnnouncementId(announcementId);
+    }
 }
 

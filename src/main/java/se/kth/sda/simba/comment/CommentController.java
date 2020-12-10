@@ -18,6 +18,16 @@ public class CommentController {
         return commentService.getAll();
     }
 
+    @GetMapping("/comments/announceid")
+    public List<Comment> getAllCommentsByAnnounceId(@RequestParam Long announceId) {
+
+
+
+            return commentService.getAllCommentsByAnnounceId(announceId);
+
+    }
+
+
     @GetMapping("/comments/{id}")
     public Comment getById(@PathVariable Long id) {
         return commentService.getById(id)
