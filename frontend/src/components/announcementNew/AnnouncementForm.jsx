@@ -13,7 +13,7 @@ function AnnouncementForm({ setAnnounce }) {
   const [user, setUser] = useState({});
   const userMail = Auth.getUserMail();
 
-    // Store user informations when logged: can acces user mail, name, Id
+    // Store user informations when logged: can access user mail, name, Id
     useEffect(() => {
         function getUserByMail() {
             UserApi.getUserByMail(userMail)

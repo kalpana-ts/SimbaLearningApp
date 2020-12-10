@@ -7,3 +7,64 @@
     background-size: 300px;
     background-position-x: 94%;
 }
+
+/* assignement view page css */
+
+.btn-assignement-view{
+    font-size: 16px;
+    font-weight: bold;
+    color: #B52B65;
+}
+.btn-assignement-view:hover{
+    color:#00509d;
+}
+.assignement-list-table{
+    margin: auto !important;
+}
+.teacher-assignement-tbl-row{
+    background-color: #22577a;
+    color: #fff;
+}
+.assignement-tbl-tbody:hover{
+    background-color: #eaeaea;
+}
+
+
+/* single assignement post page css */
+
+.assignment-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.assignment-tab #tabs h6.section-title{
+    color: #eee;
+}
+.assignment-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #B52B65;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.assignment-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #B52B65;
+    font-size: 16px;
+    font-weight: 600;
+}
+.assignment-tab .nav-link:hover {
+    border: none;
+}
+.assignment-tab thead{
+    background: #A0D368;
+    color: #fff;
+    text-align: start;
+}
+.assignment-tab a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}

@@ -1,36 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import CommentsCreateForm from './CommentsCreateForm';
 import Api from '../../api/Api';
+import CommentApi from '../../api/CommentApi';
 import CommentCard from './CommentCard';
 import { useHistory, useLocation } from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 
-function CommentsPage({announceForComment}){
+function CommentsPage({announce,user}){
 
  /* Save the response from useEffect in a variable using state variables */
 const [userComment, setUserComment] = useState([]);
-const [email, setEmail] = useState(null);
+//const [email, setEmail] = useState(null);
 const history = useHistory();
 
 /*We want all the comments to be displayed when the page is loaded,
 so we use useEffect */
 
-    useEffect (() => {
-        getAll()
-    },[]);
+useEffect(() => {
+    getAllComments();
+}, [])
 
-    const getAll =() => {
-        Api.get("/comments")
-            .then((resp) => setUserComment(resp.data)
-            )};
-    
-
-    useEffect (() => {
-        Api.get("/test")
-            .then(response => {
-                setEmail(response.data);
-            });
-    },[]);
+function getAllComments() {
+    CommentApi.getAllCommentsByAnnouncementId(announce.id)
+        .then((c) => {
+            setUserComment(c.data);
+        })
+}
 
     const createComment =(commentData) => {
             Api.post("/comments", commentData)
@@ -40,13 +35,13 @@ so we use useEffect */
     
     const updateComment =(updatedComment) => {
           Api.put("/comments/", updatedComment)
-                .then(res=> getAll());
+                .then(res=> getAllComments());
                 alert("Edited successfully..");
         };
 
     const deleteComment = (delComment) => {
                 Api.delete("/comments/" + delComment.id)
-                    .then(r => getAll());
+                    .then(r => getAllComments());
                     alert("Deleted successfully..");
        };
         
@@ -54,8 +49,9 @@ so we use useEffect */
     try {       
     return (
         <div>
-            <CommentsCreateForm onSubmit={createComment}/>
-                {userComment.map(eachuserComment=> 
+            <CommentsCreateForm announce={announce} user={user} onSubmit={createComment}/>
+                {userComment.length === 0 ? "No comments yet" :
+                userComment.map(eachuserComment=> 
                 <CommentCard key={eachuserComment.id}
                  userComment={eachuserComment}
                  onUpdateClick={updateComment}
