@@ -2,7 +2,7 @@ import React from "react";
 import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda} from "@syncfusion/ej2-react-schedule";
 
 function Scheduler() {
-    return (<ScheduleComponent> 
+    return (<ScheduleComponent currentView="Month"> 
     <Inject services = {[Day, Week, WorkWeek, Month, Agenda]} />
     </ScheduleComponent>
     )
