@@ -60,7 +60,9 @@ function Navbar({ onLogout }) {
                         </Link>
                     </li>
                     <li className="nav-item">
-
+                        <Link exact to="/calendar" className="nav-link" activeClassName="active-link">
+                        Calendar
+                        </Link>
                     </li>              
                     <li className="nav-item">
                         <button className="btn btn-log my-2 my-sm-0" onClick={onLogout}>LogOut</button>
