@@ -15,19 +15,17 @@ import AnnouncementPage from './components/announcementNew/AnnouncementPage';
 import NewAnnouncementPage from './components/announcementNew/NewAnnouncement';
 import SingleAnnouncement from './components/announcementNew/SingleAnnouncement';
 import CommentPage from './components/newComment/CommentsPage';
-import ThreadPage from './components/chat/ThreadPage';
 import AssignmentPostPage from './components/assignmentpost/AssignmentPostPage';
 import NewAssignment from './components/assignmentpost/NewAssignment';
 import SingleAssignment from './components/assignmentpost/SingleAssignment';
 import QuizPage from './components/quiz/QuizPage';
-import NewQuiz  from './components/quiz/NewQuiz';
-import SubjectPage from './components/assignmentpost/SubjectPage';
+import NewQuiz from './components/quiz/NewQuiz';
 import GradeAssignmentPage from './components/home/GradeAssignmentPage';
 import AssignmentList from './components/assignmentpost/AssignmentList';
 import ChatNewPage from './components/chatNew/ChatPage';
 import AssignmentSubmissionForm from './components/assignmentsubmission/AssignmentSubmissionForm';
 import SingleAssignmentSubmitted from './components/assignmentsubmission/SingleAssignmentSubmitted';
-
+import Scheduler from "./components/calendar/Scheduler";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -39,53 +37,55 @@ function App() {
       <Navbar onLogout={() => Auth.logout()} />
 
       <div className="container mt-5">
-        
+
         <Switch>
           <Route exact path="/assignmentPost">
-           <AssignmentPostPage/>
+            <AssignmentPostPage />
           </Route>
 
           <Route exact path="/assignmentPost/new">
-            <NewAssignment/>
+            <NewAssignment />
           </Route>
 
           <Route exact path="/assignmentPost/:id">
-            <SingleAssignment/>
+            <SingleAssignment />
           </Route>
 
           <Route exact path="/assignmentPost/grade/:grade">
-            <GradeAssignmentPage/>
+            <GradeAssignmentPage />
           </Route>
 
           <Route exact path="/assignmentPost/grade/subject/:subject">
-            <AssignmentList/>
+            <AssignmentList />
           </Route>
 
           <Route exact path="/assignmentSubmission/new/:id">
-              <AssignmentSubmissionForm/>
+            <AssignmentSubmissionForm />
           </Route>
 
           <Route exact path="/assignmentSubmission/:id">
-            <SingleAssignmentSubmitted/>
+            <SingleAssignmentSubmitted />
           </Route>
-          
+
           <Route exact path="/announce" >
             <AnnouncementPage />
           </Route>
 
 
-          <Route exact path="/Quizs" exact>
+          <Route exact path="/Quizs">
             <QuizPage />
           </Route>
 
-          <Route exact path="/Quizs/new" exact>
+          <Route exact path="/Quizs/new">
             <NewQuiz />
           </Route>
 
+          <Route exact path="/calendar">
+            <Scheduler />
+          </Route>
 
-          
 
-          <Route  path="/announce/new" exact>
+          <Route path="/announce/new" exact>
             <NewAnnouncementPage />
           </Route>
 
@@ -106,7 +106,7 @@ function App() {
           </Route>
 
         </Switch>
-      
+
       </div>
     </Router>
   );

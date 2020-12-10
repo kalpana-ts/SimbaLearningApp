@@ -59,11 +59,12 @@ function Navbar({ onLogout }) {
                     Quiz
                     </Link>
                 </li>
-
-                
+            
                 <li className="nav-item">
-
-                </li>              
+                    <Link exact to="/calendar" className="nav-link" activeClassName="active-link">
+                    Calendar
+                    </Link>
+                </li>             
                 <li className="nav-item">
                     <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>LogOut</button>
                 </li>
