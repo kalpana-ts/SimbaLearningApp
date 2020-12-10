@@ -115,3 +115,14 @@
     width:350px;
     height:280px;
 }
+
+/* assignment form */
+.assignement-student-frm{
+    background-image: url('..//..//../images//assignment.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom; 
+    height:900px;
+    background-size: 300px;
+    background-position-x: 94%;
+}

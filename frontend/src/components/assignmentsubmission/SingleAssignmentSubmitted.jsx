@@ -90,8 +90,7 @@ export default function SingleAssignmentSubmitted(){
 
         <div class="widget-body">
           <div class="widget-top-overflow text-white">
-            {assignment.fileURL &&
-              (assignment.fileURL.match(".jpg" || ".png") ? (
+            {(assignment.fileURL.match(".jpg" || ".png") ? (
                 <img
                   src={assignment.fileURL}
                   class="img-fluid"

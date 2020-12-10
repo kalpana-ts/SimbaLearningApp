@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Auth from "../../services/Auth";
+import UserApi from "../../api/UserApi";
 
 function AssignmentCard(assignment) {
+  const userMail = Auth.getUserMail();
+  const [user, setUser] = useState({});
+  const studentView = user.userType === "student";
+  const url = assignment.assignment.fileUrl;
+
+  useEffect(() => {
+    function getUserByMail() {
+      UserApi.getUserByMail(userMail).then((res) => {
+        setUser(res.data);
+      });
+    }
+    userMail !== null && getUserByMail();
+  }, [userMail]);
+
   return (
     <>
       <p>
@@ -23,11 +40,12 @@ function AssignmentCard(assignment) {
             id={"#multiCollapseExample" + assignment.assignment.id}
           >
             <div class="card card-body">
-              {assignment.assignment.fileUrl.match(
-                ".gif" || ".jpg" || ".png" || ".jpeg"
-              ) ? (
+              {url.match(".gif") ||
+              url.match(".jpg") ||
+              url.match(".png") ||
+              url.match(".jpeg") ? (
                 <img
-                  src={assignment.assignment.fileUrl}
+                  src={url}
                   class="img-fluid assignment-view-img"
                   alt="Responsive image"
                 />
@@ -35,7 +53,7 @@ function AssignmentCard(assignment) {
                 <div class="embed-responsive embed-responsive-16by9 assignment-view-frm">
                   <iframe
                     class="embed-responsive-item"
-                    src={assignment.assignment.fileUrl}
+                    src={url}
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -43,9 +61,18 @@ function AssignmentCard(assignment) {
               <br />
               <p>{assignment.assignment.assignmentDescription}</p>
               <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
-              <button type="submit" className="btn-submit-assignment">
-                <i class="fas fa-share-square"></i> Submit Your Answer
-              </button>
+
+              {studentView && (
+                <Link
+                  className="btn-submit-assignment"
+                  to={{
+                    pathname: `/assignmentSubmission/new/${assignment.assignment.id}`,
+                    state: { assignment, user },
+                  }}
+                >
+                  <i class="fas fa-share-square"></i> Submit Your Answer
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -53,9 +80,7 @@ function AssignmentCard(assignment) {
           <div class="collapse multi-collapse" id="multiCollapseExample2"></div>
         </div>
       </div>
-
     </>
-
 
     /*     <div class="col-md-7 assignment-card">
       <section class="widget">
