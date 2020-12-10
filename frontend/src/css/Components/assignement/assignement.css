@@ -68,3 +68,50 @@
     color: #333;
     font-weight: 600;
 }
+
+/*Assignment by subject page */
+.btn-submit-assignment{
+    background-color: #FFCE54; 
+    border:1px solid #e5e5e5;
+    display:inline-block;
+    padding:10px 20px;
+    color:#fff;
+    font-weight:600;
+    font-size:14px;
+    border-radius:4px;
+    transition:all .3s;
+    width:240px;
+}
+.btn-submit-assignment:hover{
+    border:1px solid transparent;
+    background:#FF8A3C;
+    color:#fff;
+}
+.question-tab{
+    width:70%;
+    background-color: #F0EFEB;
+    color: #424c55;
+    border: none;
+    text-align: start;
+}
+.question-tab:hover{
+    background-color: #cdeac0;
+    color: #424c55;
+}
+.assignment-view-img{
+    height:300px;
+    width:300px;
+}
+.assignment-view-frm{
+    height:350px;
+    width:100%;
+}
+.subject-view-img{
+    position:fixed;
+    right:0;
+    bottom:0;
+    margin:0;
+    padding:0;
+    width:350px;
+    height:280px;
+}

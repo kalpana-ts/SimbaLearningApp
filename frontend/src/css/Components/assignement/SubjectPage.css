@@ -1,7 +1,7 @@
 .top-left{
     position: absolute;
     top: 20px;
-    left: 22px;
+    left: 60px;
     color: #fff;
 }
 .subject_item:hover .cp_img {
@@ -38,7 +38,7 @@
 }
 
 .subject_item {
-    padding-top: 65%;
+    padding-top: 80%;
     text-align: center;
     width:70%;
 }
@@ -88,4 +88,7 @@
     font-size: 14px;
     color: #424242;
     font-weight: 400;
+}
+.subject-img{
+    height:200px;
 }
