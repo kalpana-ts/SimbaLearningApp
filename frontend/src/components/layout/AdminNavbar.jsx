@@ -25,6 +25,19 @@ function Navbar({ onLogout }) {
                         </Link>
                     </li>
 
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Studymaterial
+                        </a>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <Link to="/studymaterial/new" className="dropdown-item">
+                            Submit a new StudyMaterial
+                        </Link>
+                        <Link to="/studymaterial/" className="dropdown-item">
+                            List of All StudyMaterial
+                        </Link>
+                        </div>
+                    </li>
 
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

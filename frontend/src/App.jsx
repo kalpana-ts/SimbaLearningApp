@@ -24,6 +24,7 @@ import ChatNewPage from "./components/chatNew/ChatPage";
 import AssignmentSubmissionForm from "./components/assignmentsubmission/AssignmentSubmissionForm";
 import SingleAssignmentSubmitted from "./components/assignmentsubmission/SingleAssignmentSubmitted";
 import Scheduler from "./components/calendar/Scheduler";
+import NewStudyMaterial from './components/studymaterial/NewStudyMaterial';
 
 
 function App() {
@@ -37,6 +38,11 @@ function App() {
 
       <div className="container mt-5">
         <Switch>
+
+          <Route exact path="/studymaterial/new">
+              <NewStudyMaterial/>
+          </Route>
+
           <Route exact path="/assignmentPost">
             <AssignmentPostPage />
           </Route>
