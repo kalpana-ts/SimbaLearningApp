@@ -9,9 +9,9 @@ public class StudyMaterial {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long id;
-        private String Title;
+        private String title;
         @Column(columnDefinition = "TEXT")
-        private String Description;
+        private String description;
         private String fileUrl;
         private String grade;
         private String subject;
@@ -21,10 +21,10 @@ public class StudyMaterial {
         private User user;
 
 
-        public StudyMaterial(long id, String Title, String Description, String fileUrl, String grade, String subject, String postDate,  User user) {
+        public StudyMaterial(long id, String title, String descriptionescription, String fileUrl, String grade, String subject, String postDate,  User user) {
             this.id = id;
-            this.Title = Title;
-            this.Description = Description;
+            this.title = title;
+            this.description = description;
             this.fileUrl = fileUrl;
             this.grade = grade;
             this.subject = subject;
@@ -45,20 +45,20 @@ public class StudyMaterial {
             this.id = id;
         }
 
-        public String getAssignmentTitle() {
-            return Title;
+        public String getTitle() {
+            return title;
         }
 
-        public void setAssignmentTitle(String Title) {
-            this.Title = Title;
+        public void setTitle(String title) {
+            this.title = title;
         }
 
-        public String getAssignmentDescription() {
-            return Description;
+        public String getDescription() {
+            return description;
         }
 
-        public void setAssignmentDescription(String Description) {
-            this.Description = Description;
+        public void setDescription(String description) {
+            this.description = description;
         }
 
         public String getFileUrl() {
