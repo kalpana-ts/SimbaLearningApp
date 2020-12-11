@@ -15,7 +15,7 @@ function NewAssignment(){
           try {
             if (assignment !== null) {
               const response = await AssignmentPostApi.createAssignment(assignment); // We need to check response success before redirecting.
-              history.push('/assignmentPost/new');
+              history.push('/assignmentPost/');
             }
           } catch (error) {
             console.log(error);
