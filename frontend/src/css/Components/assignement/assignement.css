@@ -99,8 +99,7 @@
     color: #424c55;
 }
 .assignment-view-img{
-    height:300px;
-    width:300px;
+    height:400px;
 }
 .assignment-view-frm{
     height:350px;
@@ -118,6 +117,17 @@
 
 /* assignment form */
 .assignement-student-frm{
+    background-image: url('..//..//../images//geo.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom; 
+    height:900px;
+    background-size: 300px;
+    background-position-x: 94%;
+}
+
+/* Single assignment submitted */
+.single-assignment-submitted-frm{
     background-image: url('..//..//../images//assignment.gif');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -125,4 +135,55 @@
     height:900px;
     background-size: 300px;
     background-position-x: 94%;
+}
+.student-info-tab{
+    width:70%;
+    background-color: #F0EFEB;
+    color: #424c55;
+    border: none;
+    text-align: start;
+}
+.student-info-tab:hover{
+    background-color: #fae0e4;
+    color: #424c55;
+}
+.btn-review{
+    background-color: #087e8b; 
+    border:none;
+    display:inline-block;
+    padding:10px 20px;
+    color:#fff;
+    font-weight:600;
+    font-size:14px;
+    border-radius:4px;
+    transition:all .3s;
+    width:200px;
+}
+.btn-review:hover{
+    border:1px solid transparent;
+    background:#087e8b;
+    color:#fff;
+}
+.review-frm-radio-btn{
+    font-size: 15px;
+}
+.btn-review-submit{
+    background-color: #B52B65; 
+    color: #fff;
+    border: none;
+}
+.btn-review-submit:hover{
+    border:1px solid transparent;
+    background:#A0D368;
+    color:#fff;
+}
+.review-page-span{
+    font-size: 14px;
+    font-weight: 800;
+}
+.single-assignment-submit-ifram{
+    width:60%;
+}
+.Model-top-position{
+    margin-top: 5%;
 }

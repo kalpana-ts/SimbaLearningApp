@@ -4,7 +4,7 @@ import mathGif from "../../images/math.gif";
 import socialGif from "../../images/history.gif";
 import scienceGif from "../../images/science.gif";
 import gkGif from "../../images/gk.gif";
-import geoGif from "../../images/geo.gif";
+import languageGif from "../../images/hello-talker.gif";
 import artGif from "../../images/art.gif";
 
 import AssignmentPostApi from "../../api/AssignmentPostApi";
@@ -58,7 +58,7 @@ function AssignmentList() {
       ) : null}
 
       {subjectName[0] === "Language" ? (
-        <img className="subject-view-img" src={geoGif} alt="" srcset="" />
+        <img className="subject-view-img" src={languageGif} alt="" srcset="" />
       ) : null}
 
       {subjectName[0] === "Art" ? (
