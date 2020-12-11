@@ -92,9 +92,10 @@ function SingleAssignment() {
                     src={assignment.fileUrl}
                     class="img-fluid"
                     alt="Responsive image"
+                    class="assignment-view-img"
                   />
                 ) : (
-                  <div class="embed-responsive embed-responsive-16by9">
+                  <div class="embed-responsive embed-responsive-16by9 single-assignment-submit-ifram">
                     <iframe
                       class="embed-responsive-item"
                       src={assignment.fileUrl}
