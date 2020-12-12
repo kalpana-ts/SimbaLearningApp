@@ -28,6 +28,10 @@ function getAllComments() {
 }
 
     const createComment =(commentData) => {
+        if(commentData.body === ""){
+            alert("Please enter your comment..");
+            return;
+        } 
             Api.post("/comments", commentData)
             .then((resp)=> {setUserComment([...userComment, resp.data])})
             alert("Shared successfully..");
