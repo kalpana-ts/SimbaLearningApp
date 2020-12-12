@@ -1,8 +1,41 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import CommentApi from '../../api/CommentApi';
+import AnnouncementApi from '../../api/AnnouncementApi';
 
-function AnnouncementCard({ announce }) {
 
+function AnnouncementCard({ announcement }) {
+    const [announce, setAnnounce]=useState(announcement);
+    const history = useHistory();
+
+    const [userComment, setUserComment] = useState([]);
+    useEffect(() => {
+        getAllComments();
+    }, [])
+
+    function getAllComments() {
+        CommentApi.getAllCommentsByAnnouncementId(announce.id)
+            .then((c) => {
+                setUserComment(c.data);
+            })
+    }
+
+    function updateLike(){
+        const newAnnounce = {
+            id : announce.id,
+            title : announce.title,
+            body : announce.body,
+            date : announce.date,
+            email : announce.email,
+            user : announce.user,
+            likes : announce.likes + 1
+        }
+        const response = AnnouncementApi.updatePost(newAnnounce);
+        setAnnounce(newAnnounce);
+        history.push('/announce');
+    }
+    
   return (
     
     
@@ -10,12 +43,12 @@ function AnnouncementCard({ announce }) {
             <section class="widget">
                 <div class="widget-body">
                     <div class="widget-top-overflow text-white">
-                        {announce.imageUrl.match('.jpg' || '.png' || '.jpeg' || '.gif') ?
+                        {announce.imageUrl && (announce.imageUrl.match('.jpg' || '.png' || '.jpeg' || '.gif') ?
                         <img src={announce.imageUrl} class="img-fluid" alt="Responsive image"/> : 
                         <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src={announce.imageUrl} allowfullscreen></iframe>
                         </div>
-                        }
+                        )}
                             
                     </div>
                     <div class="post-user mt-sm">
@@ -32,8 +65,14 @@ function AnnouncementCard({ announce }) {
                 </div>
                 <footer class="bg-body-light">
                     <ul class="post-links no-separator">
-                        <li className="cmt-like"><a href="#"><span class="text-danger"><i class="fa fa-heart"></i> 427</span></a></li>
-                        <li className="cmt-like"><a href="#"><i class="fa fa-comment"></i> 98</a></li>
+                        <li className="cmt-like">
+                            {/* <a href="#"><span class="text-danger"><i class="fa fa-heart"></i> {announce.likes} </span></a> */}
+                            <button onClick={updateLike}>
+                                <i class="fa fa-heart"></i> {announce.likes} 
+                            </button>
+    
+                        </li>
+                        <li className="cmt-like"><a href="#"><i class="fa fa-comment"></i> {userComment.length} </a></li>
                         <li className="btn-view">
                             <Link className="btn btn-outline-info" 
                                 to={{ pathname: `/announce/${announce.id}`, state: { announce } }}>

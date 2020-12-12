@@ -17,19 +17,20 @@ public class StudyMaterial {
         private String subject;
         private String postDate;
 
+
         @ManyToOne
         private User user;
 
 
-        public StudyMaterial(long id, String title, String descriptionescription, String fileUrl, String grade, String subject, String postDate,  User user) {
+        public StudyMaterial(long id, String title, String description, String fileUrl, String grade, String subject, String postDate, User user) {
             this.id = id;
             this.title = title;
+
             this.description = description;
             this.fileUrl = fileUrl;
             this.grade = grade;
             this.subject = subject;
             this.postDate = postDate;
-
             this.user = user;
         }
 
@@ -102,6 +103,5 @@ public class StudyMaterial {
         }
 
 
-
-    }
+}
 

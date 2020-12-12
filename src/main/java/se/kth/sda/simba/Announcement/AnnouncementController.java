@@ -44,7 +44,7 @@ public class AnnouncementController {
         return service.create(newAnnouncement);
     }
 
-    @PutMapping("")
+    @PutMapping("/update")
     public Announcement update(@RequestBody Announcement updatedAnnouncement) {
         return service.update(updatedAnnouncement);
     }
