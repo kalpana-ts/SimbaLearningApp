@@ -4,13 +4,13 @@ import mathGif from "../../images/math.gif";
 import socialGif from "../../images/history.gif";
 import scienceGif from "../../images/science.gif";
 import gkGif from "../../images/gk.gif";
-import geoGif from "../../images/geo.gif";
+import languageGif from "../../images/hello-talker.gif";
 import artGif from "../../images/art.gif";
 
 import StudyMaterialApi from "../../api/StudyMaterialApi";
 //import AssignmentCard from '../assignmentpost/AssignmentCard';
 import StudyMaterialBySubject from "../studymaterial/StudyMaterialBySubject";
-import SingleStudyMaterial from "./SingleStudyMaterial";
+//import SingleStudyMaterial from "./SingleStudyMaterial";
 
 function StudyMaterialByGrade() {
   const { state } = useLocation();
@@ -40,24 +40,35 @@ function StudyMaterialByGrade() {
   console.log("subjectName");
 
   return (
-    materials.length===0 ? <p>No Materials to show</p>
-     : 
-        <div className="col-lg-10 material-list-table">
-        <table class="table">
-        <thead class="teacher-material-tbl-row">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Posted By</th>
-            <th scope="col">Study Material Title</th>
-            <th scope="col">Grade</th>
-            <th scope="col">Subject</th>          
-            <th scope="col">Action</th>
-            </tr>
-        </thead>
-                {materialList}
-        </table>
-        </div>);
-  
+    <div>
+      <h1>{subjectName[0]}</h1>
+      {subjectName[0] === "Math" ? (
+        <img className="subject-view-img" src={mathGif} alt="" srcset="" />
+      ) : null}
+
+      {subjectName[0] === "Social Study" ? (
+        <img className="subject-view-img" src={socialGif} alt="" srcset="" />
+      ) : null}
+
+      {subjectName[0] === "Science" ? (
+        <img className="subject-view-img" src={scienceGif} alt="" srcset="" />
+      ) : null}
+
+      {subjectName[0] === "General Knowledge" ? (
+        <img className="subject-view-img" src={gkGif} alt="" srcset="" />
+      ) : null}
+
+      {subjectName[0] === "Language" ? (
+        <img className="subject-view-img" src={languageGif} alt="" srcset="" />
+      ) : null}
+
+      {subjectName[0] === "Art" ? (
+        <img className="subject-view-img" src={artGif} alt="" srcset="" />
+      ) : null}
+
+      {materials.length === 0 ? "No Studymaterials to show" : <>{materialList}</>}
+    </div>
+  );
 }
 
 export default StudyMaterialByGrade;
