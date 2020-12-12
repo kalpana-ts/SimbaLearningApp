@@ -12,7 +12,7 @@ function NewStudyMaterial() {
             try {
               if (material !== null) {
                 const response = await StudyMaterialApi.createStudyMaterial(material); // We need to check response success before redirecting.
-                history.push('/');
+                history.push('/studymaterial');
               }
             } catch (error) {
               console.log(error);
