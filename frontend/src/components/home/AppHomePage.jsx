@@ -44,8 +44,9 @@ function AppHomePage() {
         <div class="card grade grade-1">
             <div class="card-body">
             <h5 class="card-title grade-title"> 
-            
-                <img className="grade-img" src={grade1} alt="" srcset=""/>&nbsp; Grade - 1
+            <Link className=""  to={{ pathname: `/studymaterial/grade/${grade}`, state: {grade:1} }} >
+                    <img className="grade-img" src={gradeAs1} alt="" srcset=""/>&nbsp;Grade - 1
+            </Link>
           
             </h5>
             </div>
@@ -54,21 +55,27 @@ function AppHomePage() {
         <div class="col-sm-5">
         <div class="card grade grade-2">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={grade2} alt="" srcset=""/>&nbsp;Grade - 2</h5>
+            <Link className=""  to={{ pathname: `/studymaterial/grade/${grade}`, state: {grade:2} }} >
+            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs2} alt="" srcset=""/>&nbsp;Grade - 2</h5>
+            </Link>
             </div>
         </div>
         </div>
         <div class="col-sm-5">
         <div class="card grade grade-3">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={grade3} alt="" srcset=""/>&nbsp;Grade - 3</h5>
+            <Link className=""  to={{ pathname: `/studymaterial/grade/${grade}`, state: {grade:3} }} >
+            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs3} alt="" srcset=""/>&nbsp;Grade - 3</h5>
+            </Link>
             </div>
         </div>
         </div>
         <div class="col-sm-5">
         <div class="card grade grade-4">
             <div class="card-body">
-            <h5 class="card-title grade-title"><img className="grade-img" src={grade4} alt="" srcset=""/>&nbsp;Grade - 4</h5>
+            <Link className=""  to={{ pathname: `/studymaterial/grade/${grade}`, state: {grade:4} }} >
+            <h5 class="card-title grade-title"><img className="grade-img" src={gradeAs4} alt="" srcset=""/>&nbsp;Grade - 4</h5>
+            </Link>
             </div>
         </div>
         </div>

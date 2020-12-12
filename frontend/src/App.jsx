@@ -26,7 +26,10 @@ import AssignmentSubmissionForm from './components/assignmentsubmission/Assignme
 import SingleAssignmentSubmitted from './components/assignmentsubmission/SingleAssignmentSubmitted';
 import Scheduler from "./components/calendar/Scheduler";
 import NewStudyMaterial from './components/studymaterial/NewStudyMaterial';
-
+import StudyMaterialList from './components/studymaterial/StudyMaterialList';
+import SingleStudyMaterial from './components/studymaterial/SingleStudyMaterial';
+import GradeStudyMaterialPage from './components/studymaterial/GradeStudyMaterialPage';
+import StudyMaterialByGrade from './components/studymaterial/StudyMaterialByGrade';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -56,12 +59,31 @@ function App() {
             <SingleAssignment />
           </Route>
 
+          <Route exact path="/studymaterial">
+            < StudyMaterialList/>
+          </Route>
+
+          <Route exact path="/studymaterial/:id">
+            <SingleStudyMaterial />
+          </Route>
+
+
           <Route exact path="/assignmentPost/grade/:grade">
             <GradeAssignmentPage />
           </Route>
 
+          <Route exact path="/studymaterial/grade/:grade">
+            <GradeStudyMaterialPage />
+          </Route>
+
+
+
           <Route exact path="/assignmentPost/grade/subject/:subject">
             <AssignmentList />
+          </Route>
+
+          <Route exact path="/studymaterial/grade/subject/:subject">
+            <StudyMaterialByGrade />
           </Route>
 
           <Route exact path="/assignmentSubmission/new/:id">
