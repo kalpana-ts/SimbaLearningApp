@@ -9,42 +9,55 @@ function StudyMaterialBySubject(material) {
 
   return (
         
-    <div class="row d-flex align-items-center justify-content-center">
-      <div class="col-md-7 assignment-post">
-          <div class="single-assignment-card">
-          <div className="card-title bg-secondary text-white m-0 p-1 ">
-      {material.title + " ... "}
-       
-      </div>
-      <div className="card-body">
-            Description: 
-            {material.description} <br />
-            Grade:
-            {material.grade}
-            <br />
-            Subject: 
-            {material.subject}
-            <br />
-            
-
-          </div>
-          <div class="widget-body">
-          <div class="widget-top-overflow text-white">
-          {material.fileUrl && (url.match('.jpg') || url.match('.png') ?
-                      <img src={material.fileUrl} class="img-fluid" alt="Responsive image"/> : 
-                      <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src={material.fileUrl} allowfullscreen></iframe>
-                      </div>)
-                      }
-          </div>
-          
-        </div>
-               
-        
+    <>
+    <p>
+      <button
+        class="btn question-tab"
+        type="button"
+        data-toggle="collapse"
+        data-target={".multi-collapse" + material.material.id}
+        aria-expanded="false"
+        aria-controls={"#multiCollapseExample" + material.material.id}
+      >
+        {material.material.title}
+      </button>
+    </p>
+    <div class="row">
+      <div class="col">
+        <div
+          class="collapse multi-collapse"
+          className={"collapse multi-collapse" + material.material.id}
+          id={"#multiCollapseExample" + material.material.id}
+        >
+          <div class="card card-body">
+            {url.match(".gif") ||
+            url.match(".jpg") ||
+            url.match(".png") ||
+            url.match(".jpeg") ? (
+              <img
+                src={url}
+                class="img-fluid assignment-view-img"
+                alt="Responsive image"
+              />
+            ) : (
+              <div class="embed-responsive embed-responsive-16by9 assignment-view-frm">
+                <iframe
+                  class="embed-responsive-item"
+                  src={url}
+                  allowfullscreen
+                ></iframe>
               </div>
+            )}
+            <br />
+            <p>{material.material.description}</p>
           </div>
+        </div>
       </div>
-      
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2"></div>
+      </div>
+    </div>
+  </>
   );
 }
 
