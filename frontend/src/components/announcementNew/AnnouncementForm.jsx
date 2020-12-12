@@ -31,7 +31,8 @@ function AnnouncementForm({ setAnnounce }) {
       body: details,
       imageUrl: fileUrl,
       date: format(new Date(), 'dd-MMM-yyyy'),
-      user: user
+      user: user,
+      likes : 0
     });
     document.getElementById("announce-form").reset();
   };

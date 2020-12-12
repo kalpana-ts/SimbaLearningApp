@@ -45,10 +45,10 @@ function Navbar({ onLogout }) {
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <Link to="/assignmentPost/new" className="dropdown-item">
-                            Post a New Assignment
+                            Upload a New Assignment
                         </Link>
                         <Link to="/assignmentPost/" className="dropdown-item">
-                            List of Assignment
+                            List of all Assignments
                         </Link>
                         </div>
                     </li>
@@ -58,18 +58,18 @@ function Navbar({ onLogout }) {
                         Announcement
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <Link to="/announce" className="dropdown-item">
-                            Posted Announcement
-                        </Link>
                         <Link to="/announce/new" className="dropdown-item">
-                            New Announcement
+                            Post a new Announcement
+                        </Link>
+                        <Link to="/announce" className="dropdown-item">
+                            List of all Announcements
                         </Link>
                         </div>
                     </li>
 
                     <li className="nav-item">
                         <Link exact to="/messages" className="nav-link" activeClassName="active-link">
-                        Messages
+                        Message
                         </Link>
                     </li>
                     <li className="nav-item">

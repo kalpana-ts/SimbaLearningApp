@@ -30,27 +30,18 @@ function SingleAnnouncement() {
     userEmail !== null && getUserByMail();
 }, [userEmail])
 
-  // try to fetch token value
-  // useEffect(() => {
-  //   Api.get("/announce/:id")
-  //     .then(r => {
-  //       const email = r.data;
-  //       setEmail(email);
-  // })
-  // }, []);
-
-  const messageHandler = () => {
-    const createOrDirect = async () => {
-      try {
-        const response = await ChatApi.createThread(announce.email, {});
-        const thread = response.data;
-        history.push({ pathname: `/chat/${thread.id}`, state: { thread } });
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    createOrDirect();
-  };
+  // const messageHandler = () => {
+  //   const createOrDirect = async () => {
+  //     try {
+  //       const response = await ChatApi.createThread(announce.email, {});
+  //       const thread = response.data;
+  //       history.push({ pathname: `/chat/${thread.id}`, state: { thread } });
+  //     } catch (e) {
+  //       console.log(e);
+  //     }
+  //   };
+  //   createOrDirect();
+  // };
 
   try {
     return (
@@ -77,14 +68,14 @@ function SingleAnnouncement() {
                     <h3 className="product-title">{announce.title}</h3>
                     <p class="text-justify">{announce.body}</p>
                     
-                    {isPoster ? null : (
+                    {/* {isPoster ? null : (
                       <button
                         className="btn btn-outline-info my-2 my-sm-0"
                         onClick={messageHandler}
                         type="button">
                         Message Poster
                       </button>
-                    )}
+                    )} */}
                    
 
                     <hr/>
