@@ -14,7 +14,7 @@ class AnnouncementApi {
   }
 
   updatePost(post) {
-    return Api.put('/announcests', post);
+    return Api.put('/announce/update', post);
   }
 
   deletePost(id) {

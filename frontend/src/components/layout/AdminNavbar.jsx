@@ -106,7 +106,7 @@ function Navbar({ onLogout }) {
               </Link>
             </div>
           </li>
-
+          
           <li className="nav-item">
             <Link
               exact

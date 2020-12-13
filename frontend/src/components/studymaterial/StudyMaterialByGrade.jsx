@@ -7,34 +7,35 @@ import gkGif from "../../images/gk.gif";
 import languageGif from "../../images/hello-talker.gif";
 import artGif from "../../images/art.gif";
 
-import AssignmentPostApi from "../../api/AssignmentPostApi";
+import StudyMaterialApi from "../../api/StudyMaterialApi";
 //import AssignmentCard from '../assignmentpost/AssignmentCard';
-import AssignmentBySubject from "../assignmentpost/AssignmentBySubject";
+import StudyMaterialBySubject from "../studymaterial/StudyMaterialBySubject";
+//import SingleStudyMaterial from "./SingleStudyMaterial";
 
-function AssignmentList() {
+function StudyMaterialByGrade() {
   const { state } = useLocation();
   const grade = state === undefined ? null : state.grade;
   const subject = state === undefined ? null : state.subject;
   console.log("grade from list:", grade);
   console.log("Subject from list:", subject);
-  const [assignments, setAssignments] = useState([]);
+  const [materials, setMaterials] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await AssignmentPostApi.getAllAssignmentsByGradeAndSubject(
+      const response = await StudyMaterialApi.getAllStudyMaterialByGradeAndSubject(
         grade,
         subject
       );
-      setAssignments(response.data);
+      setMaterials(response.data);
     };
     fetchPosts();
   }, []);
 
-  const assignmentList = assignments.map((assignment) => (
-    <AssignmentBySubject key={assignment.id} assignment={assignment} />
+  const materialList = materials.map((material) => (
+    <StudyMaterialBySubject key={material.id} material={material}  />
   ));
 
-  const subjectName = assignments.map((assignment) => assignment.subject);
+  const subjectName = materials.map((material) => material.subject);
 
   console.log("subjectName");
 
@@ -65,9 +66,9 @@ function AssignmentList() {
         <img className="subject-view-img" src={artGif} alt="" srcset="" />
       ) : null}
 
-      {assignments.length === 0 ? "No Assignments to show" : <>{assignmentList}</>}
+      {materials.length === 0 ? "No Studymaterials to show" : <>{materialList}</>}
     </div>
   );
 }
 
-export default AssignmentList;
+export default StudyMaterialByGrade;

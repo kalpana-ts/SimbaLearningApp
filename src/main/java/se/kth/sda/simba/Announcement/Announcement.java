@@ -30,6 +30,7 @@ public class Announcement {
 
     private String email;
 
+    private Integer likes;
     /*@Column(name = "poster")
     private String poster;*/
 
@@ -125,4 +126,11 @@ public class Announcement {
         this.user = user;
     }
 
+    public Integer getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
 }
