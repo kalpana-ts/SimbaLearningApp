@@ -2,88 +2,152 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ onLogout }) {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark">
+      <a className="navbar-brand" href="/">
+        <img className="logo" src="/images/Simba-ICON.png" alt="logo" />
+      </a>
+      <p className="nav-simba-title">
+        <span className="title-name">SIMBA</span>
+        <br />
+        <span className="title-slogan">The Lion King (Learning App)</span>
+      </p>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
-    return (
+      <div className="collapse navbar-collapse" id="navbarColor01">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
 
-        <nav className="navbar navbar-expand-lg navbar-dark">
-            <a className="navbar-brand" href="/">
-                <img className="logo" src="/images/Simba-ICON.png" alt="logo"/>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Studymaterial
             </a>
-            <p className="nav-simba-title">
-                <span className="title-name">SIMBA</span><br/>
-                <span className="title-slogan">The Lion King (Learning App)</span>
-            </p>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarColor01">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            Home
-                        </Link>
-                    </li>
-
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Studymaterial
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <Link to="/studymaterial/new" className="dropdown-item">
-                            Submit a new StudyMaterial
-                        </Link>
-                        <Link to="/studymaterial/" className="dropdown-item">
-                            List of All StudyMaterial
-                        </Link>
-                        </div>
-                    </li>
-
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Assignment
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <Link to="/assignmentPost/new" className="dropdown-item">
-                            Post a New Assignment
-                        </Link>
-                        <Link to="/assignmentPost/" className="dropdown-item">
-                            List of Assignment
-                        </Link>
-                        </div>
-                    </li>
-
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Announcement
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <Link to="/announce" className="dropdown-item">
-                            Posted Announcement
-                        </Link>
-                        <Link to="/announce/new" className="dropdown-item">
-                            New Announcement
-                        </Link>
-                        </div>
-                    </li>
-
-                    <li className="nav-item">
-                        <Link exact to="/messages" className="nav-link" activeClassName="active-link">
-                        Messages
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link exact to="/calendar" className="nav-link" activeClassName="active-link">
-                        Calendar
-                        </Link>
-                    </li>              
-                    <li className="nav-item">
-                        <button className="btn btn-log my-2 my-sm-0" onClick={onLogout}>LogOut</button>
-                    </li>
-                </ul>  
+            <div
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <Link to="/studymaterial/new" className="dropdown-item">
+                Submit a new StudyMaterial
+              </Link>
+              <Link to="/studymaterial/" className="dropdown-item">
+                List of All StudyMaterial
+              </Link>
             </div>
-        </nav>
-    );
+          </li>
+
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Assignment
+            </a>
+            <div
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <Link to="/assignmentPost/new" className="dropdown-item">
+                Post a New Assignment
+              </Link>
+              <Link to="/assignmentPost/" className="dropdown-item">
+                List of Assignment
+              </Link>
+            </div>
+          </li>
+
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Announcement
+            </a>
+            <div
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <Link to="/announce" className="dropdown-item">
+                Posted Announcement
+              </Link>
+              <Link to="/announce/new" className="dropdown-item">
+                New Announcement
+              </Link>
+            </div>
+          </li>
+
+          <li className="nav-item">
+            <Link
+              exact
+              to="/messages"
+              className="nav-link"
+              activeClassName="active-link"
+            >
+              Messages
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link
+              exact
+              to="/Quizs/new"
+              className="nav-link"
+              activeClassName="active-link"
+            >
+              New Quiz
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link
+              exact
+              to="/calendar"
+              className="nav-link"
+              activeClassName="active-link"
+            >
+              Calendar
+            </Link>
+          </li>
+          <li className="nav-item">
+            <button className="btn btn-log my-2 my-sm-0" onClick={onLogout}>
+              LogOut
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React ,{useState} from 'react'
 
-function QuizCard({ quiz }) {
+function OldQuizCard({quiz}) {
   const [option, setOption] = useState("");
-  let [score, setScore] = useState(0);
-
-/*   const submitHandler = (isCorrect) => {
-    if(isCorrect){
-      setScore(score + 1);
-    }
-  }; */
-
+  
   return (
-
-    <div className="row">
+      <div className="row">
       <br/>
         <div class="card quiz-card shadow p-3 mb-5 bg-white rounded">
           <div className="card-header">
@@ -26,8 +18,8 @@ function QuizCard({ quiz }) {
                 type="radio"
                 name={'opt'+ quiz.id}
                 id={'opt'+ quiz.id}
-                value="1"
-                onChange={quiz.correctanswer === 1 ? setScore(score + 1) : null}
+                value="option 1"
+                onChange={(e) => setOption(e.target.value)}
                 checked
               />
               <label class="form-check-label" for={'opt'+ quiz.id}>
@@ -40,8 +32,8 @@ function QuizCard({ quiz }) {
                 type="radio"
                 name={'opt'+ quiz.id}
                 id={'opt'+ quiz.id}
-                value="2"
-                onChange={quiz.correctanswer === 2 ? setScore(score + 1) : null}
+                value="option 2"
+                onChange={(e) => setOption(e.target.value)}
               />
               <label class="form-check-label" for={'opt'+ quiz.id}>
                 {quiz.option2}
@@ -53,8 +45,8 @@ function QuizCard({ quiz }) {
                 type="radio"
                 name={'opt'+ quiz.id}
                 id={'opt'+ quiz.id}
-                value="3"
-                onChange={quiz.correctanswer === 3 ? setScore(score + 1) : null}
+                value="option 3"
+                onChange={(e) => setOption(e.target.value)}
               />
               <label class="form-check-label" for={'opt'+ quiz.id}>
                 {quiz.option3}
@@ -66,24 +58,17 @@ function QuizCard({ quiz }) {
                 type="radio"
                 name={'opt'+ quiz.id}
                 id={'opt'+ quiz.id}
-                value="4"
-                onChange={quiz.correctanswer === 4 ? setScore(score + 1) : null}
+                value="option 4"
+                onChange={(e) => setOption(e.target.value)}
               />
               <label class="form-check-label" for={'opt'+ quiz.id}>
                 {quiz.option4}
               </label>
             </div>
-              <label class="form-check-label" id="correctAns" value={quiz.correctanswer} for={'opt'+ quiz.id}>               
-              </label>
-              {/* <button type="submit" className="btn-newPost" onClick={() => submitHandler(quiz.correctanswer, option)}>
-                {" "}
-                <i class="fas fa-share-square"></i> Submit Assignement
-              </button>
- */}
           </div>
         </div>
     </div>
-  );
+    );
 }
 
-export default QuizCard;
+export default OldQuizCard
