@@ -8,7 +8,7 @@
 @import "./Components/Chat/ChatPage.css";
 @import "./Components/assignement/assignement.css";
 @import "./Components/assignement/SubjectPage.css";
-
+@import "./Components/quiz/quiz.css";
 
 
 body {

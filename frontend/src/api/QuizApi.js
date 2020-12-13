@@ -10,14 +10,12 @@ class QuizApi {
     getQuizBySubject(subject) {
         return Api.get('/Quizs/'+subject);
     }
-    createQuiz(Quiz) {
-        return Api.post('/Quizs/new/', Quiz);
+    createQuiz(quiz) {
+        return Api.post('/Quizs/new', quiz);
     }
-
-
    
-    updateQuiz(Quiz) {
-        return Api.put('/Quizs', Quiz);
+    updateQuiz(quiz) {
+        return Api.put('/Quizs', quiz);
     }
     deleteQuiz(id) {
         return Api.delete('/Quizs/'+id);

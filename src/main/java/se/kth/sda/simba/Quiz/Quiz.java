@@ -29,24 +29,10 @@ public class Quiz {
     }
     public Quiz() {
     }
-    public String getQ() {
-        return Q;
-    }
-    public void setQ(String Q) {
-        this.Q = Q;
-    }
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Quiz(Long id, String Q, String postedby, String subject, String option1, String option2, String option3, String option4, User user, String correctanswer) {
+    public Quiz(Long id, String Q, String subject, String option1, String option2, String option3, String option4, User user, String correctanswer) {
         this.id = id;
         this.Q = Q;
-        this.postedby = postedby;
         this.subject = subject;
         this.option1 = option1;
         this.option2 = option2;
@@ -96,6 +82,19 @@ public class Quiz {
     }
     public void setPostedby(String postedby) {
         this.postedby = postedby;
+    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    public String getQ() {
+        return Q;
+    }
+    public void setQ(String Q) {
+        this.Q = Q;
     }
 }
 

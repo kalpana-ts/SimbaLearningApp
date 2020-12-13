@@ -1,107 +1,151 @@
+import React, { useEffect, useState } from "react";
+import Auth from "../../services/Auth";
+import UserApi from "../../api/UserApi";
 
-import React, { useState } from 'react'
-// import { FaRegUserCircle } from "react-icons/fa";
+function QuizCreateForm({ setQuiz }) {
+    const [ques, setQues] = useState("");
+    const [opt1, setOpt1] = useState("");
+    const [opt2, setOpt2] = useState("");
+    const [opt3, setOpt3] = useState("");
+    const [opt4, setOpt4] = useState("");
+    const [ans, setAns] = useState("");
+    const [subject, setSubject] = useState("");
 
-
-function QuizCreateForm({ onCreateQuizClick, userData }) {
-
-    const [question, setQuestion] = useState("");
-    const [option1, setOption1] = useState("");
-    const [option2, setOption2] = useState("");
-    const [option3, setOption3] = useState("");
-    const [answer, setAnswer] = useState("");
-    const[title,setTitle]=useState("");
-
-    
-
-    const onCreatClick= () => {
-        const quizData = {question, option1,option2,option3,answer, title};
-        onCreateQuizClick(quizData)
-            .then(() => {
-                setQuestion("");
-                setOption1("");
-                setOption2("");
-                setOption3("");
-                setAnswer("");
-                setTitle("");
-            })
-    }
-
-   
-
+    const [user, setUser] = useState({});
+    const userMail = Auth.getUserMail();
+  
+    useEffect(() => {
+      function getUserByMail() {
+        UserApi.getUserByMail(userMail).then((res) => {
+          setUser(res.data);
+        });
+      }
+      userMail !== null && getUserByMail();
+    }, [userMail]);
+  
+    const submitHandler = (event) => {
+      event.preventDefault();
+      setQuiz({
+        q: ques,
+        option1: opt1,
+        option2: opt2,
+        option3: opt3,
+        option4: opt4,
+        correctanswer: ans,
+        subject: subject,
+        user: user
+      });
+    };
     return (
-        
-            <div className="card">
-                <div className="card-body">
-                    <h4 className="card-title" >
-                    
-                    {/* <FaRegUserCircle /> */}
-                    {userData.name}
-                    
-                    </h4>
-                    <div>
-                        <div className="form-group">
-                            
-                            <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Type the question"
-                            value={question}
-                            onChange={e => setQuestion(e.target.value)} />
+      <div className="assignement-frm">
+        <h2 style={{ color: "#006d77" }}>Quiz</h2>
+        <div className="row">
+          <div className="col-md-6 col-sm-6">
+            <br />
+            <form
+              id="assignment-form"
+              style={{ width: "100%" }}
+              onSubmit={submitHandler}
+            >
+              <div className="form-group">
+                <label htmlFor="formGroupExampleInput">Quize Title</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  required
+                  id="formGroupExampleInput"
+                  placeholder="Enter Subject.."
+                  onChange={(e) => setSubject(e.target.value)}
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Question
+                </label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  placeholder="Enter Question..."
+                  onChange={(e) => setQues(e.target.value)}
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Option 1
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  placeholder="Enter option 1..."
+                  onChange={(e) => setOpt1(e.target.value)}
+                ></input>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Option 2
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  placeholder="Enter option 2..."
+                  onChange={(e) => setOpt2(e.target.value)}
+                ></input>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Option 3
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  placeholder="Enter option 3..."
+                  onChange={(e) => setOpt3(e.target.value)}
+                ></input>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Option 4
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  placeholder="Enter option 4..."
+                  onChange={(e) => setOpt4(e.target.value)}
+                ></input>
+              </div> <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Correct Answer
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  placeholder="Enter correct answer..."
+                  onChange={(e) => setAns(e.target.value)}
+                ></input>
+              </div>
+              
+  
+              <button type="submit" className="btn-newPost">
+                {" "}
+                <i class="fas fa-share-square"></i> Submit Assignement
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            placeholder="What is your option1"
-                            value={option1}
-                            onChange={e => setOption1(e.target.value)} />
-                       
-
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            placeholder="What is your option2"
-                            value={option2}
-                            onChange={e => setOption2(e.target.value)} />
-                       
-
-
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            placeholder="What is your option3"
-                            value={option3}
-                            onChange={e => setOption3(e.target.value)} />
-
-                         <textarea
-                            type="text"
-                            className="form-control"
-                            placeholder="What is your answer"
-                            value={answer}
-                            onChange={e => setAnswer(e.target.value)} />
-
-                            <textarea
-                            type="text"
-                            className="form-control"
-                            placeholder="What is your title"
-                            value={title}
-                            onChange={e => setTitle(e.target.value)} />
-
-
-                        </div>
-
-                        <div className="form-group">
-                            <button
-                                className="btn btn-info"
-                            onClick={onCreatClick}>
-                                Send
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    )
-    
-}
-
-export default QuizCreateForm
+export default QuizCreateForm;
