@@ -14,6 +14,9 @@ function FileUploader({ setFileUrl }) {
   };
   
   const handleUpload = () => {
+    if(file===null){
+      alert('Please select a file to upload');
+    }else{
     const uploadTask = storage.ref(`files/${file.name}`).put(file);
     uploadTask.on(
       "state_changed",
@@ -36,6 +39,7 @@ function FileUploader({ setFileUrl }) {
           });
       }
     );
+    }
   };
 
   console.log("file: ", file);
