@@ -26,6 +26,10 @@ function AnnouncementForm({ setAnnounce }) {
 
   const submitHandler = event => {
     event.preventDefault();
+    if(details===""){
+      alert("Submit a valid announcement");
+      return;
+    }
     setAnnounce({
       title: announceTitle,
       body: details,
