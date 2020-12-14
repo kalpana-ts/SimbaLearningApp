@@ -39,6 +39,9 @@ public class User {
     @Column(name = "userType")
     private String userType;
 
+    @Column(name = "imgUrl")
+    private String imgUrl;
+
     @OneToMany
     private List<AssignmentPost> assignmentPosts;
     @OneToMany
@@ -52,12 +55,13 @@ public class User {
                 @Length(min = 5, max = 100, message = "Password length most be between 5-100 characters")
                         String password,
                 @Length(min = 3, max = 100, message = "Name must be between 3-100 characters") String name,
-                String grade, String userType) {
+                String grade, String userType, String imgUrl) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.grade = grade;
         this.userType = userType;
+        this.imgUrl = imgUrl;
     }
 
     public Long getId() {
@@ -108,5 +112,13 @@ public class User {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

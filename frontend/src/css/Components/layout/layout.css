@@ -2,15 +2,21 @@
     background-color: transparent !important;
 }
 .navbar-dark .navbar-nav .nav-link{
-    color: #848484 !important;
+    color: #848484;
 }
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: #006d77;
-    font-size: 20px;
+    color: #B52B65;
+}
+.nav-link:focus{
+    color: #fff !important;
+    background-color:#006d77 ;
+}
+.nav-dropdown{
+    color:  #848484;
 }
 .active-link{
-    color: #006d77 !important;
-    font-size: 20px;
+    color: #fff !important;
+    background-color:#006d77 ;
 }
 .logo-img{
     height:50px;
@@ -68,7 +74,10 @@
 .navbar-nav{
     flex: none;
     order: 0;
-    margin-left: 48%;
+    margin-left: 20%;
+}
+.student-nav{
+    margin-left: 40% !important;
 }
 .navbar-toggler {
     background-color: #006d77 !important;
@@ -78,15 +87,36 @@
     padding-right: .8rem !important;
     padding-left: .8rem !important;
 }
+.profile-img{
+    height: 40px;
+    width: 40px;
+}
+.navbar-login
+{
+    width: 270px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.profile-dropdown{
+    margin-left: -80%;
+    border: none;
+    background-color: #dbe7e4;
+}
 
 @media (min-width:801px) {
     .navbar-nav{
-        margin-left: 48%;
+        margin-left: 20%;
+    }
+    .student-nav{
+        margin-left: 40% !important;
     }
 }
 @media (min-width:1300px) {
     .navbar-nav{
-        margin-left: 40%;
+        margin-left: 20%;
+    }
+    .student-nav{
+        margin-left: 40% !important;
     }
 }
 @media (min-width: 1200px){
