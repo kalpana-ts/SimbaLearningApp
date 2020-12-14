@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Auth from "../../services/Auth";
 import UserApi from "../../api/UserApi";
+import UserImg from "../../images/user_empty.png";
 
 function Navbar({ onLogout }) {
   const [user, setUser] = useState({});
@@ -42,7 +43,12 @@ function Navbar({ onLogout }) {
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto student-nav">
           <li className="nav-item">
-            <NavLink exact to="/" className="nav-link" activeClassName="active-link">
+            <NavLink
+              exact
+              to="/"
+              className="nav-link"
+              activeClassName="active-link"
+            >
               Home
             </NavLink>
           </li>
@@ -101,12 +107,21 @@ function Navbar({ onLogout }) {
               aria-expanded="false"
               exact
             >
-              <img
-                className="profile-img"
-                src={user.imgUrl}
-                alt="profile"
-                srcset=""
-              />{" "}
+              {user.imgUrl === null ? (
+                <img
+                  className="profile-img"
+                  src={UserImg}
+                  alt="profile"
+                  srcset=""
+                />
+              ) : (
+                <img
+                  className="profile-img"
+                  src={user.imgUrl}
+                  alt="profile"
+                  srcset=""
+                />
+              )} &nbsp;&nbsp;
               {user.name}
             </a>
             <div
@@ -118,17 +133,26 @@ function Navbar({ onLogout }) {
                   <div class="col-lg-4">
                     <p class="text-center">
                       <span class="glyphicon glyphicon-user icon-size">
-                        <img
-                          className="profile-img"
-                          src={user.imgUrl}
-                          alt="profile"
-                          srcset=""
-                        />{" "}
+                        {user.imgUrl === null ? (
+                          <img
+                            className="profile-img"
+                            src={UserImg}
+                            alt="profile"
+                            srcset=""
+                          />
+                        ) : (
+                          <img
+                            className="profile-img"
+                            src={user.imgUrl}
+                            alt="profile"
+                            srcset=""
+                          />
+                        )}
                       </span>
                     </p>
                   </div>
                   <div class="col-lg-8">
-                    <p class="text-left">
+                    <p class="text-left user-profile-data">
                       <strong>{user.name}</strong>
                     </p>
                     <p class="text-left small">{user.email}</p>

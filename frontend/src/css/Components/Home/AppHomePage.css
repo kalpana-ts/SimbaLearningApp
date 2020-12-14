@@ -3,7 +3,7 @@
     font-style: normal;
     font-size: 24px;
     color: #fff;
-    padding: 25px 0px 0px 100px !important;
+    padding: 16px 0px 7px 100px !important
 }
  .Assignement-title{
     font-weight: bold;
@@ -43,4 +43,9 @@
  }
  .grade-img{
      height:40px;
+ }
+ .isDisabled {
+   color: currentColor;
+   cursor: not-allowed;
+   text-decoration: none;
  }

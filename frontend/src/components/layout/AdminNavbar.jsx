@@ -200,7 +200,7 @@ function Navbar({ onLogout }) {
                     </p>
                   </div>
                   <div class="col-lg-8">
-                    <p class="text-left">
+                    <p class="text-left user-profile-data">
                       <strong>{user.name}</strong>
                     </p>
                     <p class="text-left small">{user.email}</p>
