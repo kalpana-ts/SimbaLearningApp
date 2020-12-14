@@ -83,7 +83,9 @@ export default function AssignmentSubmittedList({ assignment, user }) {
         <div>
           <h1>Assigments submitted back by You</h1>
           {assignmentsSubmittedByUser === [] ? (
-            "No submissions yet"
+            <div className="center-data">
+              <p>No Submission Yet..</p>
+            </div>
           ) : (
             <table class="table" cellspacing="0">
               <thead>
