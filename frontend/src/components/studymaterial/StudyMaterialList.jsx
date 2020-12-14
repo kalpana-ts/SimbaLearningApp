@@ -21,7 +21,8 @@ function StudyMaterialList(){
     );
 
     return (
-        materials.length===0 ? <p>No Materials to show</p>
+        <div>
+        { materials.length === 0 ? <p>No Materials to show</p>
      : 
         <div className="col-lg-10 assignement-list-table">
         <table class="table">
@@ -38,6 +39,7 @@ function StudyMaterialList(){
         </thead>
                 {materialsList}
         </table>
+        </div>}
         </div>);
 }
 
