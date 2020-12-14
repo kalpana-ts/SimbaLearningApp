@@ -219,7 +219,7 @@ export default function SingleAssignmentSubmitted() {
 
           <div class="widget-body">
             <div class="widget-top-overflow text-white">
-              {url.match(".gif") ||
+              {url && ((url.match(".gif") ||
               url.match(".jpg") ||
               url.match(".png") ||
               url.match(".jpeg") ? (
@@ -237,7 +237,7 @@ export default function SingleAssignmentSubmitted() {
                     allowfullscreen
                   ></iframe>
                 </div>
-              )}
+              )))}
             </div>
           </div>
         </div>

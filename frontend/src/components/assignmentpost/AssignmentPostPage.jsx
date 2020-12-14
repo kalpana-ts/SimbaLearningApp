@@ -24,7 +24,7 @@ function AssignmentPostPage(){
     );
 
     return (
-        assignments === [] ? <p>No Assignments to show</p>
+        assignments.length === 0 ? <p>No Assignments to show</p>
      : 
         <div className="col-lg-10 assignement-list-table">
         <table class="table">
@@ -32,7 +32,7 @@ function AssignmentPostPage(){
             <tr>
             <th scope="col">#</th>
             <th scope="col">Psted By</th>
-            <th scope="col">Assignement</th>
+            <th scope="col">Assignment</th>
             <th scope="col">Grade</th>
             <th scope="col">Subject</th>
             <th scope="col">Submission Date</th>
