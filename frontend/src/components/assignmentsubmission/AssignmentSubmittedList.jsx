@@ -58,7 +58,6 @@ export default function AssignmentSubmittedList({ assignment, user }) {
     <>
       {teacherView && (
         <div>
-          <h1>Assigments submitted back by students</h1>
           {assignmentsSubmitted.length === 0 ? (
             "No submissions yet"
           ) : (
@@ -81,14 +80,13 @@ export default function AssignmentSubmittedList({ assignment, user }) {
 
       {studentView && (
         <div>
-          <h1>Assigments submitted back by You</h1>
           {assignmentsSubmittedByUser === [] ? (
             <div className="center-data">
               <p>No Submission Yet..</p>
             </div>
           ) : (
             <table class="table" cellspacing="0">
-              <thead>
+              <thead style={{backgroundColor: '#9fd8cb'}}>
                 <tr>
                   <th>Submitted By</th>
                   <th>Submitted on</th>

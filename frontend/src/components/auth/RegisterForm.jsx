@@ -7,8 +7,18 @@ function RegisterForm({ onSubmit }) {
   const [password, setPassword] = useState("");
   const [userType, setuserType] = useState("");
   const [grade, setGrade] = useState("0");
-  const [imgUrl, setImgUrl] = useState('');
+  const [imgUrl, setImgUrl] = useState("");
   const [uploading, setUploading] = useState(true);
+
+  function onClickHandler(e) {
+    e.preventDefault();
+    if (grade === "0" && userType === "student") {
+      alert("Please select grade..")
+    }
+    else{
+      onSubmit({ name, email, password, userType, grade, imgUrl });
+    }
+  }
 
   return (
     <div className="sign-up-form">
@@ -95,6 +105,7 @@ function RegisterForm({ onSubmit }) {
             className="form-control"
             onChange={(e) => setGrade(e.target.value)}
           >
+            <option value="0">Please select</option>
             <option value="1">Grade 1</option>
             <option value="2">Grade 2</option>
             <option value="3">Grade 3</option>
@@ -113,20 +124,12 @@ function RegisterForm({ onSubmit }) {
       </div> */}
 
       <div className="group">
-        <button
-          type="submit"
-          className="button"
-          onClick={(e) => onSubmit({ name, email, password, userType, grade, imgUrl })}
-        >   
+        <button type="submit" className="button" onClick={onClickHandler}>
           Sign Up
         </button>
       </div>
 
       <div className="hr"></div>
-     {/*  <div className="foot">
-        {" "}
-        <label htmlFor="tab-1">Already Member?</label>{" "}
-      </div> */}
     </div>
   );
 }

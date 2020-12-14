@@ -24,11 +24,11 @@ import ChatNewPage from "./components/chatNew/ChatPage";
 import AssignmentSubmissionForm from "./components/assignmentsubmission/AssignmentSubmissionForm";
 import SingleAssignmentSubmitted from "./components/assignmentsubmission/SingleAssignmentSubmitted";
 import Scheduler from "./components/calendar/Scheduler";
-import NewStudyMaterial from './components/studymaterial/NewStudyMaterial';
-import StudyMaterialList from './components/studymaterial/StudyMaterialList';
-import SingleStudyMaterial from './components/studymaterial/SingleStudyMaterial';
-import GradeStudyMaterialPage from './components/studymaterial/GradeStudyMaterialPage';
-import StudyMaterialByGrade from './components/studymaterial/StudyMaterialByGrade';
+import NewStudyMaterial from "./components/studymaterial/NewStudyMaterial";
+import StudyMaterialList from "./components/studymaterial/StudyMaterialList";
+import SingleStudyMaterial from "./components/studymaterial/SingleStudyMaterial";
+import GradeStudyMaterialPage from "./components/studymaterial/GradeStudyMaterialPage";
+import StudyMaterialByGrade from "./components/studymaterial/StudyMaterialByGrade";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -41,9 +41,8 @@ function App() {
 
       <div className="container mt-5">
         <Switch>
-
           <Route exact path="/studymaterial/new">
-              <NewStudyMaterial/>
+            <NewStudyMaterial />
           </Route>
 
           <Route exact path="/assignmentPost">
@@ -59,13 +58,12 @@ function App() {
           </Route>
 
           <Route exact path="/studymaterial">
-            < StudyMaterialList/>
+            <StudyMaterialList />
           </Route>
 
           <Route exact path="/studymaterial/:id">
             <SingleStudyMaterial />
           </Route>
-
 
           <Route exact path="/assignmentPost/grade/:grade">
             <GradeAssignmentPage />
@@ -74,8 +72,6 @@ function App() {
           <Route exact path="/studymaterial/grade/:grade">
             <GradeStudyMaterialPage />
           </Route>
-
-
 
           <Route exact path="/assignmentPost/grade/subject/:subject">
             <AssignmentList />
@@ -129,7 +125,6 @@ function App() {
             <AppHomePage />
           </Route>
         </Switch>
-
       </div>
     </Router>
   );

@@ -107,7 +107,7 @@ function Navbar({ onLogout }) {
               aria-expanded="false"
               exact
             >
-              {user.imgUrl === null ? (
+              {(user.imgUrl === null || user.imgUrl === "") ? (
                 <img
                   className="profile-img"
                   src={UserImg}
@@ -133,7 +133,7 @@ function Navbar({ onLogout }) {
                   <div class="col-lg-4">
                     <p class="text-center">
                       <span class="glyphicon glyphicon-user icon-size">
-                        {user.imgUrl === null ? (
+                        {(user.imgUrl === null || user.imgUrl === "") ? (
                           <img
                             className="profile-img"
                             src={UserImg}
