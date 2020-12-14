@@ -65,7 +65,13 @@ function AssignmentList() {
         <img className="subject-view-img" src={artGif} alt="" srcset="" />
       ) : null}
 
-      {assignments.length === 0 ? "No Assignments to show" : <>{assignmentList}</>}
+      {assignments.length === 0 ? (
+        <div className="center-data">
+          <p>No Assignments to show</p>
+        </div>
+      ) : (
+        <>{assignmentList}</>
+      )}
     </div>
   );
 }
