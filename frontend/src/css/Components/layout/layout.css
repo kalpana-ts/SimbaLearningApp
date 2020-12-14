@@ -102,6 +102,9 @@
     border: none;
     background-color: #dbe7e4;
 }
+.user-profile-data{
+    line-height: 0.5285em;
+}
 
 @media (min-width:801px) {
     .navbar-nav{
