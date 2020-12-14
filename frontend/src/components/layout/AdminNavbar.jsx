@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Auth from "../../services/Auth";
 import UserApi from "../../api/UserApi";
+import UserImg from "../../images/user_empty.png";
 
 function Navbar({ onLogout }) {
   const [user, setUser] = useState({});
@@ -68,10 +69,20 @@ function Navbar({ onLogout }) {
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <NavLink to="/studymaterial/new" className="dropdown-item nav-dropdown" exact activeClassName="active-link">
+              <NavLink
+                to="/studymaterial/new"
+                className="dropdown-item nav-dropdown"
+                exact
+                activeClassName="active-link"
+              >
                 Submit a new StudyMaterial
               </NavLink>
-              <NavLink to="/studymaterial/" className="dropdown-item nav-dropdown" exact activeClassName="active-link">
+              <NavLink
+                to="/studymaterial/"
+                className="dropdown-item nav-dropdown"
+                exact
+                activeClassName="active-link"
+              >
                 List of All StudyMaterial
               </NavLink>
             </div>
@@ -94,10 +105,20 @@ function Navbar({ onLogout }) {
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <NavLink to="/assignmentPost/new" className="dropdown-item nav-dropdown" exact activeClassName="active-link">
+              <NavLink
+                to="/assignmentPost/new"
+                className="dropdown-item nav-dropdown"
+                exact
+                activeClassName="active-link"
+              >
                 Upload New Assignment
               </NavLink>
-              <NavLink to="/assignmentPost/" className="dropdown-item nav-dropdown" exact activeClassName="active-link">
+              <NavLink
+                to="/assignmentPost/"
+                className="dropdown-item nav-dropdown"
+                exact
+                activeClassName="active-link"
+              >
                 List of Assignment
               </NavLink>
             </div>
@@ -120,10 +141,20 @@ function Navbar({ onLogout }) {
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <NavLink to="/announce/new" className="dropdown-item nav-dropdown" exact activeClassName="active-link">
+              <NavLink
+                to="/announce/new"
+                className="dropdown-item nav-dropdown"
+                exact
+                activeClassName="active-link"
+              >
                 Post New Announcement
               </NavLink>
-              <NavLink to="/announce" className="dropdown-item nav-dropdown" exact activeClassName="active-link">
+              <NavLink
+                to="/announce"
+                className="dropdown-item nav-dropdown"
+                exact
+                activeClassName="active-link"
+              >
                 List Of Announcement
               </NavLink>
             </div>
@@ -173,12 +204,22 @@ function Navbar({ onLogout }) {
               aria-expanded="false"
               exact
             >
-              <img
-                className="profile-img"
-                src={user.imgUrl}
-                alt="profile"
-                srcset=""
-              />{" "}
+              {user.imgUrl === null || user.imgUrl === "" ? (
+                <img
+                  className="profile-img"
+                  src={UserImg}
+                  alt="profile"
+                  srcset=""
+                />
+              ) : (
+                <img
+                  className="profile-img"
+                  src={user.imgUrl}
+                  alt="profile"
+                  srcset=""
+                />
+              )}{" "}
+              &nbsp;&nbsp;
               {user.name}
             </a>
             <div
@@ -190,12 +231,21 @@ function Navbar({ onLogout }) {
                   <div class="col-lg-4">
                     <p class="text-center">
                       <span class="glyphicon glyphicon-user icon-size">
-                        <img
-                          className="profile-img"
-                          src={user.imgUrl}
-                          alt="profile"
-                          srcset=""
-                        />{" "}
+                        {user.imgUrl === null || user.imgUrl === "" ? (
+                          <img
+                            className="profile-img"
+                            src={UserImg}
+                            alt="profile"
+                            srcset=""
+                          />
+                        ) : (
+                          <img
+                            className="profile-img"
+                            src={user.imgUrl}
+                            alt="profile"
+                            srcset=""
+                          />
+                        )}
                       </span>
                     </p>
                   </div>
@@ -217,11 +267,6 @@ function Navbar({ onLogout }) {
               </div>
             </div>
           </li>
-          {/* <li className="nav-item">
-            <button className="btn btn-log my-2 my-sm-0" onClick={onLogout}>
-              LogOut
-            </button>
-          </li> */}
         </ul>
       </div>
     </nav>

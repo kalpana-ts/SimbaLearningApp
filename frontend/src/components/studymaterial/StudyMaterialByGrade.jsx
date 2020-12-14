@@ -43,7 +43,7 @@ function StudyMaterialByGrade() {
 
   return (
     <div>
-      <h1>{subjectName[0]}</h1>
+      <span className="center-subject-name ">{subjectName[0]}</span> <br/> <br/>
       {subjectName[0] === "Math" ? (
         <img className="subject-view-img" src={mathGif} alt="" srcset="" />
       ) : null}
@@ -73,9 +73,9 @@ function StudyMaterialByGrade() {
           <p>No Study Material To Show..</p>
         </div>
       ) : (
-        <div className="col-lg-10 assignement-list-table">
+        <div className="col-lg-10 student-assignement-list-table">
           <table class="table">
-            <thead class="teacher-assignement-tbl-row">
+            <thead class="student-assignement-tbl-row">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Posted By</th>

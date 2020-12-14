@@ -9,6 +9,7 @@
 @import "./Components/assignement/assignement.css";
 @import "./Components/assignement/SubjectPage.css";
 @import "./Components/quiz/quiz.css";
+@import "./Components/StudyMaterial/StudyMaterial.css";
 
 
 body {
