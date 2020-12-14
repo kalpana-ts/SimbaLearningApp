@@ -23,15 +23,16 @@ function StudyMaterialList(){
     return (
         materials.length===0 ? <p>No Materials to show</p>
      : 
-        <div className="col-lg-10 material-list-table">
+        <div className="col-lg-10 assignement-list-table">
         <table class="table">
-        <thead class="teacher-material-tbl-row">
+        <thead class="teacher-assignement-tbl-row">
             <tr>
             <th scope="col">#</th>
             <th scope="col">Posted By</th>
             <th scope="col">Study Material Title</th>
             <th scope="col">Grade</th>
-            <th scope="col">Subject</th>          
+            <th scope="col">Subject</th> 
+            <th scope="col">Submission Date</th>         
             <th scope="col">Action</th>
             </tr>
         </thead>

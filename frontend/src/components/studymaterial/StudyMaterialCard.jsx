@@ -13,7 +13,7 @@ function StudyMaterialCard(material) {
                 <td>{material.material.subject}</td>
                 <td>{material.material.postDate}</td>
                 <td>
-                    <Link className="btn-studymaterial-view" to={{ pathname: `/studymaterial/${material.material.id}`, state: { material } }}>
+                    <Link className="btn-assignement-view" to={{ pathname: `/studymaterial/${material.material.id}`, state: { material } }}>
                         View 
                     </Link>
                 </td>
