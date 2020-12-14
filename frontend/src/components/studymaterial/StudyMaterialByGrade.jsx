@@ -8,6 +8,7 @@ import languageGif from "../../images/hello-talker.gif";
 import artGif from "../../images/art.gif";
 
 import StudyMaterialApi from "../../api/StudyMaterialApi";
+import StudyMaterialCard from '../studymaterial/StudyMaterialCard';
 //import AssignmentCard from '../assignmentpost/AssignmentCard';
 import StudyMaterialBySubject from "../studymaterial/StudyMaterialBySubject";
 //import SingleStudyMaterial from "./SingleStudyMaterial";
@@ -31,8 +32,9 @@ function StudyMaterialByGrade() {
     fetchPosts();
   }, []);
 
-  const materialList = materials.map((material) => (
-    <StudyMaterialBySubject key={material.id} material={material}  />
+  const materialsList = materials.map((material) => (
+   // <StudyMaterialBySubject key={material.id} material={material}  />
+   <StudyMaterialCard key={material.id} material={material}/>    
   ));
 
   const subjectName = materials.map((material) => material.subject);
@@ -66,7 +68,25 @@ function StudyMaterialByGrade() {
         <img className="subject-view-img" src={artGif} alt="" srcset="" />
       ) : null}
 
-      {materials.length === 0 ? "No Studymaterials to show" : <>{materialList}</>}
+       {materials.length===0 ? <p>No Materials to show</p>
+     : 
+        <div className="col-lg-10 assignement-list-table">
+        <table class="table">
+        <thead class="teacher-assignement-tbl-row">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Posted By</th>
+            <th scope="col">Study Material Title</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Subject</th> 
+            <th scope="col">Submission Date</th>         
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+                {materialsList}
+        </table>
+       </div>}
+      {/* {materials.length === 0 ? "No Studymaterials to show" : <>{materialList}</>} */}
     </div>
   );
 }

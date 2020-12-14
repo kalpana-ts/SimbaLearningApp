@@ -59,7 +59,7 @@ export default function AssignmentSubmittedList({ assignment, user }) {
       {teacherView && (
         <div>
           <h1>Assigments submitted back by students</h1>
-          {assignmentsSubmitted === [] ? (
+          {assignmentsSubmitted.length === 0 ? (
             "No submissions yet"
           ) : (
             <table class="table" cellspacing="0">

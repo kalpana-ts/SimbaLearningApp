@@ -16,14 +16,21 @@ function SingleStudyMaterial() {
   try {
     return (
         
-        <div class="row d-flex align-items-center justify-content-center">
+      <div className="single-assignment-submitted-frm">
           <div class="col-md-7 assignment-post">
               <div class="single-assignment-card">
-              <div className="card-title bg-secondary text-white m-0 p-1 ">
+              <p>
+        <button
+          class="btn student-info-tab"
+          type="button"
+          aria-controls="multiCollapseExample1 multiCollapseExample2"
+        >  
           {material.title + " ... "}
           Posted By: 
-          {material.user.name}    
-          </div>
+          {material.user.name}
+          </button>
+          </p>    
+          
           <div className="card-body">
                 Description: 
                 {material.description} <br />
@@ -33,12 +40,14 @@ function SingleStudyMaterial() {
                 Subject: 
                 {material.subject}
                 <br />
+                Download Attachment: {material.fileUrl ? 
+                <a href={material.fileUrl} target="_blank">{material.title} file</a>: 'No attachment'}
                 
   
               </div>
               <div class="widget-body">
               <div class="widget-top-overflow text-white">
-              {material.fileUrl && (url.match('.jpg') || url.match('.png') ?
+              {material.fileUrl && (url.match('.jpg') || url.match('.png') || url.match(".jpeg") || url.match(".gif") ?
                           <img src={material.fileUrl} class="img-fluid" alt="Responsive image"/> : 
                           <div class="embed-responsive embed-responsive-16by9">
                           <iframe class="embed-responsive-item" src={material.fileUrl} allowfullscreen></iframe>
