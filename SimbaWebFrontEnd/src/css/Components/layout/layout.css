@@ -5,8 +5,8 @@
     color: #848484;
 }
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: #006d77;
-    font-size: 20px;
+    background-color: #006d77;
+    color: #fff;
 }
 .active-link{
     color: #006d77 !important;
@@ -15,13 +15,22 @@
 .logo-img{
     height:50px;
 }
-.btn-outline-info{
-    color: #006d77;
-    border-color: #006d77;
-}
-.btn-outline-info:hover{
-    background-color: #006d77;
-}
+.btn-home-login {
+    background-color: #FF8A3C;
+    border: 1px solid #e5e5e5;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .btn-home-login:hover {
+    border: 1px solid transparent;
+    background: #E56B6F;
+    color: #fff;
+  }
 .line{
     position: absolute;
     width: 1440px;
