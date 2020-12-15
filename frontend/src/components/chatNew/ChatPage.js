@@ -73,7 +73,7 @@ function ChatPage() {
                 
                 <label class="btn btn-secondary btn-chat active">
                     <img className="chat-page-icon" src={inboxGif} alt="mail" />
-                    <input type="radio" name="options" id="option2" autocomplete="off" onClick={handleClickInbox} /> Your Messages
+                    <input type="radio" name="options" id="option2" autocomplete="off" defaultChecked onClick={handleClickInbox} /> Your Messages
                 </label>
                 
                 <label class="btn btn-secondary btn-chat">
