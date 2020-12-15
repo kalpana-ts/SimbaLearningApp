@@ -23,11 +23,10 @@ export default function AssignmentSubmissionForm() {
 
   function submitAssignment(e) {
     e.preventDefault();
-    // if (assignmentDescription === "" && fileUrl === "") {
-    //     //emptySubmission=true;
-    //     alert("Can't submit empty assignment")
-    //     return;
-    // }
+    if (assignmentDescription === "" && fileUrl === "") {
+        alert("Can't submit empty assignment")
+        return;
+    }
     const newAssignment = {
       assignmentTitle: assignmentTitle,
       assignmentDescription: assignmentDescription,
@@ -42,22 +41,6 @@ export default function AssignmentSubmissionForm() {
     };
     AssignmentSubmissionApi.createAssignment(newAssignment);
     history.goBack();
-   // history.push(`/assignmentPost/grade/subject`, state ={ grade:grade,subject:subject});
-
-  //   try {
-  //     if (newAssignment !== null) {
-  //   const response =  AssignmentSubmissionApi.createAssignment(newAssignment).then(console.log('response',response));
-  //   history.push('/');
-  //   console.log('response',response)
-  //   }
-  // } catch (error) {
-   
-  //   history.push(`/assignmentPost/grade/subject/${subject}`,state= {grade,subject});
-  //     }
-//   <Route exact path="/assignmentPost/grade/subject/:subject">
-//   <AssignmentList />
-// </Route>
-// <Link className="" to={{ pathname: `/assignmentPost/grade/subject/${subject}`, state: {grade,subject:'Math'} }} ></Link>
   }
   
   return (
@@ -79,7 +62,7 @@ export default function AssignmentSubmissionForm() {
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="2"
-                required
+                
                 placeholder="Enter your Answer here...."
                 onChange={(e) => setAssignmentDescription(e.target.value)}
               ></textarea>
@@ -93,7 +76,7 @@ export default function AssignmentSubmissionForm() {
               <i class="fas fa-share-square"></i> Submit Your Answer
             </button>
           </form>
-          {/* {emptySubmission && <h2>Please submit a valid answer</h2>} */}
+         
         </div>
       </div>
     </div>
