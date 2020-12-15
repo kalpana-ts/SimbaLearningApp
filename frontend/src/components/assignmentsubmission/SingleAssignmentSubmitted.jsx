@@ -36,8 +36,10 @@ export default function SingleAssignmentSubmitted() {
     setComments(e.target.value);
   };
 
-  const submitReview = () => {
+  const submitReview = (e) => {
+    e.preventDefault();
     if (comments === "") {
+      alert('Enter some comments');
       return;
     }
     const updateAssignmentSubmission = {
@@ -83,7 +85,7 @@ export default function SingleAssignmentSubmitted() {
               </span>
             </div>
             <div className="col-md-4">
-              {teacherView && (
+              {(teacherView && status!=="Accepted") && (
                 <div>
                   <div>
                     <button
