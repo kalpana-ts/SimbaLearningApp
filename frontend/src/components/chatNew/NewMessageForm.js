@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import UserApi from '../../api/UserApi';
 import MessageApi from '../../api/MessageApi';
 import FileUploader from '../../components/announcementNew/FileUploader';
@@ -10,7 +11,7 @@ function NewMessageForm({user}) {
     const [ recipient, setRecipient ] = useState("");
     const [ subject, setSubject ] = useState("");
     const [ fileUrl, setFileUrl ] = useState("");
-
+    const history=useHistory();
     useEffect(() => {
         function getAllUsers() {
             UserApi.getAllUsers()
@@ -49,6 +50,7 @@ function NewMessageForm({user}) {
                 setSubject("");
                 setFileUrl("");
                 alert("Message sent successfully...")
+                history.push('/messages');
             })
     }
 

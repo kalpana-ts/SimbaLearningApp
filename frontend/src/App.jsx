@@ -29,6 +29,7 @@ import StudyMaterialList from './components/studymaterial/StudyMaterialList';
 import SingleStudyMaterial from './components/studymaterial/SingleStudyMaterial';
 import GradeStudyMaterialPage from './components/studymaterial/GradeStudyMaterialPage';
 import StudyMaterialByGrade from './components/studymaterial/StudyMaterialByGrade';
+import ReplyForm from "./components/chatNew/ReplyForm";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -123,6 +124,10 @@ function App() {
 
           <Route path="/messages" exact>
             <ChatNewPage />
+          </Route>
+
+          <Route path="/replymessage" exact>
+            <ReplyForm/>
           </Route>
 
           <Route path="/">
