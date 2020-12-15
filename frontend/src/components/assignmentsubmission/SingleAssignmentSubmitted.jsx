@@ -32,14 +32,17 @@ export default function SingleAssignmentSubmitted() {
   }, [userMail]);
 
   const [status, setStatus] = useState(assignment.status);
+  const [newStatus, setNewStatus] = useState(status);
   const [comments, setComments] = useState(assignment.comments);
 
   const handleChange = (e) => {
     setComments(e.target.value);
   };
 
-  const submitReview = () => {
+  const submitReview = (e) => {
+    e.preventDefault();
     if (comments === "") {
+      alert('Enter some comments');
       return;
     }
     const updateAssignmentSubmission = {
@@ -50,7 +53,7 @@ export default function SingleAssignmentSubmitted() {
       grade: assignment.grade,
       subject: assignment.subject,
       dateSubmitted: assignment.dateSubmitted,
-      status: status,
+      status: newStatus,
       comments: comments,
       reviewedBy: user.name,
       assignmentPost: assignment.assignmentPost,
@@ -87,7 +90,7 @@ export default function SingleAssignmentSubmitted() {
               </span>
             </div>
             <div className="col-md-4">
-              {teacherView && (
+              {(teacherView && status!=="Accepted") && (
                 <div>
                   <div>
                     <button
@@ -132,7 +135,7 @@ export default function SingleAssignmentSubmitted() {
                           id="accepted"
                           name="status"
                           value="Accepted"
-                          onChange={(e) => setStatus(e.target.value)}
+                          onChange={(e) => setNewStatus(e.target.value)}
                         />
                         &nbsp;&nbsp;
                         <label for="accepted">Accept </label>
@@ -142,7 +145,7 @@ export default function SingleAssignmentSubmitted() {
                           id="RevertedBack"
                           name="status"
                           value="Reverted Back"
-                          onChange={(e) => setStatus(e.target.value)}
+                          onChange={(e) => setNewStatus(e.target.value)}
                         />
                         &nbsp;&nbsp;
                         <label for="RevertedBack">Revert Back </label>
@@ -222,7 +225,9 @@ export default function SingleAssignmentSubmitted() {
             </div>
           </div>
         </div>
-        <div class="col"></div>
+        <div class="col">
+          
+        </div>
       </div>
     </div>
   );
