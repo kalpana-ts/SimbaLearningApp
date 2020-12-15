@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import {useHistory, useLocation, Link } from "react-router-dom";
 import Auth from "../../services/Auth";
 import UserApi from "../../api/UserApi";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AssignmentSubmissionApi from "../../api/AssignmentSubmissionApi";
 
+
 export default function SingleAssignmentSubmitted() {
   const userMail = Auth.getUserMail();
   const [user, setUser] = useState({});
   const { state } = useLocation();
+  const history=useHistory();
   const passedAssignment =
     state === undefined ? null : state.assignmentSubmitted;
   const [assignment, setAssignment] = useState(
@@ -59,6 +61,8 @@ export default function SingleAssignmentSubmitted() {
       () => {
         console.log("assignment");
         setShow(false);
+       // history.push(to = {pathname: `/assignmentSubmission/${assignment.id}`, state: passedAssignment });
+        history.goBack();
       }
     );
   };

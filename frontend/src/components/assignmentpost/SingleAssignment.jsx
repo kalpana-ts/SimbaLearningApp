@@ -76,9 +76,15 @@ function SingleAssignment() {
                   <p>{assignment.assignmentDescription}</p>
                   <p>Submission date : {assignment.submissionDate}</p>
                   {studentView && (
-                    <Link
+                    // <Link
+                    //   to={{
+                    //     pathname: `/assignmentSubmission/new/${assignment.id}`,
+                    //     state: { assignment, user },
+                    //   }}
+                    // >
+                       <Link
                       to={{
-                        pathname: `/assignmentSubmission/new/${assignment.id}`,
+                        pathname: '/assignmentSubmission/new',
                         state: { assignment, user },
                       }}
                     >

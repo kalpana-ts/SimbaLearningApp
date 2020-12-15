@@ -30,7 +30,10 @@ function AssignmentList() {
     fetchPosts();
   }, []);
 
-  const assignmentList = assignments.map((assignment) => (
+  const sortedAssignments = [].concat(assignments)
+      .sort((a, b) => a.submissionDate > b.submissionDate ? 1 : -1);
+    
+  const assignmentList = sortedAssignments.map((assignment) => (
     <AssignmentBySubject key={assignment.id} assignment={assignment} />
   ));
 

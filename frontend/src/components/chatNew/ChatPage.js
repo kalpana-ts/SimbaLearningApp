@@ -27,7 +27,7 @@ function ChatPage() {
     }, [userMail])
 
     const [newMessageComponentOn, setNewMessageComponentOn] = useState(false);
-    const [inboxComponentOn, setInboxComponentOn] = useState(true);
+    const [inboxComponentOn, setInboxComponentOn] = useState(false);
     const [sentMessagesComponentOn, setSentMessagesComponentOn] = useState(false);
 
     const handleClickCompose = () => {
@@ -68,7 +68,7 @@ function ChatPage() {
             <div className="col-md-3 btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary btn-chat">
                     <img className="chat-page-icon" src={composeGif} alt="mail" />
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked onClick={handleClickCompose} /> New Messages
+                    <input type="radio" name="options" id="option1" autocomplete="off" onClick={handleClickCompose} /> New Messages
                 </label>
                 
                 <label class="btn btn-secondary btn-chat active">

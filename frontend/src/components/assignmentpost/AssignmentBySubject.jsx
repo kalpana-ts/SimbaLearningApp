@@ -29,7 +29,8 @@ function AssignmentCard(assignment) {
           aria-expanded="false"
           aria-controls={"#multiCollapseExample" + assignment.assignment.id}
         >
-          {assignment.assignment.assignmentTitle}
+          {assignment.assignment.assignmentTitle}               
+          {/* Submission Date: {assignment.assignment.submissionDate} */}
         </button>
       </p>
       <div class="row">
@@ -40,7 +41,7 @@ function AssignmentCard(assignment) {
             id={"#multiCollapseExample" + assignment.assignment.id}
           >
             <div class="card card-body">
-              {url.match(".gif") ||
+              {url && (url.match(".gif") ||
               url.match(".jpg") ||
               url.match(".png") ||
               url.match(".jpeg") ? (
@@ -57,17 +58,24 @@ function AssignmentCard(assignment) {
                     allowfullscreen
                   ></iframe>
                 </div>
-              )}
+              ))}
               <br />
               <p>{assignment.assignment.assignmentDescription}</p>
               <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
               <div className="row">
                 <div className="col-md-5">
                   {studentView && (
-                    <Link
+                    // <Link
+                    //   className="btn-submit-assignment"
+                    //   to={{
+                    //     pathname: `/assignmentSubmission/new/${assignment.assignment.id}`,
+                    //     state: { assignment, user },
+                    //   }}
+                    // >
+                      <Link
                       className="btn-submit-assignment"
                       to={{
-                        pathname: `/assignmentSubmission/new/${assignment.assignment.id}`,
+                        pathname: '/assignmentSubmission/new',
                         state: { assignment, user },
                       }}
                     >
