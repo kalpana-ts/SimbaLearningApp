@@ -5,7 +5,7 @@ function AboutPage() {
     
   return (
       
-      <div class="about-data shadow-lg p-3 mb-5 rounded">
+      <div class="about-data shadow-sm p-3 mb-5 rounded">
         <div className="row">
                 <div className="col-md-4">
                     <img

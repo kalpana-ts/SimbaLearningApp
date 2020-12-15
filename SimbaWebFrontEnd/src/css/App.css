@@ -1,7 +1,6 @@
-@import "./Components/auth/loginPage.css";
 @import "./Components/layout/layout.css";
 @import "./Components/Home/Home.css";
-@import "./Components/Home/AppHomePage.css";
+@import "./Components/OurTeam/OurTeam.css";
 
 body {
   min-height: 100vh;
