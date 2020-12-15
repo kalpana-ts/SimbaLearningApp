@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import MessageApi from '../../api/MessageApi';
+import {useHistory,Link} from "react-router-dom";
 
 
 function Message({message, inbox, getAllAgain, deleteMessage, user}) {
-
+        const history=useHistory();
+      //  console.log('user:',user);
+    
 
     return (
                     <>
@@ -20,6 +23,10 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                         :
                                     <div>
                                         <p>{message.msgBody}</p>
+                                       <Link className="reply-class" to={{ pathname: '/replymessage', state: {replyTo:message.sender} }} >                
+                                            Reply
+                                        </Link>
+                                    
                                         <a href={message.fileUrl} className={message.fileUrl === "" ? 'show-msg' : 'show-files-msg'}>
                                         {   message.fileUrl.match('.jpg' || '.png') ?
                                             <img src={message.fileUrl} class="img-fluid" alt="Responsive image"/> 
@@ -32,7 +39,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                     </div>
                                 }
 
-                                <span className="time_date"> 11:01 AM    |    June 9</span>
+                                {/* <span className="time_date"> 11:01 AM    |    June 9</span> */}
                             </div>
                         </div>
                         </div>
@@ -61,7 +68,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                     </div>
                                 }
 
-                                <span className="time_date"> 11:01 AM    |    Today</span> 
+                                {/* <span className="time_date"> 11:01 AM    |    Today</span>  */}
                             </div>
                         </div>
 
