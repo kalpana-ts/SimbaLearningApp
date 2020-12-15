@@ -29,16 +29,17 @@ public class ChatMessage {
 
     private String fileUrl;
 
-
+    private String date;
     public ChatMessage() {
     }
 
-    public ChatMessage(Long id, String msgBody, String msgSubject) {
+    public ChatMessage(Long id, String msgBody, String msgSubject,String date) {
         this.id = id;
         this.msgBody = msgBody;
         this.msgSubject = msgSubject;
         this.readBySender = false;
         this.readByRecipient = false;
+        this.date = date;
     }
 
     public Long getId() {
@@ -105,4 +106,11 @@ public class ChatMessage {
         this.fileUrl = fileUrl;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }

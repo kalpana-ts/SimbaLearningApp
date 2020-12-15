@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
+import { format } from 'date-fns';
 import UserApi from '../../api/UserApi';
 import MessageApi from '../../api/MessageApi';
 import FileUploader from '../../components/announcementNew/FileUploader';
@@ -11,6 +12,7 @@ function NewMessageForm({user}) {
     const [ recipient, setRecipient ] = useState("");
     const [ subject, setSubject ] = useState("");
     const [ fileUrl, setFileUrl ] = useState("");
+    const [ date, setDate] = useState("");
     const history=useHistory();
     useEffect(() => {
         function getAllUsers() {
@@ -31,7 +33,8 @@ function NewMessageForm({user}) {
         console.log(listOfTeachers);
     
 
-    const sendMessage = () => {
+    const sendMessage = (e) => {
+        e.preventDefault();
         if (message === "") { alert("Please enter your message.."); }
         if (recipient === "") { alert("Please select person name.."); }
         const newMessage = {
@@ -39,6 +42,7 @@ function NewMessageForm({user}) {
             recipient: listOfTeachers.find((user) => user.name === recipient),
             msgBody: message,
             sender: user,
+            date: format(new Date(), 'dd-MMM-yyyy HH:mm'),
             fileUrl : fileUrl
         }
 
@@ -50,7 +54,8 @@ function NewMessageForm({user}) {
                 setSubject("");
                 setFileUrl("");
                 alert("Message sent successfully...")
-                history.push('/messages');
+                //window.location.reload(true);
+                //history.push('/messages');
             })
     }
 
