@@ -32,6 +32,7 @@ export default function SingleAssignmentSubmitted() {
   }, [userMail]);
 
   const [status, setStatus] = useState(assignment.status);
+  const [newStatus, setNewStatus] = useState(status);
   const [comments, setComments] = useState(assignment.comments);
 
   const handleChange = (e) => {
@@ -52,7 +53,7 @@ export default function SingleAssignmentSubmitted() {
       grade: assignment.grade,
       subject: assignment.subject,
       dateSubmitted: assignment.dateSubmitted,
-      status: status,
+      status: newStatus,
       comments: comments,
       reviewedBy: user.name,
       assignmentPost: assignment.assignmentPost,
@@ -134,7 +135,7 @@ export default function SingleAssignmentSubmitted() {
                           id="accepted"
                           name="status"
                           value="Accepted"
-                          onChange={(e) => setStatus(e.target.value)}
+                          onChange={(e) => setNewStatus(e.target.value)}
                         />
                         &nbsp;&nbsp;
                         <label for="accepted">Accept </label>
@@ -144,7 +145,7 @@ export default function SingleAssignmentSubmitted() {
                           id="RevertedBack"
                           name="status"
                           value="Reverted Back"
-                          onChange={(e) => setStatus(e.target.value)}
+                          onChange={(e) => setNewStatus(e.target.value)}
                         />
                         &nbsp;&nbsp;
                         <label for="RevertedBack">Revert Back </label>
@@ -224,7 +225,9 @@ export default function SingleAssignmentSubmitted() {
             </div>
           </div>
         </div>
-        <div class="col"></div>
+        <div class="col">
+          
+        </div>
       </div>
     </div>
   );
