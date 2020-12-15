@@ -40,7 +40,7 @@ function AssignmentCard(assignment) {
             id={"#multiCollapseExample" + assignment.assignment.id}
           >
             <div class="card card-body">
-              {url.match(".gif") ||
+              {url && (url.match(".gif") ||
               url.match(".jpg") ||
               url.match(".png") ||
               url.match(".jpeg") ? (
@@ -57,7 +57,7 @@ function AssignmentCard(assignment) {
                     allowfullscreen
                   ></iframe>
                 </div>
-              )}
+              ))}
               <br />
               <p>{assignment.assignment.assignmentDescription}</p>
               <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
