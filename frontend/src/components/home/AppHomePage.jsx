@@ -9,7 +9,6 @@ import StudentHome from "./StudentHome";
 
 
 function AppHomePage() {
-  const [grade, setGrade] = useState("1");
   const [user, setUser] = useState({});
   const userMail = Auth.getUserMail();
 

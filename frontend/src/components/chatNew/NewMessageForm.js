@@ -68,7 +68,7 @@ function NewMessageForm({user}) {
                                 <span className="input-group-text">Send To</span>
                             </div>
                                 <select id='user' name ='user'
-                                    className='browser-default custom-select' required
+                                    className='browser-default custom-select'
                                     onChange={event => setRecipient(event.target.value)}>
                                         <option value="">Please select</option>
                                     { listOfTeachers.length === 0 ? "" :

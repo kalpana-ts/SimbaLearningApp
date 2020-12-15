@@ -42,9 +42,8 @@ function App() {
 
       <div className="container mt-5">
         <Switch>
-
           <Route exact path="/studymaterial/new">
-              <NewStudyMaterial/>
+            <NewStudyMaterial />
           </Route>
 
           <Route exact path="/assignmentPost">
@@ -60,13 +59,12 @@ function App() {
           </Route>
 
           <Route exact path="/studymaterial">
-            < StudyMaterialList/>
+            <StudyMaterialList />
           </Route>
 
           <Route exact path="/studymaterial/:id">
             <SingleStudyMaterial />
           </Route>
-
 
           <Route exact path="/assignmentPost/grade/:grade">
             <GradeAssignmentPage />
@@ -75,8 +73,6 @@ function App() {
           <Route exact path="/studymaterial/grade/:grade">
             <GradeStudyMaterialPage />
           </Route>
-
-
 
           <Route exact path="/assignmentPost/grade/subject/:subject">
             <AssignmentList />
@@ -134,7 +130,6 @@ function App() {
             <AppHomePage />
           </Route>
         </Switch>
-
       </div>
     </Router>
   );

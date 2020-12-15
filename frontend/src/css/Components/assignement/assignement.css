@@ -17,6 +17,9 @@
     font-size: 18px;
     font-weight: 600;
   }
+  .iframe-border{
+    border: 2px solid #747274;
+  }
 
 /* assignement view page css */
 
@@ -81,7 +84,7 @@
 
 /*Assignment by subject page */
 .btn-submit-assignment{
-    background-color: #FFCE54; 
+    background-color: #A0D368; 
     border:1px solid #e5e5e5;
     display:inline-block;
     padding:10px 20px;
@@ -90,11 +93,28 @@
     font-size:14px;
     border-radius:4px;
     transition:all .3s;
-    width:240px;
+    width:190px;
 }
 .btn-submit-assignment:hover{
     border:1px solid transparent;
     background:#FF8A3C;
+    color:#fff;
+}
+.btn-student-assignment-list{
+    background-color: #E56B6F; 
+    border:1px solid #e5e5e5;
+    display:inline-block;
+    padding:10px 20px;
+    color:#fff;
+    font-weight:600;
+    font-size:14px;
+    border-radius:4px;
+    transition:all .3s;
+    width:180px;
+}
+.btn-student-assignment-list:hover{
+    border:1px solid transparent;
+    background:#826AED;
     color:#fff;
 }
 .question-tab{
@@ -109,7 +129,8 @@
     color: #424c55;
 }
 .assignment-view-img{
-    height:400px;
+    height:300px;
+    width:350px;
 }
 .assignment-view-frm{
     height:350px;
@@ -146,33 +167,27 @@
     background-size: 300px;
     background-position-x: 94%;
 }
-.student-info-tab{
+.single-assignment-submitted-tab{
     width:70%;
-    background-color: #F0EFEB;
-    color: #424c55;
+    background-color: #8f250c;
+    color: #fff;
     border: none;
     text-align: start;
 }
-.student-info-tab:hover{
-    background-color: #fae0e4;
-    color: #424c55;
+.single-assignment-submitted-tab:hover{
+    color: #fff;
 }
 .btn-review{
-    background-color: #087e8b; 
+    background-color: transparent; 
     border:none;
-    display:inline-block;
-    padding:10px 20px;
-    color:#fff;
     font-weight:600;
-    font-size:14px;
-    border-radius:4px;
-    transition:all .3s;
-    width:200px;
+    font-size:16px;
+    float: right;
+    color: #fff;
 }
-.btn-review:hover{
-    border:1px solid transparent;
-    background:#087e8b;
-    color:#fff;
+.review-page-user-details{
+    font-weight:600;
+    font-size:16px;
 }
 .review-frm-radio-btn{
     font-size: 15px;
@@ -190,6 +205,7 @@
 .review-page-span{
     font-size: 14px;
     font-weight: 800;
+    color: #8f250c;
 }
 .single-assignment-submit-ifram{
     width:60%;
@@ -197,3 +213,4 @@
 .Model-top-position{
     margin-top: 5%;
 }
+
