@@ -21,11 +21,12 @@ export default function AssignmentSubmissionForm() {
   const [subject, setSubject] = useState(assignment.assignment.subject);
   // const emptySubmission = false;
 
-  function submitAssignment() {
-    // if (assignmentDescription === "" && fileUrl === "") {
-    //     emptySubmission=true;
-    //     return;
-    // }
+  function submitAssignment(e) {
+    e.preventDefault();
+    if (assignmentDescription === "" && fileUrl === "") {
+        alert("Can't submit empty assignment")
+        return;
+    }
     const newAssignment = {
       assignmentTitle: assignmentTitle,
       assignmentDescription: assignmentDescription,
@@ -39,9 +40,9 @@ export default function AssignmentSubmissionForm() {
       user: user,
     };
     AssignmentSubmissionApi.createAssignment(newAssignment);
-    history.push("/");
+    history.goBack();
   }
-
+  
   return (
     <div className="assignement-student-frm">
       <h2 style={{ color: "#B52B65" }}>Submit Your Answer</h2>
@@ -61,6 +62,7 @@ export default function AssignmentSubmissionForm() {
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="2"
+                
                 placeholder="Enter your Answer here...."
                 onChange={(e) => setAssignmentDescription(e.target.value)}
               ></textarea>
@@ -74,7 +76,7 @@ export default function AssignmentSubmissionForm() {
               <i class="fas fa-share-square"></i> Submit Your Answer
             </button>
           </form>
-          {/* {emptySubmission && <h2>Please submit a valid answer</h2>} */}
+         
         </div>
       </div>
     </div>

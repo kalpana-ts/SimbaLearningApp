@@ -82,7 +82,8 @@ function App() {
             <StudyMaterialByGrade />
           </Route>
 
-          <Route exact path="/assignmentSubmission/new/:id">
+          {/* <Route exact path="/assignmentSubmission/new/:id"> */}
+          <Route exact path="/assignmentSubmission/new">
             <AssignmentSubmissionForm />
           </Route>
 

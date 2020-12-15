@@ -29,7 +29,8 @@ function AssignmentCard(assignment) {
           aria-expanded="false"
           aria-controls={"#multiCollapseExample" + assignment.assignment.id}
         >
-          {assignment.assignment.assignmentTitle}
+          {assignment.assignment.assignmentTitle}               
+          {/* Submission Date: {assignment.assignment.submissionDate} */}
         </button>
       </p>
       <div class="row">
@@ -64,10 +65,17 @@ function AssignmentCard(assignment) {
               <div className="row">
                 <div className="col-md-5">
                   {studentView && (
-                    <Link
+                    // <Link
+                    //   className="btn-submit-assignment"
+                    //   to={{
+                    //     pathname: `/assignmentSubmission/new/${assignment.assignment.id}`,
+                    //     state: { assignment, user },
+                    //   }}
+                    // >
+                      <Link
                       className="btn-submit-assignment"
                       to={{
-                        pathname: `/assignmentSubmission/new/${assignment.assignment.id}`,
+                        pathname: '/assignmentSubmission/new',
                         state: { assignment, user },
                       }}
                     >
