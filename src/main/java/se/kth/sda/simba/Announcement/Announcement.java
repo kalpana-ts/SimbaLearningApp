@@ -28,7 +28,7 @@ public class Announcement {
 
     private String date;
 
-    private String email;
+   // private String email;
 
     private Integer likes;
     /*@Column(name = "poster")
@@ -39,7 +39,7 @@ public class Announcement {
     private List<Comment>comment;
 
     */
-    @OneToMany(cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy ="announcement", cascade = {CascadeType.REMOVE})
     private List<Comment> comments;
 
     @ManyToOne
@@ -48,21 +48,15 @@ public class Announcement {
     public Announcement() {
     }
 
-    public Announcement(Long id, String title, String body, String date, String email) {
+    public Announcement(Long id, String title, String body, String date) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.date = date;
-        this.email = email;
+
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    public String getEmail() {
-        return email;
-    }
 
     public Long getId() {
         return id;
@@ -110,14 +104,14 @@ public class Announcement {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-    public List<Comment> getComments() {
+    /*public List<Comment> getComments() {
         return comments;
     }
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
-
+*/
     public User getUser() {
         return user;
     }

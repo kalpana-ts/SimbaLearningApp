@@ -42,6 +42,9 @@ function SingleAnnouncement() {
   //   };
   //   createOrDirect();
   // };
+  // const backhandler= (e)=>{
+  //   history.goBack();
+  // }
 
   try {
     return (
@@ -88,6 +91,9 @@ function SingleAnnouncement() {
                 </div>
             </div>
         </div>
+        {/* <button onClick={backhandler}>
+          Go back
+        </button> */}
         </div>
     );
   } catch (e) {
