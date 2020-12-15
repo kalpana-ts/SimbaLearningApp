@@ -21,9 +21,11 @@ export default function AssignmentSubmissionForm() {
   const [subject, setSubject] = useState(assignment.assignment.subject);
   // const emptySubmission = false;
 
-  function submitAssignment() {
+  function submitAssignment(e) {
+    e.preventDefault();
     // if (assignmentDescription === "" && fileUrl === "") {
-    //     emptySubmission=true;
+    //     //emptySubmission=true;
+    //     alert("Can't submit empty assignment")
     //     return;
     // }
     const newAssignment = {
@@ -39,9 +41,25 @@ export default function AssignmentSubmissionForm() {
       user: user,
     };
     AssignmentSubmissionApi.createAssignment(newAssignment);
-    history.push("/");
-  }
+    history.goBack();
+   // history.push(`/assignmentPost/grade/subject`, state ={ grade:grade,subject:subject});
 
+  //   try {
+  //     if (newAssignment !== null) {
+  //   const response =  AssignmentSubmissionApi.createAssignment(newAssignment).then(console.log('response',response));
+  //   history.push('/');
+  //   console.log('response',response)
+  //   }
+  // } catch (error) {
+   
+  //   history.push(`/assignmentPost/grade/subject/${subject}`,state= {grade,subject});
+  //     }
+//   <Route exact path="/assignmentPost/grade/subject/:subject">
+//   <AssignmentList />
+// </Route>
+// <Link className="" to={{ pathname: `/assignmentPost/grade/subject/${subject}`, state: {grade,subject:'Math'} }} ></Link>
+  }
+  
   return (
     <div className="assignement-student-frm">
       <h2 style={{ color: "#B52B65" }}>Submit Your Answer</h2>
@@ -61,6 +79,7 @@ export default function AssignmentSubmissionForm() {
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="2"
+                required
                 placeholder="Enter your Answer here...."
                 onChange={(e) => setAssignmentDescription(e.target.value)}
               ></textarea>
