@@ -74,7 +74,7 @@ function AnnouncementCard({ announcement , user}) {
             <span class="thumb pull-left mr">
               <img
                 class="img-circle"
-                src="https://bootdey.com/img/Content/user_1.jpg"
+                src={announce.user.imgUrl}
                 alt="..."
               />
             </span>
