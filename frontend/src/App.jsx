@@ -16,8 +16,6 @@ import CommentPage from "./components/newComment/CommentsPage";
 import AssignmentPostPage from "./components/assignmentpost/AssignmentPostPage";
 import NewAssignment from "./components/assignmentpost/NewAssignment";
 import SingleAssignment from "./components/assignmentpost/SingleAssignment";
-import QuizPage from "./components/quiz/QuizPage";
-import NewQuiz from "./components/quiz/NewQuiz";
 import GradeAssignmentPage from "./components/home/GradeAssignmentPage";
 import AssignmentList from "./components/assignmentpost/AssignmentList";
 import ChatNewPage from "./components/chatNew/ChatPage";
@@ -93,14 +91,6 @@ function App() {
 
           <Route exact path="/announce">
             <AnnouncementPage />
-          </Route>
-
-          <Route exact path="/Quizs">
-            <QuizPage />
-          </Route>
-
-          <Route exact path="/Quizs/new">
-            <NewQuiz />
           </Route>
 
           <Route exact path="/calendar">

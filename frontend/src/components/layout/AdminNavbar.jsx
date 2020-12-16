@@ -172,14 +172,9 @@ function Navbar({ onLogout }) {
           </li>
 
           <li className="nav-item">
-            <NavLink
-              exact
-              to="/Quizs/new"
-              className="nav-link"
-              activeClassName="active-link"
-            >
-              Quiz
-            </NavLink>
+            <a href="http://localhost:3001" className="nav-link" >
+              <span>Mind Game</span>
+            </a>
           </li>
 
           {/* <li className="nav-item">

@@ -4,9 +4,10 @@ import { useHistory } from "react-router-dom";
 import CommentApi from "../../api/CommentApi";
 import AnnouncementApi from "../../api/AnnouncementApi";
 
-function AnnouncementCard({ announcement , user}) {
+function AnnouncementCard({ announcement }) {
   const [announce, setAnnounce] = useState(announcement);
   const history = useHistory();
+  const url = announce.imageUrl;
 
   const [userComment, setUserComment] = useState([]);
   useEffect(() => {
@@ -51,10 +52,12 @@ function AnnouncementCard({ announcement , user}) {
       <section class="widget">
         <div class="widget-body">
           <div class="widget-top-overflow text-white">
-            {announce.imageUrl &&
-              (announce.imageUrl.match(
-                ".jpg" || ".png" || ".jpeg" || ".gif"
-              ) ? (
+
+            {url &&
+              (url.match(".gif") ||
+              url.match(".jpg") ||
+              url.match(".png") ||
+              url.match(".jpeg") ? (
                 <img
                   src={announce.imageUrl}
                   class="img-fluid"
@@ -99,6 +102,7 @@ function AnnouncementCard({ announcement , user}) {
                 <i class="fa fa-heart"></i> {announce.likes}
               </button>
             </li>
+
             {user.email === announce.user.email ? (
               <button
                 className="btn btn-light mr-s"
