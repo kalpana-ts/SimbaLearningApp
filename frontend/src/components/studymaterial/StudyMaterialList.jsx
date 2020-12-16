@@ -34,7 +34,7 @@ function StudyMaterialList() {
                 <th scope="col">Study Material Title</th>
                 <th scope="col">Grade</th>
                 <th scope="col">Subject</th>
-                <th scope="col">Submission Date</th>
+                <th scope="col">Posted Date</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>

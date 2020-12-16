@@ -20,7 +20,8 @@ function AnnouncementCard({ announcement }) {
     });
   }
 
-  function updateLike() {
+  const updateLike = (e) => {
+      e.preventDefault();
     const newAnnounce = {
       id: announce.id,
       title: announce.title,
@@ -35,11 +36,23 @@ function AnnouncementCard({ announcement }) {
     history.push("/announce");
   }
 
+  const deletePost = (e)=>{
+        e.preventDefault();
+        AnnouncementApi.deletePost(announce.id)
+          .then(() => {
+            AnnouncementApi.getAllPosts(); // to refresh the list immediately
+          // history.push('/announce');
+          window.location.reload(true);
+          //history.goBack();
+         })
+    }
+
   return (
     <div class="col-md-6 announcement-post">
       <section class="widget">
         <div class="widget-body">
           <div class="widget-top-overflow text-white">
+
             {url &&
               (url.match(".gif") ||
               url.match(".jpg") ||
@@ -64,7 +77,7 @@ function AnnouncementCard({ announcement }) {
             <span class="thumb pull-left mr">
               <img
                 class="img-circle"
-                src="https://bootdey.com/img/Content/user_1.jpg"
+                src={announce.user.imgUrl}
                 alt="..."
               />
             </span>
@@ -89,6 +102,15 @@ function AnnouncementCard({ announcement }) {
                 <i class="fa fa-heart"></i> {announce.likes}
               </button>
             </li>
+
+            {user.email === announce.user.email ? (
+              <button
+                className="btn btn-light mr-s"
+                onClick={deletePost}
+              >
+                <i class="fas fa-trash"></i>
+              </button>
+            ) : null}
             <li className="cmt-like">
               <a href="#">
                 <i class="fa fa-comment"></i> {userComment.length}{" "}

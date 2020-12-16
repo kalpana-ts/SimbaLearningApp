@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CommentUpdateForm from "./CommentUpdateForm";
 import user_img from "../../images/user_img_1.jpeg";
 
-function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
+function CommentCard({userComment, onUpdateClick, onDeleteClick, userData,user}) {
     const [isUpdating, setIsUpdating] = useState(false);
     
     const handleUpdateClick = () => {
@@ -23,8 +23,8 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
 
         <div id="comment" className="media-block">
             <a className="media-left" href="#">
-                <img className="img-circle img-sm" alt="Profile Picture" 
-                src={user_img} />
+                <img className="img-circle img-sm" alt="" 
+                src={userComment.user.imgUrl} />
             </a>
             <div className="media-body comment-text">
                 <div className="mar-btm">
@@ -34,10 +34,16 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
                   <p>{userComment.body}</p>
                 <div class="pad-ver">
                     <div className="btn-group">
+                    { user.email === userComment.user.email ? (
+                        <div>
                       <a className="btn btn-sm btn-default btn-hover-success" href="#comment" onClick={handleUpdateClick}>
                         <i class="fas fa-edit"></i></a>
-                      <a className="btn btn-sm btn-default btn-hover-danger" href="#comment" onClick={() => onDeleteClick(userComment)}>
-                        <i class="fas fa-trash-alt"></i></a>
+                        
+                    <a className="btn btn-sm btn-default btn-hover-danger" href="#comment" onClick={() => onDeleteClick(userComment)}>
+                    <i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    ) : null }
+                      
                     </div>
                     <a className="btn btn-sm btn-default btn-hover-primary" href="#create-comment"><i class="fas fa-comment-alt"></i></a>
                 </div>

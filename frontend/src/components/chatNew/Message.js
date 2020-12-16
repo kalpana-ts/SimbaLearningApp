@@ -52,7 +52,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                     </div>
                                 }
 
-                                {/* <span className="time_date"> 11:01 AM    |    June 9</span> */}
+                                <span className="time_date"> {message.date} </span>
                             </div>
                         </div>
                         </div>
@@ -93,7 +93,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
                                     </div>
                                 }
 
-                                {/* <span className="time_date"> 11:01 AM    |    Today</span>  */}
+                                <span className="time_date"> {message.date} </span>
                             </div>
                         </div>
 
@@ -101,6 +101,7 @@ function Message({message, inbox, getAllAgain, deleteMessage, user}) {
 
                     </>
     );
+
 }
 
 export default Message;

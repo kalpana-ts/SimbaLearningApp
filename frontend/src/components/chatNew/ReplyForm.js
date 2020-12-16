@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory,useLocation } from "react-router-dom";
 import UserApi from "../../api/UserApi";
+import { format } from 'date-fns';
 import Auth from "../../services/Auth";
 import MessageApi from "../../api/MessageApi";
 import FileUploader from "../../components/announcementNew/FileUploader";
@@ -45,6 +46,7 @@ function ReplyForm() {
       recipient: replyTo,
       msgBody: message,
       sender: user,
+      date: format(new Date(), 'dd-MMM-yyyy'),
       fileUrl: fileUrl,
     };
 

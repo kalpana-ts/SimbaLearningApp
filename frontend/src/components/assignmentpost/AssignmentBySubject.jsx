@@ -7,6 +7,7 @@ function AssignmentCard(assignment) {
   const userMail = Auth.getUserMail();
   const [user, setUser] = useState({});
   const studentView = user.userType === "student";
+  const teacherView = user.userType === "teacher";
   const url = assignment.assignment.fileUrl;
 
   useEffect(() => {
@@ -40,6 +41,11 @@ function AssignmentCard(assignment) {
             className={"collapse multi-collapse" + assignment.assignment.id}
             id={"#multiCollapseExample" + assignment.assignment.id}
           >
+            <p>{assignment.assignment.assignmentDescription}</p>
+              <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
+             {url &&  <h4><a href={url} target="_blank">
+                   Click here to open the attachment </a> </h4>}
+            
             <div class="card card-body">
               {url && (url.match(".gif") ||
               url.match(".jpg") ||
@@ -60,11 +66,20 @@ function AssignmentCard(assignment) {
                 </div>
               ))}
               <br />
-              <p>{assignment.assignment.assignmentDescription}</p>
-              <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
+              
               <div className="row">
                 <div className="col-md-5">
+                  {teacherView && (<Link
+                      className="btn-student-assignment-list"
+                      to={{
+                        pathname: `/assignmentPost/${assignment.assignment.id}`,
+                        state: { assignment },
+                      }}
+                    >
+                      <i class="fas fa-share-square"></i> Assignments Submitted Back by Students
+                    </Link>)}
                   {studentView && (
+                    
                     // <Link
                     //   className="btn-submit-assignment"
                     //   to={{

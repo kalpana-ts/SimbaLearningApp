@@ -6,8 +6,7 @@ import UserApi from "../../api/UserApi";
 import AssignmentSubmittedList from "../assignmentsubmission/AssignmentSubmittedList";
 import AssignmentSubmissionApi from "../../api/AssignmentSubmissionApi";
 
-//delete for user
-//Assingmentsubmission linked to this post
+
 
 function SingleAssignment() {
   const userMail = Auth.getUserMail();
@@ -61,7 +60,7 @@ function SingleAssignment() {
                     aria-controls="nav-profile"
                     aria-selected="false"
                   >
-                    Assignment By Student
+                    Assignments Submitted Back By Students
                   </a>
                 </div>
               </nav>
@@ -75,7 +74,7 @@ function SingleAssignment() {
                   <h3>{assignment.assignmentTitle}</h3>
                   <p>{assignment.assignmentDescription}</p>
                   <p>Submission date : {assignment.submissionDate}</p>
-                  {studentView && (
+                  {/* {studentView && (
                     // <Link
                     //   to={{
                     //     pathname: `/assignmentSubmission/new/${assignment.id}`,
@@ -90,7 +89,7 @@ function SingleAssignment() {
                     >
                       <button>Submit Your Answer</button>
                     </Link>
-                  )}
+                  )} */}
                   <div class="widget-top-overflow text-white">
                     {url.match(".gif") ||
                     url.match(".jpg") ||
