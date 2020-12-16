@@ -36,3 +36,4 @@ out/
 ### .DS_Store ###
 *.DS_Store
 frontend/src/services/simba-learning-app-firebase-adminsdk-v1y9x-d8a0d888eb.json
+node_modules
