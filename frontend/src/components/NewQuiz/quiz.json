@@ -1,0 +1,288 @@
+[
+    {
+        "subject": "GK",
+       "questionText": "What is the capital of France?",
+       "answerOptions": [
+          {
+             "answerText": "New York",
+             "isCorrect": false
+          },
+          {
+             "answerText": "London",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Paris",
+             "isCorrect": true
+          },
+          {
+             "answerText": "Dublin",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "GK",
+       "questionText": "Who is CEO of Tesla?",
+       "answerOptions": [
+          {
+             "answerText": "Jeff Bezos",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Elon Musk",
+             "isCorrect": true
+          },
+          {
+             "answerText": "Bill Gates",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Tony Stark",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "GK",
+       "questionText": "The iPhone was created by which company?",
+       "answerOptions": [
+          {
+             "answerText": "Apple",
+             "isCorrect": true
+          },
+          {
+             "answerText": "Intel",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Amazon",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Microsoft",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "GK",
+       "questionText": "How many Harry Potter books are there?",
+       "answerOptions": [
+          {
+             "answerText": "1",
+             "isCorrect": false
+          },
+          {
+             "answerText": "4",
+             "isCorrect": false
+          },
+          {
+             "answerText": "6",
+             "isCorrect": false
+          },
+          {
+             "answerText": "7",
+             "isCorrect": true
+          }
+       ]
+    },
+    {
+        "subject": "logical",
+       "questionText": "You are in a running race, and you overtake third place. What place are you in?",
+       "answerOptions": [
+          {
+             "answerText": "first",
+             "isCorrect": false
+          },
+          {
+             "answerText": "second",
+             "isCorrect": false
+          },
+          {
+             "answerText": "third",
+             "isCorrect": true
+          },
+          {
+             "answerText": "fourth",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "logical",
+       "questionText": "Take three pears from ten. How many do you have?",
+       "answerOptions": [
+          {
+             "answerText": "zero",
+             "isCorrect": false
+          },
+          {
+             "answerText": "one",
+             "isCorrect": false
+          },
+          {
+             "answerText": "two",
+             "isCorrect": false
+          },
+          {
+             "answerText": "three",
+             "isCorrect": true
+          }
+       ]
+    },
+    {
+        "subject": "logical",
+       "questionText": "Some months have thirty days, some have thirty-one. How many have twenty-eight?",
+       "answerOptions": [
+          {
+             "answerText": "ten",
+             "isCorrect": false
+          },
+          {
+             "answerText": "eleven",
+             "isCorrect": false
+          },
+          {
+             "answerText": "two",
+             "isCorrect": false
+          },
+          {
+             "answerText": "twelve",
+             "isCorrect": true
+          }
+       ]
+    },
+    {
+        "subject": "logical",
+       "questionText": "A farmer has ten cows. All but six of them die. How many are left?",
+       "answerOptions": [
+          {
+             "answerText": "three",
+             "isCorrect": false
+          },
+          {
+             "answerText": "four",
+             "isCorrect": false
+          },
+          {
+             "answerText": "seven",
+             "isCorrect": false
+          },
+          {
+             "answerText": "six",
+             "isCorrect": true
+          }
+       ]
+    },
+    {
+        "subject": "logical",
+       "questionText": "You are in a running race, and you overtake third place. What place are you in?",
+       "answerOptions": [
+          {
+             "answerText": "first",
+             "isCorrect": false
+          },
+          {
+             "answerText": "second",
+             "isCorrect": false
+          },
+          {
+             "answerText": "third",
+             "isCorrect": true
+          },
+          {
+             "answerText": "fourth",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "science",
+       "questionText": "All animals need food, air, and ____ to survive.",
+       "answerOptions": [
+          {
+             "answerText": "House",
+             "isCorrect": false
+          },
+          {
+             "answerText": "water",
+             "isCorrect": true
+          },
+          {
+             "answerText": "Chocolate",
+             "isCorrect": false
+          },
+          {
+             "answerText": "fruit",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "science",
+       "questionText": "What is Earth’s only natural satellite?",
+       "answerOptions": [
+          {
+             "answerText": "sun",
+             "isCorrect": true
+          },
+          {
+             "answerText": "moon",
+             "isCorrect": false
+          },
+          {
+             "answerText": "mars",
+             "isCorrect": false
+          },
+          {
+             "answerText": "venus",
+             "isCorrect": false
+          }
+       ]
+    },
+    {
+        "subject": "science",
+       "questionText": "Who invented the first functional telephone?",
+       "answerOptions": [
+          {
+             "answerText": " Albert Einstein",
+             "isCorrect": true
+          },
+          {
+             "answerText": "Nikola Tesla",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Thomas Alva Edison",
+             "isCorrect": false
+          },
+          {
+             "answerText": "Alexander Graham Bell",
+             "isCorrect": true
+          }
+       ]
+    },
+    {
+        "subject": "science",
+       "questionText": "What is the young one of a cow called?",
+       "answerOptions": [
+          {
+             "answerText": "Puppy",
+             "isCorrect": false
+          },
+          {
+             "answerText": "kitten",
+             "isCorrect": false
+          },
+          {
+             "answerText": "calf",
+             "isCorrect": true
+          },
+          {
+             "answerText": "baby",
+             "isCorrect": false
+          }
+       ]
+    }
+ ]
