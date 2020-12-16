@@ -29,6 +29,7 @@ function StudyMaterialBySubject(material) {
           className={"collapse multi-collapse" + material.material.id}
           id={"#multiCollapseExample" + material.material.id}
         >
+          <p>{material.material.description}</p>
           <div class="card card-body">
             {url.match(".gif") ||
             url.match(".jpg") ||
@@ -49,7 +50,7 @@ function StudyMaterialBySubject(material) {
               </div>
             )}
             <br />
-            <p>{material.material.description}</p>
+            
           </div>
         </div>
       </div>
