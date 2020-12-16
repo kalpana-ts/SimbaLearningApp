@@ -53,7 +53,7 @@ function SingleAnnouncement() {
             <div class="single-announcement-card">
                 <div class="d-flex justify-content-between p-2 px-3">
                     <div class="d-flex flex-row align-items-center"> 
-                    <img  src="https://i.imgur.com/UXdKE3o.jpg" width="50" class="rounded-circle"/>
+                    <img  src={announce.user.imgUrl} width="50" class="rounded-circle"/>
                         <div class="d-flex flex-column ml-2"> 
                           <span class="font-weight-bold">{User_Email_ID}</span> 
                         <small class="text-primary">{User_Name}</small> </div>
