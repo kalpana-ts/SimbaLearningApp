@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import CommentApi from "../../api/CommentApi";
 import AnnouncementApi from "../../api/AnnouncementApi";
 
-function AnnouncementCard({ announcement }) {
+function AnnouncementCard({ announcement, user }) {
   const [announce, setAnnounce] = useState(announcement);
   const history = useHistory();
   const url = announce.imageUrl;
