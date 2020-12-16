@@ -59,7 +59,8 @@ function getAllComments() {
                 <CommentCard key={eachuserComment.id}
                  userComment={eachuserComment}
                  onUpdateClick={updateComment}
-                 onDeleteClick={deleteComment}/>)}
+                 onDeleteClick={deleteComment}
+                 user={user}/>)}
                 
         </div>
     );

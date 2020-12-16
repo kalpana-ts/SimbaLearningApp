@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CommentUpdateForm from "./CommentUpdateForm";
 import user_img from "../../images/user_img_1.jpeg";
 
-function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
+function CommentCard({userComment, onUpdateClick, onDeleteClick, userData,user}) {
     const [isUpdating, setIsUpdating] = useState(false);
     
     const handleUpdateClick = () => {
@@ -36,8 +36,11 @@ function CommentCard({userComment, onUpdateClick, onDeleteClick, userData}) {
                     <div className="btn-group">
                       <a className="btn btn-sm btn-default btn-hover-success" href="#comment" onClick={handleUpdateClick}>
                         <i class="fas fa-edit"></i></a>
-                      <a className="btn btn-sm btn-default btn-hover-danger" href="#comment" onClick={() => onDeleteClick(userComment)}>
-                        <i class="fas fa-trash-alt"></i></a>
+                        {user.email === userComment.user.email ? (
+             <a className="btn btn-sm btn-default btn-hover-danger" href="#comment" onClick={() => onDeleteClick(userComment)}>
+             <i class="fas fa-trash-alt"></i></a>
+            ) : null}
+                      
                     </div>
                     <a className="btn btn-sm btn-default btn-hover-primary" href="#create-comment"><i class="fas fa-comment-alt"></i></a>
                 </div>

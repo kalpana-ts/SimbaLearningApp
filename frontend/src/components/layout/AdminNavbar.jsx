@@ -83,7 +83,7 @@ function Navbar({ onLogout }) {
                 exact
                 activeClassName="active-link"
               >
-                List of All StudyMaterial
+                List of All StudyMaterials
               </NavLink>
             </div>
           </li>
@@ -111,7 +111,7 @@ function Navbar({ onLogout }) {
                 exact
                 activeClassName="active-link"
               >
-                Upload New Assignment
+                Upload a New Assignment
               </NavLink>
               <NavLink
                 to="/assignmentPost/"
@@ -119,7 +119,7 @@ function Navbar({ onLogout }) {
                 exact
                 activeClassName="active-link"
               >
-                List of Assignment
+                List of All Assignments
               </NavLink>
             </div>
           </li>
@@ -147,7 +147,7 @@ function Navbar({ onLogout }) {
                 exact
                 activeClassName="active-link"
               >
-                Post New Announcement
+                Post a New Announcement
               </NavLink>
               <NavLink
                 to="/announce"
@@ -155,7 +155,7 @@ function Navbar({ onLogout }) {
                 exact
                 activeClassName="active-link"
               >
-                List Of Announcement
+                List Of All Announcements
               </NavLink>
             </div>
           </li>
@@ -178,11 +178,11 @@ function Navbar({ onLogout }) {
               className="nav-link"
               activeClassName="active-link"
             >
-              New Quiz
+              Quiz
             </NavLink>
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink
               exact
               to="/calendar"
@@ -191,7 +191,7 @@ function Navbar({ onLogout }) {
             >
               Calendar
             </NavLink>
-          </li>
+          </li> */}
 
           <li className="nav-item dropdown">
             <a

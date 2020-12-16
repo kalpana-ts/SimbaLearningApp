@@ -60,7 +60,7 @@ function Navbar({ onLogout }) {
               className="nav-link"
               activeClassName="active-link"
             >
-              Announcement
+              Announcements
             </NavLink>
           </li>
 
@@ -86,7 +86,7 @@ function Navbar({ onLogout }) {
             </NavLink>
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink
               exact
               to="/calendar"
@@ -95,7 +95,7 @@ function Navbar({ onLogout }) {
             >
               Calendar
             </NavLink>
-          </li>
+          </li> */}
           <li className="nav-item dropdown">
             <a
               className="dropdown-toggle"
