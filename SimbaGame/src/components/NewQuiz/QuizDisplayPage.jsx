@@ -35,9 +35,6 @@ function QuizDisplayPage({onLogout}) {
           <div className="score-section">
             You Scored {score} Out Of {questions.length}
             <br/><br/><br/><br/>
-            {/* <button style={{marginLeft:'40%'}} type="submit" className="btn-close" onClick={onLogout}>
-              close
-            </button> */}
             <a style={{marginLeft:'40%'}} className="btn-close" href="https://simbalearningapp-edb1a.web.app">
               close
             </a>
