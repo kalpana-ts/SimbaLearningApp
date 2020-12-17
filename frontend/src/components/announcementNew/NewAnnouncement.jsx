@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import AnnouncementApi from '../../api/AnnouncementApi';
 import AnnouncementForm from './AnnouncementForm';
 
+//to add new announcement in database
 function NewAnnouncement() {
   const [announce, setAnnounce] = useState(null);
   const history = useHistory();

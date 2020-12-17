@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import ReactImageUploadComponent from 'react-images-upload';
+import React, { useEffect, useState } from "react";
+import ReactImageUploadComponent from "react-images-upload";
 
+//uploader to upload only image files
 function ImageUploader({ setImgUrl, setUploading }) {
   const [payload, setPayload] = useState(null);
 
-  const updateImage = event => {
+  const updateImage = (event) => {
     var file = event[0];
     var data = new FormData();
-    data.append('file', file);
-    data.append('upload_preset', 'Simba_Img');
+    data.append("file", file);
+    data.append("upload_preset", "Simba_Img");
     setPayload(data);
   };
   useEffect(() => {
@@ -17,15 +18,15 @@ function ImageUploader({ setImgUrl, setUploading }) {
       try {
         if (payload !== null) {
           const response = await fetch(
-            'https://api.cloudinary.com/v1_1/dmythh2na/image/upload',
+            "https://api.cloudinary.com/v1_1/dmythh2na/image/upload",
             {
-              method: 'post',
+              method: "post",
               body: payload,
-              signal: abortFetch.signal
+              signal: abortFetch.signal,
             }
           );
           const jsonResponse = await response.json();
-          setImgUrl(jsonResponse['secure_url']);
+          setImgUrl(jsonResponse["secure_url"]);
           setUploading(false);
         }
       } catch (error) {
