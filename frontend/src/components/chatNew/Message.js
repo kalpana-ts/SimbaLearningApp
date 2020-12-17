@@ -94,7 +94,7 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                       />
                       </a>
                     ) : (
-                      <div class="embed-responsive embed-responsive-16by9">
+                      <div className="embed-responsive embed-responsive-16by9">
                         <iframe
                           class="embed-responsive-item"
                           src={message.fileUrl}

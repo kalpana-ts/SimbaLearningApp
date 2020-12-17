@@ -21,7 +21,6 @@ import AssignmentList from "./components/assignmentpost/AssignmentList";
 import ChatNewPage from "./components/chatNew/ChatPage";
 import AssignmentSubmissionForm from "./components/assignmentsubmission/AssignmentSubmissionForm";
 import SingleAssignmentSubmitted from "./components/assignmentsubmission/SingleAssignmentSubmitted";
-import Scheduler from "./components/calendar/Scheduler";
 import NewStudyMaterial from './components/studymaterial/NewStudyMaterial';
 import StudyMaterialList from './components/studymaterial/StudyMaterialList';
 import SingleStudyMaterial from './components/studymaterial/SingleStudyMaterial';
@@ -91,10 +90,6 @@ function App() {
 
           <Route exact path="/announce">
             <AnnouncementPage />
-          </Route>
-
-          <Route exact path="/calendar">
-            <Scheduler />
           </Route>
 
           <Route path="/announce/new" exact>
