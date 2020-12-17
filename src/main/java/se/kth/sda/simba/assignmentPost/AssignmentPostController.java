@@ -13,9 +13,7 @@ public class AssignmentPostController {
     @Autowired
     private AssignmentPostService assignmentPostService;
 
-
-
-
+    //End point to Get all assignments
     @GetMapping("")
     public List<AssignmentPost> getAll() {
             return assignmentPostService.getAll();
@@ -28,35 +26,31 @@ public class AssignmentPostController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    /*@GetMapping("/grade/{grade}")
-    public List<AssignmentPost> getAllByGrade(@PathVariable String grade) {
-        return assignmentPostService.getAllByGrade(grade);
-    }*/
-
+    //Get all assignment by its grade and subject
     @GetMapping("/grade/{grade}/{subject}")
     public List<AssignmentPost> getAllByGradeAndSubject(@PathVariable("grade") String grade, @PathVariable("subject") String subject){
         return assignmentPostService.getAllByGradeAndSubject(grade,subject);
     }
 
+    //Get all assignment by its subject
     @GetMapping("/subject/{subject}")
     public List<AssignmentPost> getAllBySubject(@PathVariable String subject) {
         return assignmentPostService.getAllBySubject(subject);
     }
 
-    //Filter
-
-    //Create a assignment
+    //Create an assignment
     @PostMapping("/new")
     public AssignmentPost create(@RequestBody AssignmentPost newAssignmentPost) {
         return assignmentPostService.create(newAssignmentPost);
     }
 
-    //Create a task
+    //Edit an existing assignment
     @PutMapping("")
     public AssignmentPost update(@RequestBody AssignmentPost newAssignmentPost) {
         return assignmentPostService.update(newAssignmentPost);
     }
 
+    // delete an assignment by its id
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         assignmentPostService.delete(id);
