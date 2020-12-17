@@ -27,18 +27,17 @@ This program will be coded in for Backend Spring, for frontend Javascript, React
 ·       Calendar
  
  
-
-
 ### How do students use Simba?
 
-If you're using Simba for Schools, students can just sign in with their email address to access all of the course materials and other activities  of their classes. Once students sign in to Simba, they stay signed in for up to 1 year.
+If you're using Simba for Schools, students can just sign in with their email address to access all of the course materials and other activities  of their classes. 
+
 ### What makes  Simba unique from other E-Learning platforms?
 
 .Kids Friendly User Interface.
 .Self explanatory Navigations.
 .Unique design to arouse interest in children to study.
+.CAn upload any type of file including videos(Kids favourite).
 .Well researched study and upto date study materials.
-
 
 
 

@@ -11,6 +11,8 @@ import Inbox from "./Inbox";
 import SentMessages from "./SentMessages";
 import NewMessageForm from "./NewMessageForm";
 
+
+//Message to other users signedup in this app
 function ChatPage() {
   const [user, setUser] = useState({});
   const userMail = Auth.getUserMail();

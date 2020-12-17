@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { format } from "date-fns";
 import UserApi from "../../api/UserApi";
 import MessageApi from "../../api/MessageApi";
@@ -11,8 +10,7 @@ function NewMessageForm({ user }) {
   const [recipient, setRecipient] = useState("");
   const [subject, setSubject] = useState("");
   const [fileUrl, setFileUrl] = useState("");
-  const [date, setDate] = useState("");
-  const history = useHistory();
+
   useEffect(() => {
     function getAllUsers() {
       UserApi.getAllUsers().then((res) => {
@@ -57,8 +55,6 @@ function NewMessageForm({ user }) {
       setSubject("");
       setFileUrl("");
       alert("Message sent successfully...");
-      //window.location.reload(true);
-      //history.push('/messages');
     });
   };
 

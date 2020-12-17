@@ -11,7 +11,7 @@ function NewStudyMaterial() {
         const createStudyMaterial = async () => {
             try {
               if (material !== null) {
-                const response = await StudyMaterialApi.createStudyMaterial(material); // We need to check response success before redirecting.
+              StudyMaterialApi.createStudyMaterial(material); 
                 history.push('/studymaterial');
               }
             } catch (error) {

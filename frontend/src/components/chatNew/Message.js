@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import MessageApi from "../../api/MessageApi";
-import { useHistory, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
+//Render message both inbox and sent box
 function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
-  const history = useHistory();
+  
   const url = message.fileUrl;
 
   return (
@@ -40,8 +40,8 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                       url.match(".jpg") ||
                       url.match(".png") ||
                       url.match(".jpeg") ? (
-                        <a href={message.fileUrl} target="_blank">
-                        <img
+                        <a href={message.fileUrl} target="_blank" rel="noreferrer">
+                        <image
                           src={message.fileUrl}
                           class="img-fluid"
                           alt="Responsive image"
@@ -51,6 +51,7 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                         <div class="embed-responsive embed-responsive-16by9">
                           <iframe
                             class="embed-responsive-item"
+                            title="attachment"
                             src={message.fileUrl}
                             allowfullscreen
                           ></iframe>
@@ -85,8 +86,8 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                     url.match(".jpg") ||
                     url.match(".png") ||
                     url.match(".jpeg") ? (
-                      <a href={message.fileUrl} target="_blank">
-                      <img
+                      <a href={message.fileUrl} target="_blank" rel="noreferrer">
+                      <image
                         src={message.fileUrl}
                         class="img-fluid"
                         alt="Responsive image"
@@ -97,6 +98,7 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                         <iframe
                           class="embed-responsive-item"
                           src={message.fileUrl}
+                          title="attachment"
                           allowfullscreen
                         ></iframe>
                       </div>

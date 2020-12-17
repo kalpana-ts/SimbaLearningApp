@@ -24,16 +24,19 @@ public class AnnouncementController {
         this.userService = userService;
     }
 
+    //Get all announcements
     @GetMapping("")
     public List<Announcement> getAll() {
         return service.getAll();
     }
 
+    //Get announcement by id
     @GetMapping("/{id}")
     public Announcement getById(@PathVariable Long id) {
         return service.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
+    //posting a new announcement
     @PostMapping("/new")
     public Announcement create(@RequestBody Announcement newAnnouncement) {
         //newAnnouncement.setEmail(authService.getLoggedInUserEmail());
@@ -44,11 +47,13 @@ public class AnnouncementController {
         return service.create(newAnnouncement);
     }
 
+    //Updating an existing announcement
     @PutMapping("/update")
     public Announcement update(@RequestBody Announcement updatedAnnouncement) {
         return service.update(updatedAnnouncement);
     }
 
+    // ENd point to Delete an announcement with its id
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);

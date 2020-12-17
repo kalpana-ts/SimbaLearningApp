@@ -36,13 +36,13 @@ function SingleStudyMaterial() {
             </div>
 
             <div class="widget-body">
-              <a href={material.fileUrl} target="_blank">
+              <a href={material.fileUrl} target="_blank" rel="noreferrer" >
                 {material.fileUrl &&
                   (url.match(".jpg") ||
                   url.match(".png") ||
                   url.match(".jpeg") ||
                   url.match(".gif") ? (
-                    <img
+                    <image
                       src={material.fileUrl}
                       class="img-fluid"
                       alt="Responsive image"
@@ -51,6 +51,7 @@ function SingleStudyMaterial() {
                     <div class="embed-responsive embed-responsive-16by9 iframe-border">
                       <iframe
                         class="embed-responsive-item"
+                        title="Attachment1"
                         src={material.fileUrl}
                         allowfullscreen
                       ></iframe>
@@ -63,51 +64,7 @@ function SingleStudyMaterial() {
         </div>
       </div>
 
-      /*       <div className="single-assignment-submitted-frm">
-          <div class="col-md-7 assignment-post">
-              <div class="single-assignment-card">
-              <p>
-        <button
-          class="btn student-info-tab"
-          type="button"
-          aria-controls="multiCollapseExample1 multiCollapseExample2"
-        >  
-          {material.title + " ... "}
-          Posted By: 
-          {material.user.name}
-          </button>
-          </p>    
-          
-          <div className="card-body">
-                Description: 
-                {material.description} <br />
-                Grade:
-                {material.grade}
-                <br />
-                Subject: 
-                {material.subject}
-                <br />
-                Download Attachment: {material.fileUrl ? 
-                <a href={material.fileUrl} target="_blank">{material.title} file</a>: 'No attachment'}
-                
-  
-              </div>
-              <div class="widget-body">
-              <div class="widget-top-overflow text-white">
-              {material.fileUrl && (url.match('.jpg') || url.match('.png') || url.match(".jpeg") || url.match(".gif") ?
-                          <img src={material.fileUrl} class="img-fluid" alt="Responsive image"/> : 
-                          <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src={material.fileUrl} allowfullscreen></iframe>
-                          </div>)
-                          }
-              </div>
-              
-            </div>
-                   
-            
-                  </div>
-              </div>
-          </div> */
+      
     );
   } catch (e) {
     console.log(e);

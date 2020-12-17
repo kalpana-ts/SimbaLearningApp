@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Auth from "../../services/Auth";
 import UserApi from "../../api/UserApi";
 
+//Individual assignments from both the logins
 function AssignmentCard(assignment) {
   const userMail = Auth.getUserMail();
   const [user, setUser] = useState({});
@@ -30,8 +31,7 @@ function AssignmentCard(assignment) {
           aria-expanded="false"
           aria-controls={"#multiCollapseExample" + assignment.assignment.id}
         >
-          {assignment.assignment.assignmentTitle}               
-          {/* Submission Date: {assignment.assignment.submissionDate} */}
+          {assignment.assignment.assignmentTitle}
         </button>
       </p>
       <div class="row">
@@ -42,34 +42,42 @@ function AssignmentCard(assignment) {
             id={"#multiCollapseExample" + assignment.assignment.id}
           >
             <p>{assignment.assignment.assignmentDescription}</p>
-              <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
-             {url &&  <h4><a href={url} target="_blank">
-                   Click here to open the attachment </a> </h4>}
-            
+            <h4>Submission Date: {assignment.assignment.submissionDate}</h4>
+            {url && (
+              <h4>
+                <a href={url} target="_blank" rel="noreferrer">
+                  Click here to open the attachment{" "}
+                </a>{" "}
+              </h4>
+            )}
+
             <div class="card card-body">
-              {url && (url.match(".gif") ||
-              url.match(".jpg") ||
-              url.match(".png") ||
-              url.match(".jpeg") ? (
-                <img
-                  src={url}
-                  class="img-fluid assignment-view-img"
-                  alt="Responsive image"
-                />
-              ) : (
-                <div class="embed-responsive embed-responsive-16by9 assignment-view-frm">
-                  <iframe
-                    class="embed-responsive-item"
+              {url &&
+                (url.match(".gif") ||
+                url.match(".jpg") ||
+                url.match(".png") ||
+                url.match(".jpeg") ? (
+                  <image
                     src={url}
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              ))}
+                    class="img-fluid assignment-view-img"
+                    alt="Responsive image"
+                  />
+                ) : (
+                  <div class="embed-responsive embed-responsive-16by9 assignment-view-frm">
+                    <iframe
+                      class="embed-responsive-item"
+                      src={url}
+                      title="assignment1"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                ))}
               <br />
-              
+
               <div className="row">
                 <div className="col-md-5">
-                  {teacherView && (<Link
+                  {teacherView && (
+                    <Link
                       className="btn-student-assignment-list"
                       to={{
                         pathname: `/assignmentPost/${assignment.assignment.id}`,
@@ -77,20 +85,13 @@ function AssignmentCard(assignment) {
                       }}
                     >
                       <i class="fas fa-share-square"></i> Submitted by Students
-                    </Link>)}
+                    </Link>
+                  )}
                   {studentView && (
-                    
-                    // <Link
-                    //   className="btn-submit-assignment"
-                    //   to={{
-                    //     pathname: `/assignmentSubmission/new/${assignment.assignment.id}`,
-                    //     state: { assignment, user },
-                    //   }}
-                    // >
-                      <Link
+                    <Link
                       className="btn-submit-assignment"
                       to={{
-                        pathname: '/assignmentSubmission/new',
+                        pathname: "/assignmentSubmission/new",
                         state: { assignment, user },
                       }}
                     >

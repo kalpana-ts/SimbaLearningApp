@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import mathGif from "../../images/math.gif";
 import socialGif from "../../images/history.gif";
 import scienceGif from "../../images/science.gif";
@@ -8,7 +9,6 @@ import languageGif from "../../images/hello-talker.gif";
 import artGif from "../../images/art.gif";
 
 import AssignmentPostApi from "../../api/AssignmentPostApi";
-//import AssignmentCard from '../assignmentpost/AssignmentCard';
 import AssignmentBySubject from "../assignmentpost/AssignmentBySubject";
 
 function AssignmentList() {

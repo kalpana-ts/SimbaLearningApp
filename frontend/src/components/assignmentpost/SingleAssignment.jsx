@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Auth from "../../services/Auth";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import ErrorScreen from "../tempscreens/ErrorScreen";
 import UserApi from "../../api/UserApi";
 import AssignmentSubmittedList from "../assignmentsubmission/AssignmentSubmittedList";
-import AssignmentSubmissionApi from "../../api/AssignmentSubmissionApi";
 
 
 
+//Display Single assigment post and Assignments submitted back by students
 function SingleAssignment() {
   const userMail = Auth.getUserMail();
   console.log("userMail:", userMail);
@@ -17,9 +17,6 @@ function SingleAssignment() {
   const [assignment, setAssignment] = useState(passedAssignment.assignment);
 
   const url = assignment.fileUrl;
-  const isOwner = userMail === assignment.user.email;
-  const User_Email_ID = assignment.user.email;
-  const User_Name = assignment.user.name;
   const studentView = user.userType === "student";
   const teacherView = user.userType === "teacher";
 
@@ -74,36 +71,21 @@ function SingleAssignment() {
                   <h3>{assignment.assignmentTitle}</h3>
                   <p>{assignment.assignmentDescription}</p>
                   <p>Submission date : {assignment.submissionDate}</p>
-                  {/* {studentView && (
-                    // <Link
-                    //   to={{
-                    //     pathname: `/assignmentSubmission/new/${assignment.id}`,
-                    //     state: { assignment, user },
-                    //   }}
-                    // >
-                       <Link
-                      to={{
-                        pathname: '/assignmentSubmission/new',
-                        state: { assignment, user },
-                      }}
-                    >
-                      <button>Submit Your Answer</button>
-                    </Link>
-                  )} */}
                   <div class="widget-top-overflow text-white">
                     {url.match(".gif") ||
                     url.match(".jpg") ||
                     url.match(".png") ||
                     url.match(".jpeg") ? (
-                      <img
+                      <image
                         src={assignment.fileUrl}
-                        class="img-fluid"
+                        className="img-fluid"
                         alt="Responsive image"
                         class="assignment-view-img"
                       />
                     ) : (
                       <div class="embed-responsive embed-responsive-16by9 single-assignment-submit-ifram">
                         <iframe
+                          title="assignment1"
                           class="embed-responsive-item"
                           src={assignment.fileUrl}
                           allowfullscreen
@@ -118,9 +100,6 @@ function SingleAssignment() {
                   role="tabpanel"
                   aria-labelledby="nav-profile-tab"
                 >
-                  {/* {studentView && (
-                <AssignmentSubmittedList assignment={assignment} user={user} />
-              )} */}
                   <AssignmentSubmittedList
                     assignment={assignment}
                     user={user}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import mathGif from "../../images/math.gif";
 import socialGif from "../../images/history.gif";
 import scienceGif from "../../images/science.gif";
@@ -9,9 +10,7 @@ import artGif from "../../images/art.gif";
 
 import StudyMaterialApi from "../../api/StudyMaterialApi";
 import StudyMaterialCard from "../studymaterial/StudyMaterialCard";
-//import AssignmentCard from '../assignmentpost/AssignmentCard';
-import StudyMaterialBySubject from "../studymaterial/StudyMaterialBySubject";
-//import SingleStudyMaterial from "./SingleStudyMaterial";
+
 
 function StudyMaterialByGrade() {
   const { state } = useLocation();
@@ -33,7 +32,7 @@ function StudyMaterialByGrade() {
   }, []);
 
   const materialsList = materials.map((material) => (
-    // <StudyMaterialBySubject key={material.id} material={material}  />
+    
     <StudyMaterialCard key={material.id} material={material} />
   ));
 
@@ -90,7 +89,7 @@ function StudyMaterialByGrade() {
           </table>
         </div>
       )}
-      {/* {materials.length === 0 ? "No Studymaterials to show" : <>{materialList}</>} */}
+      
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import AssignmentSubmissionApi from "../../api/AssignmentSubmissionApi";
 import AssignmentSubmittedCard from "../assignmentsubmission/AssignmentSubmittedCard";
 
+//Table title for submitted assignemnts
 export default function AssignmentSubmittedList({ assignment, user }) {
   const [assignmentsSubmitted, setAssignmentsSubmitted] = useState([]);
-  //const[assignmentsSubmittedByUser,setassignmentsSubmittedByUser] = useState([]);
   const studentView = user.userType === "student";
   const teacherView = user.userType === "teacher";
 
@@ -20,18 +19,6 @@ export default function AssignmentSubmittedList({ assignment, user }) {
   useEffect(() => {
     getAllSubmittedForThisAssignment(assignment.id);
   }, []);
-
-  // function getAllSubmittedForThisAssignmentByUser(){
-  //     AssignmentSubmissionApi.getAllSubmittedForAssignmentByUser(assignment.id,user.id)
-  //     .then((res)=> {
-  //         setassignmentsSubmittedByUser(res.data);
-  //     })
-
-  //   }
-  // useEffect(()=>{
-
-  //     getAllSubmittedForThisAssignmentByUser(assignment.id,user.id);
-  // },[]);
 
   console.log("assignmentsSubmitted", assignmentsSubmitted);
   const assignmentSubmittedList = assignmentsSubmitted.map((assignsubmit) => (
@@ -80,7 +67,7 @@ export default function AssignmentSubmittedList({ assignment, user }) {
 
       {studentView && (
         <div>
-          {assignmentsSubmittedByUser === [] ? (
+          {assignmentsSubmittedByUser === 0 ? (
             <div className="center-data">
               <p>No Submission Yet..</p>
             </div>
@@ -102,23 +89,5 @@ export default function AssignmentSubmittedList({ assignment, user }) {
         </div>
       )}
     </>
-
-    /* <div>
-            {teacherView && 
-                <div>
-            <h1>Assigments submitted back by students</h1>
-            {assignmentsSubmitted === [] ? 'No submissions yet' 
-            :<div className="row">{assignmentSubmittedList}
-            </div>
-                }
-            </div>}
-            {studentView && <div>
-            <h1>Assigments submitted back by You</h1>
-            {assignmentsSubmittedByUser === [] ? 'No submissions yet' 
-            :<div className="row">{assignementSubmittedByUser}</div>
-                }
-            </div>}
-
-        </div> */
   );
 }
