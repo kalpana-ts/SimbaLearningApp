@@ -60,7 +60,7 @@
 .navbar-nav{
     flex: none;
     order: 0;
-    margin-left: 62%;
+    margin-left: 50%;
 }
 .navbar-toggler {
     background-color: #006d77 !important;
@@ -91,12 +91,12 @@
 
 @media (min-width:801px) {
     .navbar-nav{
-        margin-left: 48%;
+        margin-left: 50%;
     }
 }
 @media (min-width:1300px) {
     .navbar-nav{
-        margin-left: 62%;
+        margin-left: 50%;
     }
 }
 @media (min-width: 1200px){
