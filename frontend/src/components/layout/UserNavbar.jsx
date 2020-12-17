@@ -76,14 +76,9 @@ function Navbar({ onLogout }) {
           </li>
 
           <li className="nav-item">
-            <NavLink
-              exact
-              to="/quizs"
-              className="nav-link"
-              activeClassName="active-link"
-            >
-              Quiz
-            </NavLink>
+            <a href="https://simbagame-7ab0e.web.app" className="nav-link" >
+              <span>Mind Game</span>
+            </a>
           </li>
 
           {/* <li className="nav-item">

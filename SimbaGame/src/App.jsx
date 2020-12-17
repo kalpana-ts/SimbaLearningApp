@@ -36,7 +36,7 @@ function App() {
     </Router>
   );
 
-  return loggedIn ? loggedInRouter : <LoginPage />;
+  return loggedInRouter;
 }
 
 export default App;
