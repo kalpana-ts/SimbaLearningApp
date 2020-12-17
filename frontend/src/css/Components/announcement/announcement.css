@@ -25,13 +25,12 @@ background-position-x: 94%;
   color:#fff;
 }
 .btn-newPost-upload{
-    background-color: #fff!important;
+    background-color: #E56B6F!important;
     width: 10rem!important;
-    border-color: #a3d0da!important;
-    color:#666 !important;
+    color:#fff;
     font-size: 18px;
     text-align: center;
-    height: 45px;
+    height: 28px;
     margin-left: 2%;
 }
 

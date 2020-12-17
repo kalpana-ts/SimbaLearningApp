@@ -93,7 +93,6 @@
     font-size:14px;
     border-radius:4px;
     transition:all .3s;
-    width:190px;
 }
 .btn-submit-assignment:hover{
     border:1px solid transparent;
@@ -110,7 +109,6 @@
     font-size:14px;
     border-radius:4px;
     transition:all .3s;
-    width:180px;
 }
 .btn-student-assignment-list:hover{
     border:1px solid transparent;

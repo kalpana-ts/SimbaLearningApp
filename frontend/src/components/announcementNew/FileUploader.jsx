@@ -48,9 +48,9 @@ function FileUploader({ setFileUrl }) {
     <div>
 
         <br/>
-          <input type="file" className="input-file-upload" id="exampleFormControlFile1" onChange={handleChange}/>
+          <input type="file" className="" style={{width:'60%', border:'none'}} id="exampleFormControlFile1" onChange={handleChange}/>
           <button className="btn-newPost-upload" 
-          onClick={handleUpload}> <img src={upldGif} className="upload-img" alt="" srcset=""/> Upload </button>
+          onClick={handleUpload}> Upload </button>
           <br/>
         <br/>
         <progress className="announcement-progress" value={progress} max="100" />
