@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-//import { useHistory } from "react-router-dom";
-
 import AssignmentPostApi from "../../api/AssignmentPostApi";
-//import AssignmentPostForm from '../../components/assignmentpost/AssignmentPostForm';
-//import NewAssignment from '../assignmentpost/NewAssignment';
-//import AssignmentCard from '../assignmentpost/AssignmentCard';
 import AssignmentByTeacher from "../assignmentpost/AssignmentByTeacher";
+
+// Main Assignment List view from teacher login
+// Renders Table Header and calls AssignmentByTeacher component to display to data
 
 function AssignmentPostPage() {
   const [assignments, setAssignments] = useState([]);

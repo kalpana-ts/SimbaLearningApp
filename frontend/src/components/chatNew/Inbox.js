@@ -5,6 +5,7 @@ import MessageApi from '../../api/MessageApi';
 // Components
 import Message from './Message'
 
+//To show incoming messages
 function Inbox({user}) {
 
     const [ messages, setMessages ] = useState([]);

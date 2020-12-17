@@ -9,7 +9,7 @@ function StudyMaterialCard(material) {
                 <th scope="row">{material.material.id}</th>
                 <td>{material.material.user.name}</td>
 
-                <td> {material.material.fileUrl ? <a href={material.material.fileUrl} target="_blank">
+                <td> {material.material.fileUrl ? <a href={material.material.fileUrl} target="_blank" rel="noreferrer">
                    {material.material.title} </a> : material.material.title }</td>
                 <td>{material.material.grade}</td>
                 <td>{material.material.subject}</td>

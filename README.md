@@ -6,7 +6,7 @@ Simba App have two type of logins admin(teacher or staff) and user(student or pa
 
 ### How do students use Simba?
 
-If you're using Simba for Schools, students can just sign in with their email address to access all of their classes. Once students sign in to Simba, they stay signed in for up to 1 year.
+If you're using Simba for Schools, students can just sign in with their email address to access all of their classes.
 
 Click here to open Simba website:
 - <https://simba-1f463.web.app>

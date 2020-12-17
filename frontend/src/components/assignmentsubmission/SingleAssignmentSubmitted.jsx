@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AssignmentSubmissionApi from "../../api/AssignmentSubmissionApi";
 
-
+//Individual card for assignments submitted back by students
 export default function SingleAssignmentSubmitted() {
   const userMail = Auth.getUserMail();
   const [user, setUser] = useState({});
@@ -59,12 +59,11 @@ export default function SingleAssignmentSubmitted() {
       assignmentPost: assignment.assignmentPost,
       user: assignment.user,
     };
-    // console.log(updateAssignmentSubmission);
+    
     AssignmentSubmissionApi.updateAssignment(updateAssignmentSubmission).then(
       () => {
         console.log("assignment");
         setShow(false);
-       // history.push(to = {pathname: `/assignmentSubmission/${assignment.id}`, state: passedAssignment });
         history.goBack();
       }
     );
@@ -207,7 +206,7 @@ export default function SingleAssignmentSubmitted() {
                 url.match(".jpg") ||
                 url.match(".png") ||
                 url.match(".jpeg") ? (
-                  <img
+                  <image
                     src={assignment.fileURL}
                     class="img-fluid"
                     alt="Responsive image"
@@ -224,9 +223,6 @@ export default function SingleAssignmentSubmitted() {
                 ))}
             </div>
           </div>
-        </div>
-        <div class="col">
-          
         </div>
       </div>
     </div>
