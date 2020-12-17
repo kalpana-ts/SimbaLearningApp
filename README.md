@@ -5,7 +5,7 @@ Simba is an interactive web based learning platform for   teachers and students 
 Simba App have two type of logins admin(teacher or staff) and user(student or parent). Throgh admin login admin can share study materials, assignements and announcements. Admin can also chat with parents thrugh admin login. From user login student can access study materials, assignements and announcements posted by teacher and also send back reply to teacher on assignement and announcements. Student or parents can also chat with teacher throgh user login.
 
 
-###Description
+### Description
 Simba is an e-learning platform for primary school students .Simba provides  courses materials  in the fields of math, social study, science, general knowledge, language and art prepared .
  
 It includes course  Materials  prepared by the teacher, assignment and tasks the student, and quizzes in which they will receive feedback about their performance.
