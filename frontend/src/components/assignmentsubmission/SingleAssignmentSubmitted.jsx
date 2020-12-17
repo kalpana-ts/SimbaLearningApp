@@ -206,7 +206,7 @@ export default function SingleAssignmentSubmitted() {
                 url.match(".jpg") ||
                 url.match(".png") ||
                 url.match(".jpeg") ? (
-                  <image
+                  <img
                     src={assignment.fileURL}
                     class="img-fluid"
                     alt="Responsive image"

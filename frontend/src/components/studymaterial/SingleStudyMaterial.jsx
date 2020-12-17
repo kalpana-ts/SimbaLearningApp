@@ -42,7 +42,7 @@ function SingleStudyMaterial() {
                   url.match(".png") ||
                   url.match(".jpeg") ||
                   url.match(".gif") ? (
-                    <image
+                    <img
                       src={material.fileUrl}
                       class="img-fluid"
                       alt="Responsive image"

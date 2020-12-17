@@ -76,7 +76,7 @@ function SingleAssignment() {
                     url.match(".jpg") ||
                     url.match(".png") ||
                     url.match(".jpeg") ? (
-                      <image
+                      <img
                         src={assignment.fileUrl}
                         className="img-fluid"
                         alt="Responsive image"

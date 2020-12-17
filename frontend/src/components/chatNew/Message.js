@@ -41,7 +41,7 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                       url.match(".png") ||
                       url.match(".jpeg") ? (
                         <a href={message.fileUrl} target="_blank" rel="noreferrer">
-                        <image
+                        <img
                           src={message.fileUrl}
                           class="img-fluid"
                           alt="Responsive image"
@@ -87,7 +87,7 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                     url.match(".png") ||
                     url.match(".jpeg") ? (
                       <a href={message.fileUrl} target="_blank" rel="noreferrer">
-                      <image
+                      <img
                         src={message.fileUrl}
                         class="img-fluid"
                         alt="Responsive image"
