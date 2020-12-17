@@ -34,6 +34,10 @@ function AssignmentPostForm({ setAssignment }) {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (submissionDate===""){
+      alert("Enter a valid submission date");
+      return;
+    }
     setAssignment({
       assignmentTitle: assignmentTitle,
       assignmentDescription: assignmentDescription,
