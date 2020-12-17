@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useHistory,useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import UserApi from "../../api/UserApi";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import Auth from "../../services/Auth";
 import MessageApi from "../../api/MessageApi";
 import FileUploader from "../../components/announcementNew/FileUploader";
@@ -19,12 +19,12 @@ function ReplyForm() {
   }, [userMail]);
 
   const { state } = useLocation();
-  const history=useHistory();
-//  const [sender, setSender] = useState(user);
+  const history = useHistory();
+  //  const [sender, setSender] = useState(user);
   const replyTo = state === undefined ? null : state.replyTo;
- // const replyMessage = state === undefined ? null : state.replyMessage;
+  // const replyMessage = state === undefined ? null : state.replyMessage;
   //const sender = state === undefined ? null : state.sender;
-//  const [listOfUsers, setListOfUsers] = useState([]);
+  //  const [listOfUsers, setListOfUsers] = useState([]);
   const [message, setMessage] = useState("");
   //const [recipient, setRecipient] = useState("");
   const [subject, setSubject] = useState("");
@@ -32,7 +32,6 @@ function ReplyForm() {
   //  console.log('sender from newmessage:',sender);
 
   console.log("replyTo from newmessage:", replyTo);
-
 
   const sendMessage = () => {
     console.log("Send messge");
@@ -46,15 +45,11 @@ function ReplyForm() {
       recipient: replyTo,
       msgBody: message,
       sender: user,
-      date: format(new Date(), 'dd-MMM-yyyy'),
+      date: format(new Date(), "dd-MMM-yyyy"),
       fileUrl: fileUrl,
     };
 
-    
-
-    console.log('newM',newMessage);
-
-
+    console.log("newM", newMessage);
 
     MessageApi.createMessage(newMessage).then(() => {
       console.log("sent");
@@ -63,39 +58,56 @@ function ReplyForm() {
       setSubject("");
       setFileUrl("");
       alert("Message sent successfully...");
-      history.push('/messages');
+      history.push("/messages");
     });
   };
 
   return (
-    <div className="container col-sm-12 col-md-10 col-lg-8">
-      <h3 className="font-italic">Send your Reply</h3>
+    <div className="row ChatPage">
+      <div className="col-md-9 message-frame">
+        <div className="messaging">
+          <div className="inbox_msg">
+            <div className="mesgs">
+              <div className="msg_history">
+                <div className="container col-sm-12 col-md-10 col-lg-8">
+                  <h3 className="font-italic">Send your Reply</h3>
 
-      <div className="card msg-form-card p-3">
-        <FileUploader setFileUrl={setFileUrl} />
+                  <div className="card msg-form-card p-3">
+                    <FileUploader setFileUrl={setFileUrl} />
 
-        <div className="input-group mb-3 user-dropdown">
-          <div className="input-group-prepend">
-            <span className="input-group-text">Send To: {replyTo.name}</span>
+                    <div className="input-group mb-3 user-dropdown">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text">
+                          Send To: {replyTo.name}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="input-group mb-3 user-dropdown">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text">Message</span>
+                      </div>
+                      <textarea
+                        className="form-control"
+                        value={message}
+                        required
+                        onChange={(event) => setMessage(event.target.value)}
+                      ></textarea>
+                    </div>
+
+                    <div className="form-group text-right">
+                      <button
+                        className="btn btn-msg-submit"
+                        onClick={sendMessage}
+                      >
+                        <i class="fas fa-share-square"></i> Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-          
-        <div className="input-group mb-3 user-dropdown">
-          <div className="input-group-prepend">
-            <span className="input-group-text">Message</span>
-          </div>
-          <textarea
-            className="form-control"
-            value={message}
-            required
-            onChange={(event) => setMessage(event.target.value)}
-          ></textarea>
-        </div>
-
-        <div className="form-group text-right">
-          <button className="btn btn-msg-submit" onClick={sendMessage}>
-            <i class="fas fa-share-square"></i> Submit
-          </button>
         </div>
       </div>
     </div>
