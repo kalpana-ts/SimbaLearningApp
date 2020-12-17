@@ -4,7 +4,7 @@ import se.kth.sda.simba.Announcement.Announcement;
 import se.kth.sda.simba.user.User;
 
 import javax.persistence.*;
-
+//Comment entity
 @Entity
 public class Comment {
     @Id
