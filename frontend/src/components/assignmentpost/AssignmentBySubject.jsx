@@ -57,7 +57,7 @@ function AssignmentCard(assignment) {
                 url.match(".jpg") ||
                 url.match(".png") ||
                 url.match(".jpeg") ? (
-                  <image
+                  <img
                     src={url}
                     class="img-fluid assignment-view-img"
                     alt="Responsive image"
