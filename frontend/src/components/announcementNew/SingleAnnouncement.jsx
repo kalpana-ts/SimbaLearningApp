@@ -13,6 +13,7 @@ function SingleAnnouncement() {
   const { state } = useLocation();
   const passedPost = state === undefined ? null : state.announce;
   const [announce, setAnnounce] = useState(passedPost);
+  const url = announce.imageUrl;
   const User_Email_ID = announce.user.email;
   const User_Name = announce.user.name;
 
@@ -33,7 +34,7 @@ function SingleAnnouncement() {
           <div class="single-announcement-card">
             <div class="d-flex justify-content-between p-2 px-3">
               <div class="d-flex flex-row align-items-center">
-                <image
+                <img
                   src={announce.user.imgUrl}
                   width="50"
                   class="rounded-circle"
@@ -46,8 +47,11 @@ function SingleAnnouncement() {
             </div>
 
             {announce.imageUrl &&
-              (announce.imageUrl.match(".jpg" || ".png") ? (
-                <image
+              (url.match(".gif") ||
+              url.match(".jpg") ||
+              url.match(".png") ||
+              url.match(".jpeg") ? (
+                <img
                   src={announce.imageUrl}
                   class="img-fluid"
                   alt="Responsive image"

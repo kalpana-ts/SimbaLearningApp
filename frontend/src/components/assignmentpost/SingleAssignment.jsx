@@ -10,7 +10,6 @@ import AssignmentSubmittedList from "../assignmentsubmission/AssignmentSubmitted
 //Display Single assigment post and Assignments submitted back by students
 function SingleAssignment() {
   const userMail = Auth.getUserMail();
-  console.log("userMail:", userMail);
   const [user, setUser] = useState({});
   const { state } = useLocation();
   const passedAssignment = state === undefined ? null : state.assignment;

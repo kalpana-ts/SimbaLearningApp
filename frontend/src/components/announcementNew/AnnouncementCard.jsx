@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import CommentApi from "../../api/CommentApi";
 import AnnouncementApi from "../../api/AnnouncementApi";
+import UserImg from "../../images/user_empty.png";
 
 //use to display all announcements to both login
 function AnnouncementCard({ announcement, user }) {
@@ -76,7 +77,21 @@ function AnnouncementCard({ announcement, user }) {
           </div>
           <div class="post-user mt-sm">
             <span class="thumb pull-left mr">
-              <img class="img-circle" src={announce.user.imgUrl} alt="..." />
+            {(announce.user.imgUrl === null || announce.user.imgUrl === "") ? (
+                <img
+                  className="profile-img"
+                  src={UserImg}
+                  alt="profile"
+                  srcset=""
+                />
+              ) : (
+                <img
+                  className="profile-img"
+                  src={announce.user.imgUrl}
+                  alt="profile"
+                  srcset=""
+                />
+              )}
             </span>
             <h5 class="poster-detail">
               <span class="fw-semi-bold">{announce.user.name}</span>{" "}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CommentUpdateForm from "./CommentUpdateForm";
+import UserImg from "../../images/user_empty.png";
 
 //display comment for announcement
 function CommentCard({
@@ -26,11 +27,21 @@ function CommentCard({
   ) : (
     <div id="comment" className="media-block">
       <a className="media-left" href="#">
-        <img
-          className="img-circle img-sm"
-          alt=""
-          src={userComment.user.imgUrl}
-        />
+        {userComment.user.imgUrl === null || userComment.user.imgUrl === "" ? (
+          <img
+            className="img-circle img-sm"
+            src={UserImg}
+            alt="profile"
+            srcset=""
+          />
+        ) : (
+          <img
+            className="img-circle img-sm"
+            src={userComment.user.imgUrl}
+            alt="profile"
+            srcset=""
+          />
+        )}
       </a>
       <div className="media-body comment-text">
         <div className="mar-btm">
