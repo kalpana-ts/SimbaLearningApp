@@ -76,7 +76,7 @@ function AssignmentCard(assignment) {
                         state: { assignment },
                       }}
                     >
-                      <i class="fas fa-share-square"></i> Assignments Submitted Back by Students
+                      <i class="fas fa-share-square"></i> Submitted by Students
                     </Link>)}
                   {studentView && (
                     

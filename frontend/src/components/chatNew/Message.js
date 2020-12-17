@@ -40,11 +40,13 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                       url.match(".jpg") ||
                       url.match(".png") ||
                       url.match(".jpeg") ? (
+                        <a href={message.fileUrl} target="_blank">
                         <img
                           src={message.fileUrl}
                           class="img-fluid"
                           alt="Responsive image"
                         />
+                        </a>
                       ) : (
                         <div class="embed-responsive embed-responsive-16by9">
                           <iframe
@@ -83,11 +85,13 @@ function Message({ message, inbox, getAllAgain, deleteMessage, user }) {
                     url.match(".jpg") ||
                     url.match(".png") ||
                     url.match(".jpeg") ? (
+                      <a href={message.fileUrl} target="_blank">
                       <img
                         src={message.fileUrl}
                         class="img-fluid"
                         alt="Responsive image"
                       />
+                      </a>
                     ) : (
                       <div class="embed-responsive embed-responsive-16by9">
                         <iframe

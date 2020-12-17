@@ -8,6 +8,15 @@
     background-size: 300px;
     background-position-x: 94%;
 }
+.studymaterial-frm{
+    background-image: url('..//..//../images//StudyMaterialForm.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom; 
+    height:900px;
+    background-size: 300px;
+    background-position-x: 94%;
+}
 .single-study-material-tab{
     width:70%;
     background-color: #1c7293;
