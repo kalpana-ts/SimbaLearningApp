@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { storage } from "../../firebase";
-import upldGif from '../../images/upld_1.gif';
 
+//uploader to add all type of files.
 function FileUploader({ setFileUrl }) {
-//   const [payload, setPayload] = useState(null);
     const [progress, setProgress] = useState(0);
     const [file, setFile] = useState(null);
 
