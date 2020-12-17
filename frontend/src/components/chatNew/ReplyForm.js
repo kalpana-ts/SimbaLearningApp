@@ -6,6 +6,7 @@ import Auth from "../../services/Auth";
 import MessageApi from "../../api/MessageApi";
 import FileUploader from "../../components/announcementNew/FileUploader";
 
+//Form to reply to a particular message
 function ReplyForm() {
   const [user, setUser] = useState({});
   const userMail = Auth.getUserMail();
@@ -20,17 +21,11 @@ function ReplyForm() {
 
   const { state } = useLocation();
   const history = useHistory();
-  //  const [sender, setSender] = useState(user);
   const replyTo = state === undefined ? null : state.replyTo;
-  // const replyMessage = state === undefined ? null : state.replyMessage;
-  //const sender = state === undefined ? null : state.sender;
-  //  const [listOfUsers, setListOfUsers] = useState([]);
   const [message, setMessage] = useState("");
-  //const [recipient, setRecipient] = useState("");
   const [subject, setSubject] = useState("");
   const [fileUrl, setFileUrl] = useState("");
-  //  console.log('sender from newmessage:',sender);
-
+  
   console.log("replyTo from newmessage:", replyTo);
 
   const sendMessage = () => {
@@ -54,7 +49,6 @@ function ReplyForm() {
     MessageApi.createMessage(newMessage).then(() => {
       console.log("sent");
       setMessage("");
-      //setRecipient("");
       setSubject("");
       setFileUrl("");
       alert("Message sent successfully...");

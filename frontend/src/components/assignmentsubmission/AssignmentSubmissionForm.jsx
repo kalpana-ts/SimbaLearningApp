@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import AssignmentSubmissionApi from "../../api/AssignmentSubmissionApi";
 import FileUploader from "../announcementNew/FileUploader";
 import { format } from "date-fns";
 
+//Form to submit back assignments for student login
 export default function AssignmentSubmissionForm() {
   const { state } = useLocation();
   const history = useHistory();
@@ -11,7 +12,6 @@ export default function AssignmentSubmissionForm() {
   const [user, setUser] = useState(currentUser);
   const passedAssignment = state === undefined ? null : state.assignment;
   const [assignment, setAssignment] = useState(passedAssignment);
-  // console.log("YEs",assignment);
   const [assignmentTitle, setAssignmentTitle] = useState(
     assignment.assignment.assignmentTitle
   );
@@ -19,7 +19,7 @@ export default function AssignmentSubmissionForm() {
   const [fileUrl, setFileUrl] = useState("");
   const [grade, setGrade] = useState(assignment.assignment.grade);
   const [subject, setSubject] = useState(assignment.assignment.subject);
-  // const emptySubmission = false;
+
 
   function submitAssignment(e) {
     e.preventDefault();

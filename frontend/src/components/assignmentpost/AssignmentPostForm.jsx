@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
 import Auth from "../../services/Auth";
 import UserApi from "../../api/UserApi";
-//import DatePicker from "../calendar/DatePicker";
 import FileUploader from "../announcementNew/FileUploader";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-//last date submission
+
+// Form to read assignment details from user(teacher login)
 
 function AssignmentPostForm({ setAssignment }) {
   const [assignmentTitle, setAssignmentTitle] = useState("");
@@ -16,13 +16,10 @@ function AssignmentPostForm({ setAssignment }) {
   const [grade, setGrade] = useState("1");
   const [subject, setSubject] = useState("Math");
   const [submissionDate, setSubmissionDate] = useState("");
-  // const [postDate,setPostDate] = useState('');
-  //const [uploading, setUploading] = useState(true);
-
   const [user, setUser] = useState({});
   const userMail = Auth.getUserMail();
 
-  // Store user informations when logged: can acces user mail, name, Id
+  // Reads details of user logged in.
   useEffect(() => {
     function getUserByMail() {
       UserApi.getUserByMail(userMail).then((res) => {
@@ -32,6 +29,7 @@ function AssignmentPostForm({ setAssignment }) {
     userMail !== null && getUserByMail();
   }, [userMail]);
 
+  //Sets assignement and returns to callback newAssignment
   const submitHandler = (event) => {
     event.preventDefault();
     if (submissionDate===""){
@@ -50,6 +48,7 @@ function AssignmentPostForm({ setAssignment }) {
     });
     document.getElementById("assignment-form").reset();
   };
+  
   return (
     <div className="assignement-frm">
       <h2 style={{ color: "#006d77" }}>Assignment Post</h2>

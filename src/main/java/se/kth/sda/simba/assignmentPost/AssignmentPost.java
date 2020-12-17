@@ -1,8 +1,6 @@
 package se.kth.sda.simba.assignmentPost;
 
 import se.kth.sda.simba.user.User;
-
-
 import javax.persistence.*;
 
 @Entity
@@ -16,15 +14,11 @@ public class AssignmentPost {
     private String fileUrl;
     private String grade;
     private String subject;
-
     private String postDate;
     private String submissionDate;
 
-
-
     @ManyToOne
-   private User user;
-
+    private User user;
 
     public AssignmentPost(long id, String assignmentTitle, String assignmentDescription, String fileUrl, String grade, String subject, String postDate, String submissionDate, User user) {
         this.id = id;

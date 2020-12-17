@@ -9,8 +9,8 @@ import Sub_Geo from '../../images/Sub_Geo.png';
 import Sub_Language from '../../images/Sub_Language.png';
 import Sub_Art from '../../images/Sub_Art.png';
 
-//setSubject as per the link , can use onclickmethod call and set state.
 
+//Subject page
 export default function GradeAssignmentPage() {
   const { state } = useLocation();
   const grade = state === undefined ? null : state.grade;

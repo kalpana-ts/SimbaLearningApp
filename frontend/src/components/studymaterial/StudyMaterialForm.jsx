@@ -3,7 +3,6 @@ import { format } from "date-fns";
 import Auth from "../../services/Auth";
 import UserApi from "../../api/UserApi";
 import FileUploader from "../announcementNew/FileUploader";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 

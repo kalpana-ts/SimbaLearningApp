@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+//rednders all the assignments posted by teacher 
+
 function AssignmentByTeacher(assignment) {
   
   return (
