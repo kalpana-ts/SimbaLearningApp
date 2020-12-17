@@ -6,6 +6,7 @@ import slide3 from '../../images/slide2.png';
 
 import HomeAboutPage from './AboutPage';
 import OurTeam from './OurTeam';
+import TrainingVideo from './TrainingVideo';
 
 function HomePage() {
     
@@ -79,6 +80,12 @@ function HomePage() {
 
           <div id="about" htmlFor="about">
               <HomeAboutPage />
+              <br/><br/>
+          </div>
+
+          <div id="TrainingVideo" htmlFor="TrainingVideo">
+              <TrainingVideo />
+              <br/>
           </div>
 
           <div id="OurTeam" htmlFor="OurTeam">
