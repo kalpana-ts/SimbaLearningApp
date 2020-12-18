@@ -39,6 +39,11 @@ function Navbar() {
             </a>
           </li>
           <li className="nav-item">
+            <a href="#TrainingVideo" className="nav-link" rel="noopener noreferrer">
+              <span>Preview</span>
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="#OurTeam" className="nav-link" rel="noopener noreferrer">
               <span>Our Team</span>
             </a>
@@ -46,7 +51,7 @@ function Navbar() {
 
           <li className="nav-item">
             <a
-              href="http://localhost:3000"
+              href="https://simbalearningapp-edb1a.web.app"
               target="_blank"
               className="btn-home-login"
               rel="noopener noreferrer"

@@ -1,6 +1,7 @@
 @import "./Components/layout/layout.css";
 @import "./Components/Home/Home.css";
 @import "./Components/OurTeam/OurTeam.css";
+@import "./Components/TrainingVideo/TrainingVideo.css";
 
 body {
   min-height: 100vh;

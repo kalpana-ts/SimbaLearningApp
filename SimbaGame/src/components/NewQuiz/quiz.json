@@ -350,7 +350,7 @@
         "isCorrect": false
      },
      {
-        "answerText": "",
+        "answerText": "rock",
         "isCorrect": false
      }
   ]
@@ -394,7 +394,7 @@
         "isCorrect": false
      },
      {
-        "answerText": "",
+        "answerText": "nine",
         "isCorrect": true
      }
   ]
@@ -416,7 +416,7 @@
         "isCorrect": true
      },
      {
-        "answerText": "s",
+        "answerText": "two",
         "isCorrect": false
      }
   ]
@@ -758,7 +758,7 @@
   "questionText": "Who is the first inventor of post card?",
   "answerOptions": [
      {
-        "answerText": " John P Charlton",
+        "answerText": "John P Charlton",
         "isCorrect": true
      },
      {
@@ -843,146 +843,98 @@
 },
 {
    "subject": "mathematics",
-  "questionText": "14+12 = ?",
+  "questionText": "You are in a running race, and you overtake third place. What place are you in?",
   "answerOptions": [
      {
-        "answerText": " 28",
+        "answerText": " first",
+        "isCorrect": false
+     },
+     {
+        "answerText": "second",
+        "isCorrect": false
+     },
+     {
+        "answerText": "third",
         "isCorrect": true
      },
      {
-        "answerText": "24",
-        "isCorrect": false
-     },
-     {
-        "answerText": "26",
-        "isCorrect": false
-     },
-     {
-        "answerText": "30",
+        "answerText": "fourth",
         "isCorrect": false
      }
   ]
 },
 {
-   "subject": "mathematics",
+   "subject": "A fraction which bears the same ratio to 1/27 as 3/11 bear to 5/9 is equal to ……….. .",
   "questionText": "24%5 = ?",
   "answerOptions": [
      {
-        "answerText": " 20",
-        "isCorrect": false
-     },
-     {
-        "answerText": "4",
+        "answerText": "1/55",
         "isCorrect": true
      },
      {
-        "answerText": "5",
+        "answerText": "55",
         "isCorrect": false
      },
      {
-        "answerText": "24",
+        "answerText": "3/11",
+        "isCorrect": false
+     },
+     {
+        "answerText": "1/11",
         "isCorrect": false
      }
   ]
 },
 {
    "subject": "mathematics",
-  "questionText": "34*5?",
+  "questionText": " A clock strikes once at 1 o’clock, twice at 2 o’clock, thrice at 3 o’clock and so on. How many times will it strike in 24 hours?",
   "answerOptions": [
      {
-        "answerText": " 155",
+        "answerText": " 78",
         "isCorrect": false
      },
      {
-        "answerText": "125",
+        "answerText": "136",
         "isCorrect": false
      },
      {
-        "answerText": "170",
+        "answerText": "156",
         "isCorrect": true
      },
      {
-        "answerText": "165",
+        "answerText": "196",
         "isCorrect": false
      }
   ]
 },
 {
    "subject": "mathematics",
-  "questionText": "(12*2+4)-4?",
+  "questionText": "The number of 3-digit numbers divisible by 6, is ………….. .",
   "answerOptions": [
      {
-        "answerText": " 68",
+        "answerText": " 149",
         "isCorrect": false
      },
      {
-        "answerText": "26",
+        "answerText": "166",
         "isCorrect": true
      },
      {
-        "answerText": "40",
+        "answerText": "150",
         "isCorrect": false
      },
      {
-        "answerText": "36",
+        "answerText": "151",
         "isCorrect": false
      }
   ]
 },
 {
    "subject": "mathematics",
-  "questionText": "20-4-2-6?",
+  "questionText": "Which of the following numbers gives 240 when added to its own square?",
   "answerOptions": [
      {
-        "answerText": " 12",
-        "isCorrect": false
-     },
-     {
-        "answerText": "24",
-        "isCorrect": false
-     },
-     {
-        "answerText": "-2",
-        "isCorrect": false
-     },
-     {
-        "answerText": "8",
-        "isCorrect": true
-     }
-  ]
-},
-{
-   "subject": "mathematics",
-  "questionText": "46/2-(2*2)+6?",
-  "answerOptions": [
-     {
-        "answerText": " 72",
-        "isCorrect": false
-     },
-     {
-        "answerText": "56",
-        "isCorrect": true
-     },
-     {
-        "answerText": "25",
-        "isCorrect": true
-     },
-     {
-        "answerText": "18",
-        "isCorrect": false
-     }
-  ]
-},
-{
-   "subject": "mathematics",
-  "questionText": "4*4*4*4 ?",
-  "answerOptions": [
-     {
-        "answerText": "256",
-        "isCorrect": true
-     },
-     {
-        "answerText": "64",
+        "answerText": " 15",
         "isCorrect": false
      },
      {
@@ -990,7 +942,55 @@
         "isCorrect": false
      },
      {
-        "answerText": "244",
+        "answerText": "18",
+        "isCorrect": false
+     },
+     {
+        "answerText": "20",
+        "isCorrect": true
+     }
+  ]
+},
+{
+   "subject": "mathematics",
+  "questionText": "The average of first 50 natural numbers is …………. ",
+  "answerOptions": [
+     {
+        "answerText": " 25.30",
+        "isCorrect": false
+     },
+     {
+        "answerText": "25.5 ",
+        "isCorrect": true
+     },
+     {
+        "answerText": "25.00",
+        "isCorrect": true
+     },
+     {
+        "answerText": "12.25",
+        "isCorrect": false
+     }
+  ]
+},
+{
+   "subject": "mathematics",
+  "questionText": "Evaluation of 83 × 82 × 8-5 is …………. .",
+  "answerOptions": [
+     {
+        "answerText": "1",
+        "isCorrect": true
+     },
+     {
+        "answerText": "0",
+        "isCorrect": false
+     },
+     {
+        "answerText": "8",
+        "isCorrect": false
+     },
+     {
+        "answerText": "none",
         "isCorrect": false
      }
   ]
